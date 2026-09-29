@@ -216,3 +216,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- pageindex-rs ---
+/target
+parity/.ref/
+parity/.venv/
+parity/golden/
+bench/data/
+bench/results/
