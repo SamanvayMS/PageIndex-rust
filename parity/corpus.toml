@@ -1,0 +1,81 @@
+# Parity corpus. Paths are relative to this file; nothing here is committed except this manifest.
+# tags: kind = born_digital | scanned | mixed ; columns = 1 | 2 | mixed ; bookmarks = none | skeleton | full (filled after spike runs)
+# FinanceBench SEC filings live under bench/data/pdfs (see bench/README.md); add them with parity/corpus_add_financebench.py later.
+
+[[doc]]
+id = "2023_annual_report_truncated"
+path = ".ref/examples/documents/2023-annual-report-truncated.pdf"
+kind = "born_digital"
+source = "reference"
+
+[[doc]]
+id = "2023_annual_report"
+path = ".ref/examples/documents/2023-annual-report.pdf"
+kind = "born_digital"
+source = "reference"
+
+[[doc]]
+id = "prml"
+path = ".ref/examples/documents/PRML.pdf"
+kind = "born_digital"
+source = "reference"
+
+[[doc]]
+id = "regulation_best_interest_interpretive_release"
+path = ".ref/examples/documents/Regulation Best Interest_Interpretive release.pdf"
+kind = "born_digital"
+source = "reference"
+
+[[doc]]
+id = "regulation_best_interest_proposed_rule"
+path = ".ref/examples/documents/Regulation Best Interest_proposed rule.pdf"
+kind = "born_digital"
+source = "reference"
+
+[[doc]]
+id = "attention_residuals"
+path = ".ref/examples/documents/attention-residuals.pdf"
+kind = "born_digital"
+source = "reference"
+
+[[doc]]
+id = "earthmover"
+path = ".ref/examples/documents/earthmover.pdf"
+kind = "born_digital"
+source = "reference"
+
+[[doc]]
+id = "four_lectures"
+path = ".ref/examples/documents/four-lectures.pdf"
+kind = "born_digital"
+source = "reference"
+
+[[doc]]
+id = "q1_fy25_earnings"
+path = ".ref/examples/documents/q1-fy25-earnings.pdf"
+kind = "born_digital"
+source = "reference"
+
+[[doc]]
+id = "ar_report"
+path = ".ref/tests/data/flash/ar_report.pdf"
+kind = "born_digital"
+source = "reference"
+
+[[doc]]
+id = "hi_report"
+path = ".ref/tests/data/flash/hi_report.pdf"
+kind = "born_digital"
+source = "reference"
+
+[[doc]]
+id = "ja_report"
+path = ".ref/tests/data/flash/ja_report.pdf"
+kind = "born_digital"
+source = "reference"
+
+[[doc]]
+id = "zh_body_en_headings"
+path = ".ref/tests/data/flash/zh_body_en_headings.pdf"
+kind = "born_digital"
+source = "reference"
