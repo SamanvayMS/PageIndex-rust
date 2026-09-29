@@ -1,0 +1,12 @@
+[package]
+name = "pdfium-spike"
+description = "Spike A: can pdfium-render reproduce the reference's pypdfium2 surface?"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish = false
+
+[dependencies]
+pdfium-render = { version = "0.9", default-features = false, features = ["pdfium_latest", "thread_safe"] }
+anyhow.workspace = true
+serde_json.workspace = true
