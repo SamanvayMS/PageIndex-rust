@@ -224,3 +224,6 @@ parity/.venv/
 parity/golden/
 bench/data/
 bench/results/
+parity/scans/
+parity/golden*/
+parity/golden.log

@@ -12,6 +12,7 @@ For each PDF this writes parity/golden/<doc>/NN_<stage>.json:
   08_tree_raw    outline_to_dict_tree output (before embedded bookmarks)
   09_tree_bookmarks  after apply_embedded_toc, with toc_source
   10_tree_optimized  after page_index_flash fallbacks + deterministic merge (optimize="merge", no LLM)
+  10b_tree_full_llm  with --llm: summaries + merge + expand, every LLM call served by parity/mock_llm.py
 
 The orchestration below is a line-for-line copy of pageindex/flash/main.py::extract_toc and
 phases/page_view.py::process_page with snapshot calls inserted; `--verify` re-runs the real
@@ -347,11 +348,39 @@ def optimized(result: dict) -> dict:
     return result
 
 
-def dump(pdf: Path, out: Path, verify: bool) -> dict:
+def full_llm(result: dict) -> dict:
+    """page_index_flash(summary=True, optimize="full") on an extract_toc result, LLM via mock_llm."""
+    import asyncio
+
+    result = copy.deepcopy(result)
+    structure = result.get("structure", [])
+    if not structure:
+        structure = flash_api._page_nodes(result.get("page_texts") or [])
+        result["structure"] = structure
+        result["toc_source"] = "pages" if structure else "unreadable"
+    elif structure[0]["start_index"] > 1:
+        flash_api._add_preface(structure)
+    if result.get("toc_source") == "pages" and len(structure) > flash_api.FLAT_TREE_MAX_NODES:
+        result.pop("page_texts", None)
+        return result
+    pages = result.pop("page_texts", None) or []
+    model = "openai/mock"
+    if structure and any(pages):
+        result["optimize"] = asyncio.run(flash_api._optimize_and_summarize(
+            structure, pages, optimize_model=model, summary_model=model, concurrency=None, max_words=None))
+    elif structure:
+        result["optimize"] = flash_api._optimize(structure, pages, False, model)
+        asyncio.run(flash_api._summarize(structure, [(t, 0) for t in pages], model, concurrency=None, max_words=None))
+    return result
+
+
+def dump(pdf: Path, out: Path, verify: bool, llm: str | None = None) -> dict:
     t0 = time.perf_counter()
     result, stages = run(pdf)
     elapsed = time.perf_counter() - t0
     stages["10_tree_optimized"] = optimized(result)
+    if llm:
+        stages["10b_tree_full_llm"] = full_llm(result)
     out.mkdir(parents=True, exist_ok=True)
     for name, payload in stages.items():
         body = {"schema": SCHEMA_VERSION, "reference": "619cbd8", "python": sys.version.split()[0],
@@ -387,10 +416,18 @@ def main() -> int:
     ap.add_argument("--ids", nargs="*")
     ap.add_argument("--out", type=Path, default=HERE / "golden")
     ap.add_argument("--verify", action="store_true", help="also run real extract_toc and assert equality")
+    ap.add_argument("--llm", choices=["stub", "replay", "record"],
+                    help="also dump 10b_tree_full_llm (summaries + expand) through parity/mock_llm.py")
+    ap.add_argument("--llm-fixture", type=Path, default=HERE / "mock_llm" / "fixtures.jsonl")
     args = ap.parse_args()
+    if args.llm:
+        sys.path.insert(0, str(HERE))
+        import mock_llm
+
+        mock_llm.install(args.llm, args.llm_fixture if args.llm != "stub" else None)
     docs = corpus_docs(args.corpus, args.ids) if args.corpus else [(p.stem, p) for p in args.pdf]
     for doc_id, pdf in docs:
-        info = dump(pdf, args.out / doc_id, args.verify)
+        info = dump(pdf, args.out / doc_id, args.verify, args.llm)
         print(json.dumps(info), flush=True)
     return 0
 

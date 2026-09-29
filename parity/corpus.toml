@@ -79,3 +79,38 @@ id = "zh_body_en_headings"
 path = ".ref/tests/data/flash/zh_body_en_headings.pdf"
 kind = "born_digital"
 source = "reference"
+# --- FinanceBench SEC filings (fetch with bench/fetch_financebench.py; CC-BY-NC, never committed) ---
+[[doc]]
+id = "fb_3m_2018_10k"
+path = "../bench/data/pdfs/3M_2018_10K.pdf"
+kind = "born_digital"
+source = "financebench"
+note = "slowest per page (dense tables); detected outline with large Preface"
+
+[[doc]]
+id = "fb_amd_2022_10k"
+path = "../bench/data/pdfs/AMD_2022_10K.pdf"
+kind = "born_digital"
+source = "financebench"
+note = "25-node tree; financial statements swallowed by Preface"
+
+[[doc]]
+id = "fb_adobe_2017_10k"
+path = "../bench/data/pdfs/ADOBE_2017_10K.pdf"
+kind = "born_digital"
+source = "financebench"
+bookmarks = "full"
+
+[[doc]]
+id = "fb_walmart_2019_10k"
+path = "../bench/data/pdfs/WALMART_2019_10K.pdf"
+kind = "mixed"
+source = "financebench"
+note = "29 of 155 pages have no extractable text"
+
+[[doc]]
+id = "fb_pepsico_2022_10k"
+path = "../bench/data/pdfs/PEPSICO_2022_10K.pdf"
+kind = "born_digital"
+source = "financebench"
+note = "503 pages; 'Documents Incorporated by Reference' swallows statements"
