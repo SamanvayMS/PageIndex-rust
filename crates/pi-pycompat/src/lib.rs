@@ -1,1 +1,6 @@
-//! Python-compatible helpers: difflib, round, str whitespace, int parsing.
+//! Python-compatible helpers: behaviour the reference relies on that Rust's standard library
+//! does not reproduce exactly.
+
+pub mod difflib;
+pub mod pyround;
+pub mod pystr;
