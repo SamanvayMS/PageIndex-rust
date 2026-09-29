@@ -1,0 +1,12 @@
+[package]
+name = "pi-outline"
+description = "Title, heading candidates, outline assembly, tree, bookmarks"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]

@@ -1,0 +1,12 @@
+[package]
+name = "pi-layout"
+description = "Lines, columns, blocks, classification"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]

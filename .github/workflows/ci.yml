@@ -1,0 +1,32 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.94
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo fmt --all --check
+      - run: cargo clippy --workspace --all-targets -- -D warnings
+      - run: cargo test --workspace
+  parity-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: dtolnay/rust-toolchain@1.94
+      - uses: Swatinem/rust-cache@v2
+      - run: parity/fetch_reference.sh
+      # Reference determinism: two dumps of the same PDF must be diff-clean.
+      - run: |
+          parity/.venv/bin/python parity/dump_reference.py --pdf parity/.ref/examples/documents/earthmover.pdf --out /tmp/g1 --verify
+          parity/.venv/bin/python parity/dump_reference.py --pdf parity/.ref/examples/documents/earthmover.pdf --out /tmp/g2
+          cargo run -q --release -p pi-cli -- diff --a /tmp/g1 --b /tmp/g2

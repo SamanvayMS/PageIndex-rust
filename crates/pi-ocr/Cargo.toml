@@ -1,0 +1,12 @@
+[package]
+name = "pi-ocr"
+description = "OCR engine trait and OpenAI-compatible vision implementation"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]

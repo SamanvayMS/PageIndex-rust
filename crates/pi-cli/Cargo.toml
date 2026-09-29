@@ -1,0 +1,19 @@
+[package]
+name = "pi-cli"
+description = "pageindex-rs command line: index, serve-mcp, parity diff"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[lints]
+workspace = true
+
+[[bin]]
+name = "pageindex-rs"
+path = "src/main.rs"
+
+[dependencies]
+anyhow.workspace = true
+clap.workspace = true
+serde_json.workspace = true

@@ -1,0 +1,12 @@
+[package]
+name = "pi-storage"
+description = "Local / S3 / GCS source and mirror backends"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
