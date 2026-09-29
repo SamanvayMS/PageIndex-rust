@@ -29,6 +29,7 @@ import math
 import sys
 import time
 import tomllib
+import unicodedata
 from pathlib import Path
 
 from pageindex.flash import api as flash_api
@@ -353,7 +354,8 @@ def dump(pdf: Path, out: Path, verify: bool) -> dict:
     stages["10_tree_optimized"] = optimized(result)
     out.mkdir(parents=True, exist_ok=True)
     for name, payload in stages.items():
-        body = {"schema": SCHEMA_VERSION, "reference": "619cbd8", "doc": pdf.name, "stage": name, "data": payload}
+        body = {"schema": SCHEMA_VERSION, "reference": "619cbd8", "python": sys.version.split()[0],
+                "unicode": unicodedata.unidata_version, "doc": pdf.name, "stage": name, "data": payload}
         (out / f"{name}.json").write_text(json.dumps(body, ensure_ascii=False, indent=None, separators=(",", ":"),
                                                      allow_nan=False))
     info = {"doc": pdf.name, "pages": len(stages["01_spans"]), "seconds": round(elapsed, 3)}
