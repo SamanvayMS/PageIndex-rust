@@ -43,13 +43,20 @@ fn main() -> Result<()> {
                 b.FPDFText_GetCharOrigin(tp, i, &mut ox, &mut oy);
                 let (mut l, mut r, mut bo, mut t) = (0f64, 0f64, 0f64, 0f64);
                 b.FPDFText_GetCharBox(tp, i, &mut l, &mut r, &mut bo, &mut t);
-                let mut loose = FS_RECTF { left: 0.0, top: 0.0, right: 0.0, bottom: 0.0 };
+                let mut loose = FS_RECTF {
+                    left: 0.0,
+                    top: 0.0,
+                    right: 0.0,
+                    bottom: 0.0,
+                };
                 b.FPDFText_GetLooseCharBox(tp, i, &mut loose);
                 let mut buf = [0u8; 256];
                 let mut flags: i32 = 0;
-                let len = b.FPDFText_GetFontInfo(tp, i, buf.as_mut_ptr() as *mut c_void, 256, &mut flags);
+                let len =
+                    b.FPDFText_GetFontInfo(tp, i, buf.as_mut_ptr() as *mut c_void, 256, &mut flags);
                 let name = if len > 0 {
-                    String::from_utf8_lossy(&buf[..(len as usize).saturating_sub(1).min(255)]).into_owned()
+                    String::from_utf8_lossy(&buf[..(len as usize).saturating_sub(1).min(255)])
+                        .into_owned()
                 } else {
                     String::new()
                 };
@@ -67,7 +74,8 @@ fn main() -> Result<()> {
             let mut objs = 0;
             let count_objs = b.FPDFPage_CountObjects(page);
             for k in 0..count_objs {
-                if b.FPDFPageObj_GetType(b.FPDFPage_GetObject(page, k)) == FPDF_PAGEOBJ_TEXT as i32 {
+                if b.FPDFPageObj_GetType(b.FPDFPage_GetObject(page, k)) == FPDF_PAGEOBJ_TEXT as i32
+                {
                     objs += 1;
                 }
             }

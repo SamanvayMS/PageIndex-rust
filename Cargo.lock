@@ -465,6 +465,9 @@ version = "0.0.1"
 [[package]]
 name = "pi-pycompat"
 version = "0.0.1"
+dependencies = [
+ "serde_json",
+]
 
 [[package]]
 name = "pi-storage"
