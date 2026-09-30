@@ -3,13 +3,12 @@
 //! `local_api.py::_index_flash`.
 //!
 //! ```text
-//! extract (01) ─► [triage + OCR] ─► layout per page (02-03, rayon) ─► detect_structure (04-08, SEAM)
+//! extract (01) ─► [triage + OCR] ─► layout per page (02-03, rayon) ─► detect_structure (04-08)
 //!   ─► apply_embedded_toc (09) ─► page_index_flash post (fallbacks, merge/expand, summaries)
 //!   ─► write_node_id ─► generate_doc_description ─► IndexedDoc
 //! ```
 //!
-//! Stages 04-08 (blocks, classification, title, headings, outline assembly) are not ported
-//! yet; [`detect_structure`] is the one seam they plug into.
+//! [`detect_structure`] runs stages 04-08 (blocks, classification, title, headings, outline).
 
 use std::collections::BTreeMap;
 use std::sync::Arc;
@@ -17,8 +16,7 @@ use std::time::Instant;
 
 use anyhow::{Context, Result, bail};
 use pi_core::PageSpans;
-use pi_layout::model::span_line::peek_text_of_line;
-use pi_layout::{DocStats, PageLayout, compute_doc_stats, page_bbox_from_viewbox, process_page};
+use pi_layout::{PageLayout, page_bbox_from_viewbox, process_page};
 use pi_llm::{Llm, OpenAiClient, RoleConfig};
 use pi_outline::{PdfSource, apply_embedded_toc};
 use pi_summary::{FlashOptions, OptimizeMode};
@@ -287,43 +285,36 @@ pub fn flash_rejection_reason(result: &Map<String, Value>) -> Option<String> {
     None
 }
 
-/// Text of each page: its layout lines in reading order, one per line.
-///
-/// The reference joins stage-04 block texts (`flash/main.py:283-288`); until blocks are
-/// ported, lines stand in for them.
-pub fn page_texts_from_lines(pages: &[PageLayout]) -> Vec<String> {
-    pages
+/// Stages 04-08 (`flash/main.py::extract_toc` steps 3-11): blocks and reading order,
+/// classification, title, captions, section openers, heading candidates, outline assembly with
+/// its validity gates, and `outline_to_dict_tree`. Returns the `extract_toc` result dict
+/// (before embedded bookmarks) with `page_texts` = each page's block texts in reading order
+/// joined by newlines, exactly as the reference builds them.
+pub fn detect_structure(doc_name: &str, layouts: Vec<PageLayout>) -> Map<String, Value> {
+    let doc = pi_layout::phases::build_document(layouts);
+    let (classified, outline) = pi_outline::pipeline::classify_and_outline(&doc);
+    let page_texts: Vec<String> = doc
+        .pages
         .iter()
         .map(|p| {
-            p.lines
+            p.reading
                 .iter()
-                .map(|l| peek_text_of_line(l, &p.spans))
+                .map(|&id| {
+                    pi_layout::model::block::block_text(&p.blocks[id], &p.layout).to_string()
+                })
                 .collect::<Vec<_>>()
                 .join("\n")
         })
-        .collect()
-}
-
-/// **SEAM for stages 04-08.** The `extract_toc` result before embedded bookmarks
-/// (`flash/main.py:147-297`): `doc_name`, `doc_title`, `structure`,
-/// `has_abstract_or_references_section`, `page_texts`, `toc_source = "detected"`.
-///
-/// TODO(stages 04-08): cluster blocks + reading order (04), header/footer/watermark/TOC
-/// classification (05), body flags (06), title (07), captions + section openers + outline
-/// assembly and validation (08), then `outline_to_dict_tree` — and build `page_texts` from
-/// the blocks. Until then the structure is empty, so `page_index_flash`'s `_page_nodes`
-/// fallback (or the embedded bookmarks) supplies the tree.
-pub fn detect_structure(
-    doc_name: &str,
-    pages: &[PageLayout],
-    _doc_stats: &DocStats,
-) -> Map<String, Value> {
+        .collect();
     let mut result = Map::new();
     result.insert("doc_name".into(), json!(doc_name));
-    result.insert("doc_title".into(), Value::Null);
-    result.insert("structure".into(), json!([]));
-    result.insert("has_abstract_or_references_section".into(), json!(false));
-    result.insert("page_texts".into(), json!(page_texts_from_lines(pages)));
+    result.insert("doc_title".into(), json!(classified.doc_title));
+    result.insert("structure".into(), Value::Array(outline.tree));
+    result.insert(
+        "has_abstract_or_references_section".into(),
+        json!(outline.has_abstract_or_references),
+    );
+    result.insert("page_texts".into(), json!(page_texts));
     result.insert("toc_source".into(), json!("detected"));
     result
 }
@@ -427,24 +418,26 @@ pub async fn index_document(
 
     // 02-03 layout, per page in parallel. ref: flash/main.py:139-150
     let t = Instant::now();
-    let (layouts, doc_stats) = tokio::task::spawn_blocking(move || {
-        let layouts: Vec<PageLayout> = spans
+    let layouts = tokio::task::spawn_blocking(move || {
+        spans
             .par_iter()
             .map(|p| {
-                let bbox = page_bbox_from_viewbox(p.viewbox.unwrap_or(DEFAULT_VIEWBOX), p.rotation);
-                process_page(&p.spans, p.page, bbox)
+                let vb = p.viewbox.unwrap_or(DEFAULT_VIEWBOX);
+                let mut layout =
+                    process_page(&p.spans, p.page, page_bbox_from_viewbox(vb, p.rotation));
+                // extract_toc sets these for the heading coordinate projection (main.py:145-146)
+                layout.viewport_box = p.viewbox;
+                layout.rot = p.rotation;
+                layout
             })
-            .collect();
-        let stats = compute_doc_stats(&layouts);
-        (layouts, stats)
+            .collect::<Vec<PageLayout>>()
     })
     .await?;
     timings.layout_s = t.elapsed().as_secs_f64();
 
     // 04-08 seam, then 09 embedded bookmarks.
     let t = Instant::now();
-    let mut result = detect_structure(doc_name, &layouts, &doc_stats);
-    drop(layouts);
+    let mut result = detect_structure(doc_name, layouts);
     let page_texts: Vec<String> = result
         .get("page_texts")
         .and_then(Value::as_array)

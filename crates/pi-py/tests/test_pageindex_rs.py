@@ -24,7 +24,7 @@ def pdf():
 
 def test_index_then_structure(pdf, tmp_path):
     storage = tmp_path / ".pageindex"
-    out = pageindex_rs.index(str(pdf), storage=str(storage), accept_flat=True)
+    out = pageindex_rs.index(str(pdf), storage=str(storage))
     assert out["doc_id"].startswith("pi-")
     assert out["name"] == "earthmover.pdf"
     assert out["result"]["structure"]
@@ -40,10 +40,11 @@ def test_index_then_structure(pdf, tmp_path):
     assert pages["content"][0]["text"]
 
 
-def test_refused_flat_tree_is_not_stored(pdf, tmp_path):
+def test_detected_outline_is_stored(pdf, tmp_path):
     out = pageindex_rs.index(str(pdf), storage=str(tmp_path / "s"))
-    assert out["doc_id"] is None
-    assert "12 pages" in out["rejected"]
+    assert out["doc_id"] is not None and out["rejected"] is None
+    assert out["result"]["toc_source"] == "detected"
+    assert out["result"]["structure"][0]["title"] == "ABSTRACT"
 
 
 def test_extract_and_triage(pdf):

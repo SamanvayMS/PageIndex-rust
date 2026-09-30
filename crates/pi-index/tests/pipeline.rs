@@ -40,7 +40,7 @@ fn llm_free() -> IndexOptions {
 }
 
 #[tokio::test]
-async fn earthmover_llm_free_falls_back_to_page_nodes() {
+async fn earthmover_llm_free_detects_the_reference_tree() {
     let Some(bytes) = pdf("earthmover.pdf") else {
         return;
     };
@@ -48,19 +48,38 @@ async fn earthmover_llm_free_falls_back_to_page_nodes() {
         .await
         .unwrap();
     assert_eq!(doc.page_texts.len(), 12);
-    assert!(
-        doc.page_texts[0].contains("Earth"),
-        "{}",
-        &doc.page_texts[0][..200.min(doc.page_texts[0].len())]
-    );
-    // No bookmarks and no stage 04-08 yet: one node per page, refused as a flat tree.
-    assert_eq!(doc.toc_source(), "pages");
-    assert_eq!(doc.node_count(), 12);
-    assert!(doc.rejection.as_deref().unwrap().contains("12 pages"));
+    assert!(doc.page_texts[0].contains("Earth"));
+    // Stages 04-08 detect the outline (no bookmarks in this PDF).
+    assert_eq!(doc.toc_source(), "detected");
+    assert!(doc.rejection.is_none());
     assert_eq!(doc.result["doc_name"], "earthmover.pdf");
     let stored = doc.stored_structure();
     assert_eq!(stored[0]["node_id"], "0000");
-    assert_eq!(stored[11]["title"], "Page 12");
+    assert_eq!(stored[0]["title"], "ABSTRACT");
+    // Identical to the Python page_index_flash(merge) result when goldens are available.
+    let golden = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
+        .join("../../parity/golden/earthmover/10_tree_optimized.json");
+    if let Ok(text) = std::fs::read_to_string(golden) {
+        fn strip(v: &serde_json::Value) -> serde_json::Value {
+            match v {
+                serde_json::Value::Object(m) => serde_json::Value::Object(
+                    m.iter()
+                        .filter(|(k, _)| *k != "_same_page")
+                        .map(|(k, x)| (k.clone(), strip(x)))
+                        .collect(),
+                ),
+                serde_json::Value::Array(a) => {
+                    serde_json::Value::Array(a.iter().map(strip).collect())
+                }
+                other => other.clone(),
+            }
+        }
+        let g: serde_json::Value = serde_json::from_str(&text).unwrap();
+        assert_eq!(
+            strip(&g["data"]["structure"]),
+            strip(&doc.result["structure"])
+        );
+    }
 }
 
 #[tokio::test]

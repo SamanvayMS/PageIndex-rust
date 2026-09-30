@@ -141,7 +141,7 @@ fn index_then_read_from_python_and_mcp() {
     let doc = &seen["docs"][&doc_id];
     assert_eq!(
         doc["get_document_structure"].as_array().unwrap().len(),
-        payload["structure"].as_array().map_or(12, Vec::len)
+        tree["structure"].as_array().unwrap().len()
     );
     assert_eq!(doc["get_page_content"][0]["markdown"], page1);
     assert_eq!(doc["get_document"]["pageNum"], 12);

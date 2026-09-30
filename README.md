@@ -4,18 +4,32 @@ A Rust reimplementation of [VectifyAI/PageIndex](https://github.com/VectifyAI/Pa
 
 ## Status
 
+The whole Flash pipeline is ported. **End to end, from PDF to `page_index_flash(optimize="merge")` result, the output is identical to the Python reference on all 18 corpus docs**, at about 12 ms/page single-process. That covers PRML, the 2023 annual report, the Regulation Best Interest releases, CJK/Arabic/Hindi fixtures, and FinanceBench 10-Ks for 3M, AMD, Adobe, Walmart and PepsiCo.
+
 | Stage | Crate | Parity vs Python goldens (18 docs) |
 |---|---|---|
-| 01 spans (PDFium chars, content streams, font Unicode repair, glyph merge) | `pi-extract` | ✅ diff-clean, 6–12× faster |
-| 02 lines, 03 columns, page/doc stats | `pi-layout` | ✅ bit-exact |
-| 04 blocks, 05 classification/title/captions | `pi-layout` | in progress |
-| 06 heading candidates, 07 outline, 08 tree | `pi-outline` | ✅ bit-exact |
-| 09 embedded bookmarks | `pi-outline` | in progress |
-| 10 fallbacks + merge/expand + summaries | `pi-optimize`, `pi-llm`, `pi-summary` | ✅ merge clean; LLM passes clean under replay |
-| Store (`.pageindex/`, Python-SDK compatible), MCP tools | `pi-store`, `pi-mcp` | in progress |
-| Page triage + OCR (OpenAI-compatible vision endpoint) | `pi-triage`, `pi-ocr` | ✅ (tested with a mock endpoint) |
+| 01 spans (PDFium chars, content streams, font Unicode repair, glyph merge) | `pi-extract` | ✅ identical; 6–12× faster |
+| 02 lines, 03 columns, 04 blocks, 05 classification/title/captions | `pi-layout` | ✅ bit-exact |
+| 06 heading candidates, 07 outline, 08 tree, 09 embedded bookmarks | `pi-outline` | ✅ bit-exact (+3 hybrid-bookmark docs; 97/97 bookmark reads) |
+| 10 fallbacks + merge/expand + summaries | `pi-optimize`, `pi-llm`, `pi-summary` | ✅ merge identical; LLM passes identical under record/replay |
+| Store (`.pageindex/`, Python-SDK compatible), MCP tools | `pi-store`, `pi-mcp` | ✅ 156/156 tool calls byte-identical; the Python SDK reads Rust-built stores |
+| Orchestrator, CLI, Python bindings | `pi-index`, `pi-cli`, `pi-py` | ✅ |
+| Page triage + OCR (OpenAI-compatible vision endpoint) | `pi-triage`, `pi-ocr` | ✅ (tested with a mock endpoint; real-model calibration is `ocr_calibrate`) |
 
 Details and every known deviation: `parity/KNOWN_DIFFS.md`. Design notes: `docs/spikes/`.
+
+## Quick start
+
+```bash
+export PDFIUM_LIB=/path/to/pdfium-7999/lib/libpdfium.so
+cargo build --release -p pi-cli
+target/release/pageindex-rs index --no-summary --optimize merge --storage .pageindex report.pdf
+target/release/pageindex-rs serve-mcp --storage .pageindex          # MCP tools over stdio
+# with summaries / expand (OpenAI-compatible endpoint):
+PI_LLM_BASE_URL=... PI_LLM_MODEL=... PI_LLM_KEY=... target/release/pageindex-rs index --summary report.pdf
+# scanned documents: add an [ocr] endpoint in pageindex.toml (or PI_OCR_*) and pass --ocr auto
+```
+Python: `cd crates/pi-py && maturin develop --release`, then `import pageindex_rs; pageindex_rs.index("report.pdf")`.
 
 ## Layout
 
