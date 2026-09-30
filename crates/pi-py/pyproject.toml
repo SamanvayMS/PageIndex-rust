@@ -1,0 +1,15 @@
+[build-system]
+requires = ["maturin>=1.5,<2"]
+build-backend = "maturin"
+
+[project]
+name = "pageindex-rs"
+description = "Rust PageIndex: vectorless document indexing (Python bindings)"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+classifiers = ["Programming Language :: Rust", "Programming Language :: Python :: 3"]
+dynamic = ["version"]
+
+[tool.maturin]
+module-name = "pageindex_rs"
+features = ["extension-module"]

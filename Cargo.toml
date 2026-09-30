@@ -42,6 +42,13 @@ toml = "1"
 tempfile = "3"
 object_store = { version = "0.14", default-features = false }
 rmcp = { version = "3.5", default-features = false }
+pi-triage = { path = "crates/pi-triage" }
+pi-ocr = { path = "crates/pi-ocr" }
+pi-layout = { path = "crates/pi-layout" }
+pi-outline = { path = "crates/pi-outline" }
+pi-summary = { path = "crates/pi-summary" }
+pi-index = { path = "crates/pi-index" }
+rayon = "1"
 
 [workspace.lints.rust]
 unsafe_code = "deny"
