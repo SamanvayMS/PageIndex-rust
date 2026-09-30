@@ -1378,6 +1378,14 @@ dependencies = [
 [[package]]
 name = "pi-outline"
 version = "0.0.1"
+dependencies = [
+ "anyhow",
+ "pi-core",
+ "pi-data",
+ "pi-layout",
+ "pi-pycompat",
+ "serde_json",
+]
 
 [[package]]
 name = "pi-pycompat"
