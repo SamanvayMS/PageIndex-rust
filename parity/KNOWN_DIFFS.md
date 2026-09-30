@@ -57,4 +57,5 @@ Notes:
 
 ## Stage status
 - **02_lines / 03_columns** (`pi-layout::process_page`) and **04 `doc_stats`** (`compute_doc_stats`): bit-exact on all 18 golden docs (`cargo test -p pi-layout --test parity`, also with `PI_PARITY_TOL=0`).
+- **04_blocks** (`phases::build_document`: blocks, reading order, doc stats) and **05_classified** (`phases::classify_document`: header/footer, watermarks, TOC/boilerplate, body paragraphs, title + title echoes, captions, section openers, caption regions): bit-exact on all 18 golden docs (same test).
 - Version pins that parity depends on: general category / case tables are Unicode 14 (Python 3.11); `\p{Number}` in `model/numbering.py` follows the `regex` module installed in the parity venv (2026.9.29), captured in `pi-pycompat/src/unicode_tables.rs`. Regenerate with `crates/pi-pycompat/gen/unicode_tables.py` if either changes.
