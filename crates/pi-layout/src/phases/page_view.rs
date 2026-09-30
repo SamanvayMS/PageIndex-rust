@@ -28,6 +28,10 @@ pub struct PageLayout {
     /// The page's spans in producer order (the reference's `page.text`); lines index into it.
     /// Carries the bold flags set by overstrike detection.
     pub spans: Vec<Span>,
+    /// Unrotated view box `(x0, y0, x1, y1)` and `/Rotate`, set by the caller when known
+    /// (`extract_toc` does); heading y-fractions use them. ref: `viewport_box`, `rot`
+    pub viewport_box: Option<[f64; 4]>,
+    pub rot: u16,
 }
 
 /// `page_bbox` as `flash/main.py::extract_toc` derives it from the view box and `/Rotate`.
@@ -76,5 +80,7 @@ pub fn process_page(spans: &[pi_core::Span], page_num: u32, page_bbox: Rect) -> 
         columns,
         lines,
         spans,
+        viewport_box: None,
+        rot: 0,
     }
 }

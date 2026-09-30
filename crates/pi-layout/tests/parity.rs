@@ -91,10 +91,18 @@ fn compare_pages(stage: &str, want: &Value, got: &[Value]) -> Result<(), String>
             let page = w["page"].as_u64().unwrap_or(0);
             let ctx = d
                 .strip_prefix(".lines[")
+                .or_else(|| d.strip_prefix(".blocks["))
                 .and_then(|s| s.split(']').next())
                 .and_then(|i| i.parse::<usize>().ok())
                 .map(|i| {
-                    let t = |v: &Value| v["lines"][i]["text"].to_string();
+                    let t = |v: &Value| {
+                        let l = &v["lines"][i];
+                        if l.is_null() {
+                            v["blocks"][i]["text"].to_string()
+                        } else {
+                            l["text"].to_string()
+                        }
+                    };
                     format!(
                         "\n    golden line text: {}\n    ours:             {}",
                         t(w),
@@ -122,12 +130,18 @@ fn run_doc(dir: &Path) -> Result<(), String> {
     if let Err(e) = compare_pages("03_columns", &load(&dir.join("03_columns.json")), &cols) {
         errs.push(e);
     }
+    let doc = pi_layout::phases::build_document(layouts);
     let blocks = dir.join("04_blocks.json");
     if blocks.exists() {
-        let want = &load(&blocks)["data"]["doc_stats"];
-        let got = serde_json::to_value(pi_layout::compute_doc_stats(&layouts)).unwrap();
-        if let Some(d) = first_diff("doc_stats", want, &got) {
+        let want = load(&blocks);
+        let got = dump::blocks_stage(&doc);
+        if let Some(d) = first_diff("doc_stats", &want["data"]["doc_stats"], &got["doc_stats"]) {
             errs.push(format!("04_blocks: {d}"));
+        }
+        let got_pages: Vec<Value> = got["pages"].as_array().unwrap().clone();
+        let want_pages = serde_json::json!({"data": want["data"]["pages"]});
+        if let Err(e) = compare_pages("04_blocks", &want_pages, &got_pages) {
+            errs.push(e);
         }
     }
     if errs.is_empty() {

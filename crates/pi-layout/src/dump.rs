@@ -4,8 +4,9 @@
 use pi_core::{PageSpans, Rect};
 use serde_json::{Value, json};
 
+use crate::model::block::{Block, block_text, heading_score};
 use crate::model::span_line::peek_text_of_line;
-use crate::phases::{PageLayout, page_bbox_from_viewbox, process_page};
+use crate::phases::{DocPage, Document, PageLayout, page_bbox_from_viewbox, process_page};
 
 /// `dump_reference.py::num`: non-finite floats become "inf" / "-inf" / "nan".
 pub fn num(x: f64) -> Value {
@@ -64,7 +65,10 @@ pub fn process_document(pages: &[PageSpans]) -> Vec<PageLayout> {
         .iter()
         .map(|p| {
             let vb = p.viewbox.expect("reference requires a view box");
-            process_page(&p.spans, p.page, page_bbox_from_viewbox(vb, p.rotation))
+            let mut layout = process_page(&p.spans, p.page, page_bbox_from_viewbox(vb, p.rotation));
+            layout.viewport_box = Some(vb);
+            layout.rot = p.rotation;
+            layout
         })
         .collect()
 }
@@ -80,4 +84,51 @@ pub fn wrap(doc: &str, stage: &str, data: Value) -> Value {
         "stage": stage,
         "data": data,
     })
+}
+
+/// `dump_reference.py::block_d` (`full` adds the stage 05 classification fields).
+pub fn block(b: &Block, page: &DocPage, full: bool) -> Value {
+    let mut d = json!({
+        "bbox": rect(&b.bbox),
+        "text": block_text(b, &page.layout),
+        "lines": b.lines,
+        "orig_index": b.orig_index.get(),
+        "reading_order_index": b.reading_order_index.get(),
+        "isolated_centered": b.isolated_centered.get(),
+        "center_aligned": b.center_aligned,
+        "bold_frac": num(b.bold_frac),
+        "italic_frac": num(b.italic_frac),
+        "weighted_skew": num(b.weighted_skew),
+        "weighted_font_size": num(b.weighted_font_size),
+        "density_chars": num(b.density_chars),
+        "density_area": num(b.density_area),
+        "max_line_height": num(b.max_line_height),
+    });
+    if full {
+        let m = d.as_object_mut().expect("object");
+        m.insert("type".into(), json!(b.kind.get()));
+        m.insert("is_body_paragraph".into(), json!(b.is_body_paragraph.get()));
+        m.insert("used_as_heading".into(), json!(b.used_as_heading.get()));
+        m.insert("caption_claimed".into(), json!(b.caption_claimed.get()));
+        m.insert("caption_label".into(), json!(b.caption_label.get()));
+        m.insert("region_label".into(), json!(b.region_label.get()));
+        m.insert("heading_score".into(), num(heading_score(b)));
+    }
+    d
+}
+
+/// The `04_blocks` payload.
+pub fn blocks_stage(doc: &Document) -> Value {
+    let pages: Vec<Value> = doc
+        .pages
+        .iter()
+        .map(|p| {
+            json!({
+                "page": p.layout.page,
+                "reading_order": p.reading.iter().map(|&id| p.blocks[id].orig_index.get()).collect::<Vec<_>>(),
+                "blocks": p.output.iter().map(|&id| block(&p.blocks[id], p, false)).collect::<Vec<_>>(),
+            })
+        })
+        .collect();
+    json!({"doc_stats": serde_json::to_value(&doc.stats).expect("doc stats"), "pages": pages})
 }

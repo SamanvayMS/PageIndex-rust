@@ -221,14 +221,11 @@ pub fn to_number(text: &str) -> f64 {
     f64::NAN
 }
 
-// ref: model/numbering.py::_detect_numbering
-pub fn detect_numbering(line: &mut Line, spans: &[Span]) {
-    if line.numbering_kind != -1 {
-        return;
-    }
-    line.numbering_kind = 0;
+/// The value `_detect_numbering` would store: `(kind, Some(text))`, or `(0, None)` when it
+/// leaves the cached text untouched.
+fn compute_numbering(line: &Line, spans: &[Span]) -> (i32, Option<String>) {
     if line.char_count() == 0 {
-        return;
+        return (0, None);
     }
     if line.spans.len() > 1 {
         let first = &spans[line.spans[0]];
@@ -242,35 +239,59 @@ pub fn detect_numbering(line: &mut Line, spans: &[Span]) {
             && first.bottom_edge() > cand.bottom_edge() + 0.05 * cand.bbox_height()
             && !to_number(&first.text).is_nan()
         {
-            line.numbering_kind = 1;
-            line.numbering_text = first.text.clone();
-            return;
+            return (1, Some(first.text.clone()));
         }
     }
     let text = raw_text_of_line(line, spans);
-    let m = match_numbering_prefix(&text);
-    if let Some(m) = &m {
+    if let Some(m) = match_numbering_prefix(&text) {
         if let Some(g1) = m.g1
             && matches!(g1.chars().next(), Some('1'..='9'))
         {
-            line.numbering_kind = 1;
-            line.numbering_text = g1.to_string();
-            return;
+            return (1, Some(g1.to_string()));
         }
         if let Some(g) = m.g1.or(m.g3) {
-            line.numbering_kind = 2;
-            line.numbering_text = g.to_string();
-            return;
+            return (2, Some(g.to_string()));
         }
         if let Some(g2) = m.g2 {
-            line.numbering_kind = 3;
-            line.numbering_text = g2.to_string();
-            return;
+            return (3, Some(g2.to_string()));
         }
     }
     if let Some(g) = match_bracketed_num(&text) {
-        line.numbering_kind = 1;
-        line.numbering_text = g.to_string();
+        return (1, Some(g.to_string()));
+    }
+    (0, None)
+}
+
+// ref: model/numbering.py::_detect_numbering
+pub fn detect_numbering(line: &mut Line, spans: &[Span]) {
+    if line.numbering_kind != -1 {
+        return;
+    }
+    let (kind, text) = compute_numbering(line, spans);
+    line.numbering_kind = kind;
+    if let Some(t) = text {
+        line.numbering_text = t;
+    }
+}
+
+/// `(numbering_kind(line), numbering_text(line))` without filling the cache. From stage 04 on
+/// lines are never modified, so a cached value is returned as is and an uncached one computed
+/// fresh gives exactly what the reference's lazy fill would.
+pub fn numbering_ro(line: &Line, spans: &[Span]) -> (i32, String) {
+    if line.numbering_kind != -1 {
+        return (line.numbering_kind, line.numbering_text.clone());
+    }
+    let (kind, text) = compute_numbering(line, spans);
+    (kind, text.unwrap_or_else(|| line.numbering_text.clone()))
+}
+
+/// `numbering_value(line)` without filling the cache (see [`numbering_ro`]).
+pub fn numbering_value_ro(line: &Line, spans: &[Span]) -> f64 {
+    let (kind, text) = numbering_ro(line, spans);
+    if kind == 1 {
+        to_number(&text)
+    } else {
+        f64::NAN
     }
 }
 
