@@ -1,6 +1,6 @@
 [package]
 name = "pi-extract"
-description = "Span producers: PDF text layer and JSON PageSpans ingestion"
+description = "Span producers: PDF text layer (pdfium + lopdf) and JSON PageSpans ingestion"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
@@ -10,3 +10,18 @@ rust-version.workspace = true
 workspace = true
 
 [dependencies]
+pi-core.workspace = true
+pi-data = { path = "../pi-data" }
+pi-pycompat = { path = "../pi-pycompat" }
+pdfium-render = { version = "0.9", default-features = false, features = ["pdfium_latest", "thread_safe"] }
+lopdf = "0.45"
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+regex = "1"
+unicode-normalization = "0.1"
+unicode-general-category = "1"
+unicode-bidi = "0.3"
+
+[dev-dependencies]

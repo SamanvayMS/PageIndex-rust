@@ -10,3 +10,8 @@ Each entry lists the stage, the scope, the reason and who reviewed it. An entry 
 
 ## Open
 (none yet)
+
+## Stage 01 (pi-extract): diff-clean on all 18 corpus docs
+- PDF objects are read with `lopdf` instead of PyPDF2. lopdf stores reals as `f32`, so `pi-extract` renders them from the f32's shortest round-trip decimal. That is exact for tokens with <= 7 significant digits, which covers every box value in the corpus. A token with more digits (e.g. `595.27559055`) would differ from Python's `float(token)` by < 1e-4 pt.
+- Unicode categories (`Mn`/`Cf` checks, `_char_category`) and bidi classes currently come from the Rust Unicode crates (Unicode 15+) instead of Python 3.11's Unicode 14 tables. This only matters for code points assigned after Unicode 14 and will be switched to the generated tables (Spike D).
+- PyPDF2 load failures (the reference then runs without content-stream repair) and lopdf load failures do not necessarily coincide on malformed PDFs.
