@@ -1604,7 +1604,16 @@ version = "0.0.1"
 dependencies = [
  "anyhow",
  "clap",
+ "pi-config",
+ "pi-extract",
+ "pi-index",
+ "pi-mcp",
+ "pi-storage",
+ "pi-store",
+ "pi-triage",
  "serde_json",
+ "tempfile",
+ "tokio",
 ]
 
 [[package]]
