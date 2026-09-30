@@ -9,4 +9,21 @@ rust-version.workspace = true
 [lints]
 workspace = true
 
+[features]
+default = []
+# Streamable HTTP transport (in addition to stdio).
+http = ["rmcp/transport-streamable-http-server", "dep:axum", "tokio/net"]
+
 [dependencies]
+serde_json.workspace = true
+pi-store.workspace = true
+pi-pycompat.workspace = true
+regex = "1"
+tokio.workspace = true
+rmcp = { workspace = true, features = ["server", "transport-io"] }
+axum = { version = "0.8", optional = true, default-features = false, features = ["tokio", "http1"] }
+
+[dev-dependencies]
+tempfile.workspace = true
+sha2.workspace = true
+rmcp = { workspace = true, features = ["client", "transport-io"] }
