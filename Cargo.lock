@@ -802,6 +802,8 @@ checksum = "cc4e190f5d26ca7051642629da2c52fc03bde85a03197c99408dcd291734c855"
 dependencies = [
  "equivalent",
  "hashbrown",
+ "serde",
+ "serde_core",
 ]
 
 [[package]]
@@ -1032,7 +1034,9 @@ version = "0.0.1"
 name = "pi-optimize"
 version = "0.0.1"
 dependencies = [
+ "async-trait",
  "futures",
+ "indexmap",
  "pi-llm",
  "pi-pycompat",
  "proptest",
