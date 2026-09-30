@@ -2,11 +2,14 @@
 //!
 //! Port of the PageIndex "Flash" layout indexer (reference `pageindex/flash` @619cbd8, MIT).
 //! Implemented so far: stages 02 (lines + page statistics) and 03 (columns) via
-//! [`process_page`], and document statistics via [`compute_doc_stats`].
+//! [`process_page`], document statistics via [`compute_doc_stats`], stage 04 (blocks and
+//! reading order) via [`phases::build_document`] and stage 05 (header/footer, TOC, body,
+//! title, captions, section openers) via [`phases::classify_document`].
 //!
 //! Every ported function carries a `// ref: path.py::func` pointer into the reference.
 
 pub mod blocks;
+pub mod classification;
 pub mod clustering;
 pub mod columns;
 pub mod consts;
