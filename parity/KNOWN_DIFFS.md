@@ -36,6 +36,17 @@ All intentional. None changes what the golden matrix (`crates/pi-mcp/tests/fixtu
 - `str()`/`repr()` of a non-string `doc_name` (quoted back in NOT_FOUND envelopes) approximates `str.isprintable` for non-Latin-1 characters.
 - MCP server: `remove_document` is gated at registration, as in the SDK's in-process server. Calling a tool that is not registered returns the unknown-tool envelope listing the registered tools; the SDK's server rejects it inside the Claude SDK instead. `initialize` carries `AGENT_INSTRUCTIONS` as the server `instructions`. The SDK delivers them only through the system prompt.
 
+## Stage 09: embedded bookmarks (`pi-outline::embedded_toc`)
+Parity status: `09_tree_bookmarks` is exact (key order included) for 18/18 golden docs. Six of them take the FULL path ("bookmarks") and 12 the IGNORE path ("detected").
+- The SKELETON ("hybrid") path is covered by three FinanceBench docs dumped with `dump_reference.py`:
+  - AMCOR_2023Q4_EARNINGS and PEPSICO_2023Q1_EARNINGS are committed as derived fixtures.
+  - NIKE_2023_10K runs through env `PI_EXTRA_GOLDEN`.
+- `read_bookmarks`/`validate_bookmarks`/`classify_bookmarks` match pypdfium2 5.13 on all 97 local PDFs (count + sha256 of entries, tier): 78 IGNORE, 3 SKELETON, 16 FULL.
+
+Notes:
+- **PDF loading and API scope.** A path is read into memory and opened with `FPDF_LoadMemDocument64`; pypdfium2 uses `FPDF_LoadDocument` on the path. The document is parsed the same way either way. The pypdfium2 v4 `item.page_index` fallback is not ported, since the reference venv pins 5.13.
+- **PDFium lock.** PDFium is not thread-safe, so `read_bookmarks` serializes its own PDFium use with a process-wide mutex. Concurrent `pi-extract` use from other threads is not covered by that lock. A single shared PDFium lock belongs in `pi_extract::pdfium`.
+
 ## Open
 (none yet)
 
