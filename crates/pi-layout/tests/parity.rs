@@ -144,6 +144,30 @@ fn run_doc(dir: &Path) -> Result<(), String> {
             errs.push(e);
         }
     }
+    let classified_path = dir.join("05_classified.json");
+    if classified_path.exists() {
+        let classified = pi_layout::phases::classify_document(&doc);
+        let want = load(&classified_path);
+        let got = dump::classified_stage(&doc, &classified);
+        let mut top = want["data"].clone();
+        let mut gtop = got.clone();
+        let want_pages =
+            serde_json::json!({"data": top.as_object_mut().unwrap().remove("pages").unwrap()});
+        let got_pages: Vec<Value> = gtop
+            .as_object_mut()
+            .unwrap()
+            .remove("pages")
+            .unwrap()
+            .as_array()
+            .unwrap()
+            .clone();
+        if let Some(d) = first_diff("05", &top, &gtop) {
+            errs.push(format!("05_classified: {d}"));
+        }
+        if let Err(e) = compare_pages("05_classified", &want_pages, &got_pages) {
+            errs.push(e);
+        }
+    }
     if errs.is_empty() {
         Ok(())
     } else {

@@ -4,9 +4,12 @@
 use pi_core::{PageSpans, Rect};
 use serde_json::{Value, json};
 
+use crate::heading_detection::{HeadingCandidate, OutlineNode};
 use crate::model::block::{Block, block_text, heading_score};
 use crate::model::span_line::peek_text_of_line;
-use crate::phases::{DocPage, Document, PageLayout, page_bbox_from_viewbox, process_page};
+use crate::phases::{
+    BlockRef, Classified, DocPage, Document, PageLayout, page_bbox_from_viewbox, process_page,
+};
 
 /// `dump_reference.py::num`: non-finite floats become "inf" / "-inf" / "nan".
 pub fn num(x: f64) -> Value {
@@ -131,4 +134,72 @@ pub fn blocks_stage(doc: &Document) -> Value {
         })
         .collect();
     json!({"doc_stats": serde_json::to_value(&doc.stats).expect("doc stats"), "pages": pages})
+}
+
+/// `[page (1-based), orig_index]`, the reference's block registry entry.
+pub fn block_ref(doc: &Document, r: BlockRef) -> Value {
+    json!([
+        doc.pages[r.0].index(),
+        doc.pages[r.0].blocks[r.1].orig_index.get()
+    ])
+}
+
+/// Numbering values are ints in the reference whenever integral (`int(...)`), else floats.
+fn number_value(v: f64) -> Value {
+    if v.is_finite() && v == v.trunc() && v.abs() < 1e15 {
+        json!(v as i64)
+    } else {
+        num(v)
+    }
+}
+
+/// `dump_reference.py::candidate_d`.
+pub fn candidate(doc: &Document, c: &HeadingCandidate) -> Value {
+    json!({
+        "type": c.kind,
+        "page": doc.pages[c.page].index(),
+        "block": block_ref(doc, (c.page, c.block)),
+        "anchor": c.anchor.map(|a| block_ref(doc, (c.page, a))),
+        "numbering": c.numbering.iter().map(|&n| number_value(n)).collect::<Vec<_>>(),
+        "prefix": c.prefix.as_ref().map(|t| t.to_string_py()),
+        "title": c.title.as_ref().map(|t| t.to_string_py()),
+        "has_numbering": c.has_numbering,
+        "is_prominent": c.is_prominent,
+        "script": c.script,
+        "y_frac": num(c.y_frac),
+        "heading_score": num(heading_score(c.block(doc))),
+    })
+}
+
+/// `dump_reference.py::outline_d`.
+pub fn outline(doc: &Document, nodes: &[OutlineNode]) -> Value {
+    Value::Array(
+        nodes
+            .iter()
+            .map(|n| json!({"heading": candidate(doc, &n.heading), "children": outline(doc, &n.children)}))
+            .collect(),
+    )
+}
+
+/// The `05_classified` payload.
+pub fn classified_stage(doc: &Document, c: &Classified) -> Value {
+    json!({
+        "doc_title": c.doc_title,
+        "title_page": c.title_page,
+        "title_blocks": c.title_blocks.iter().map(|&r| block_ref(doc, r)).collect::<Vec<_>>(),
+        "caption_regions": c.caption_regions.iter().map(|r| json!({
+            "head": block_ref(doc, (r.page, r.head)),
+            "body": r.body.iter().map(|&b| block_ref(doc, (r.page, b))).collect::<Vec<_>>(),
+            "type": r.kind,
+            "score": num(r.score),
+        })).collect::<Vec<_>>(),
+        "section_openers": outline(doc, &c.section_openers),
+        "pages": doc.pages.iter().map(|p| json!({
+            "page": p.index(),
+            "has_caption": p.has_caption.get(),
+            "title_or_refs": p.title_or_refs.get(),
+            "has_body": p.has_body.get(),
+            "blocks": p.output.iter().map(|&id| block(&p.blocks[id], p, true)).collect::<Vec<_>>(),
+        })).collect::<Vec<_>>(),
+    })
 }
