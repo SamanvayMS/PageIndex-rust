@@ -25,12 +25,22 @@ pi-llm = { path = "crates/pi-llm" }
 pi-optimize = { path = "crates/pi-optimize" }
 async-trait = "0.1"
 futures = "0.3"
-tokio = { version = "1", features = ["rt", "sync", "time", "macros"] }
+tokio = { version = "1", features = ["rt", "rt-multi-thread", "macros", "io-std", "fs", "sync", "time"] }
 reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
 sha2 = "0.10"
 tiktoken-rs = "0.7"
 unicode-general-category = "1"
 proptest = "1"
+pi-store = { path = "crates/pi-store" }
+pi-config = { path = "crates/pi-config" }
+pi-storage = { path = "crates/pi-storage" }
+pi-mcp = { path = "crates/pi-mcp" }
+uuid = { version = "1", features = ["v4"] }
+md-5 = "0.11"
+toml = "1"
+tempfile = "3"
+object_store = { version = "0.14", default-features = false }
+rmcp = { version = "3.5", default-features = false }
 
 [workspace.lints.rust]
 unsafe_code = "deny"

@@ -10,3 +10,10 @@ rust-version.workspace = true
 workspace = true
 
 [dependencies]
+serde_json.workspace = true
+uuid.workspace = true
+md-5.workspace = true
+unicode-normalization.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true

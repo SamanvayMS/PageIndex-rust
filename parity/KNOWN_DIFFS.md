@@ -24,6 +24,18 @@ Intentional divergences. None of them affects a golden:
   - most per-event log fields, which are reduced to what the report counts
 - **`_same_page` in stage 10.** `pi_optimize::postprocess_merge` leaves `_same_page` on nodes, as `dump_reference.py::optimized` (and so the `10_tree_optimized` golden) does. `page_index_flash` strips the key. `pi_summary::page_index_flash_post` reproduces `page_index_flash` and strips it.
 
+## Store and agent tools (`pi-store`, `pi-mcp`)
+All intentional. None changes what the golden matrix (`crates/pi-mcp/tests/fixtures`, 156 calls) or the interop tests (`crates/pi-store/tests/python_interop.rs`) check. Reviewed by: nobody yet (written by the porting agent).
+- `local_store.py::list_metas` iterates a `set` of directory names, so the key order of a manifest it rewrites after drift depends on hash order. Rust iterates them sorted. Reads are unaffected, and `save_document` keeps the reference's insertion order, so after the same commits the manifest bytes match.
+- Reading JSON: serde_json rejects `NaN`/`Infinity` literals and lone-surrogate escapes that Python's `json.load` accepts. Such a file reads as absent. Integers beyond the u64 range become floats. Rust strings cannot carry lone surrogates, so the reference's `errors="replace"` write path has no counterpart.
+- An `OSError` that escapes into a tool envelope (`remove_document` `"failed"` entries, `INTERNAL_ERROR` `"<tool> failed: ..."`) carries Rust's `io::Error` text instead of Python's `[Errno N] ...`.
+- A non-string `markdown` in `pages.json` reads as `""` in `get_tree(include_text)` and `get_ocr("node"/"raw")`. Python raises `TypeError` there. `get_page_content` matches the reference.
+- `naming.sanitize_filename`'s NFKC comes from the `unicode-normalization` crate (a newer Unicode than Python 3.11's 14.0). It differs only for code points changed after 14.0.
+- `_normalize_created_at` ports CPython 3.11's pure-Python `datetime.fromisoformat` algorithm. The C implementation also accepts a few extra spellings (e.g. whitespace before the UTC offset); Rust returns those strings raw. A UTC conversion that leaves the year range 1..9999 also returns the string raw (Python: `OverflowError` → `INTERNAL_ERROR`).
+- Page numbers in page specs are `u128` (saturating), and `page_index` keys are 64-bit, where Python ints are unbounded. They differ only past 38 digits or 2^64.
+- `str()`/`repr()` of a non-string `doc_name` (quoted back in NOT_FOUND envelopes) approximates `str.isprintable` for non-Latin-1 characters.
+- MCP server: `remove_document` is gated at registration, as in the SDK's in-process server. Calling a tool that is not registered returns the unknown-tool envelope listing the registered tools; the SDK's server rejects it inside the Claude SDK instead. `initialize` carries `AGENT_INSTRUCTIONS` as the server `instructions`. The SDK delivers them only through the system prompt.
+
 ## Open
 (none yet)
 
