@@ -21,6 +21,16 @@ pi-pycompat = { path = "crates/pi-pycompat" }
 pi-data = { path = "crates/pi-data" }
 regex = "1"
 unicode-normalization = "0.1"
+pi-llm = { path = "crates/pi-llm" }
+pi-optimize = { path = "crates/pi-optimize" }
+async-trait = "0.1"
+futures = "0.3"
+tokio = { version = "1", features = ["rt", "sync", "time", "macros"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+sha2 = "0.10"
+tiktoken-rs = "0.7"
+unicode-general-category = "1"
+proptest = "1"
 
 [workspace.lints.rust]
 unsafe_code = "deny"

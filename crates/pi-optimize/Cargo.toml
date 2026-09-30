@@ -10,3 +10,15 @@ rust-version.workspace = true
 workspace = true
 
 [dependencies]
+futures.workspace = true
+indexmap.workspace = true
+pi-llm.workspace = true
+pi-pycompat.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+tokio.workspace = true
+
+[dev-dependencies]
+async-trait.workspace = true
+proptest.workspace = true
+tokio = { workspace = true, features = ["rt-multi-thread"] }
