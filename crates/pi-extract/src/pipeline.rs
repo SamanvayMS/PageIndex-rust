@@ -132,13 +132,18 @@ pub fn extract_pdf_bytes(bytes: Vec<u8>) -> Result<Vec<PageSpans>> {
         )?);
     }
     let size_by_font = type3_size_by_font(&type3);
-    let mut out = Vec::with_capacity(n);
-    for (idx, p) in pass1.into_iter().enumerate() {
-        let mut ps = page_pass2(p, &size_by_font);
-        ps.page = idx as u32 + 1;
-        out.push(ps);
-    }
+    // Pass 2 makes no PDFium calls, so pages run in parallel; results keep page order.
     drop(doc);
+    use rayon::prelude::*;
+    let out = pass1
+        .into_par_iter()
+        .enumerate()
+        .map(|(idx, p)| {
+            let mut ps = page_pass2(p, &size_by_font);
+            ps.page = idx as u32 + 1;
+            ps
+        })
+        .collect();
     Ok(out)
 }
 

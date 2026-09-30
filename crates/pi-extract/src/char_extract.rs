@@ -98,7 +98,12 @@ pub fn extract_raw_chars(
             };
             let top = oy + objects[obj].fs_eff;
             let mut w: f32 = 0.0;
-            b.FPDFFont_GetGlyphWidth(objects[obj].font, cp, objects[obj].fs_raw as f32, &mut w);
+            b.FPDFFont_GetGlyphWidth(
+                objects[obj].font_key as FPDF_FONT,
+                cp,
+                objects[obj].fs_raw as f32,
+                &mut w,
+            );
             raw_chars.push(RawChar {
                 i: i as f64,
                 ch,

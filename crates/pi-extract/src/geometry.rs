@@ -173,7 +173,6 @@ pub fn collect_text_objs(b: &dyn PdfiumLibraryBindings, page: FPDF_PAGE) -> Vec<
             };
             let weight = b.FPDFFont_GetWeight(font);
             objects.push(TextObj {
-                font,
                 font_key: font as usize,
                 fs_raw,
                 scale_x,

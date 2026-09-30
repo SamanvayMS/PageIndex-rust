@@ -1,12 +1,10 @@
 //! Per-page working records of the extractor (the reference's char/object/chunk dicts).
 
-use pdfium_render::prelude::FPDF_FONT;
-
 /// A PDFium text object. ref: geometry.py::_collect_text_objs (dict fields in comments).
 #[derive(Debug, Clone)]
 pub struct TextObj {
-    pub font: FPDF_FONT,
-    /// FPDF_FONT address: per-document font identity ("font_key").
+    /// FPDF_FONT address: per-document font identity ("font_key"), also used to call back into
+    /// PDFium during pass 1 (kept as an address so pass 2 can run on other threads).
     pub font_key: usize,
     pub fs_raw: f64,
     pub scale_x: f64,
