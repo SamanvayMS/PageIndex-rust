@@ -17,6 +17,22 @@ anyhow = "1"
 thiserror = "2"
 clap = { version = "4", features = ["derive"] }
 pi-core = { path = "crates/pi-core" }
+pi-pycompat = { path = "crates/pi-pycompat" }
+pi-store = { path = "crates/pi-store" }
+pi-config = { path = "crates/pi-config" }
+pi-storage = { path = "crates/pi-storage" }
+pi-mcp = { path = "crates/pi-mcp" }
+uuid = { version = "1", features = ["v4"] }
+md-5 = "0.11"
+unicode-normalization = "0.1"
+toml = "1"
+tempfile = "3"
+sha2 = "0.11"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "io-std", "fs", "sync", "time"] }
+object_store = { version = "0.14", default-features = false }
+futures = "0.3"
+bytes = "1"
+rmcp = { version = "3.5", default-features = false }
 
 [workspace.lints.rust]
 unsafe_code = "deny"
