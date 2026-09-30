@@ -1,6 +1,6 @@
 [package]
 name = "pi-ocr"
-description = "OCR engine trait and OpenAI-compatible vision implementation"
+description = "OCR producer: page rendering, OpenAI-compatible vision engine, spans + tables"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
@@ -10,3 +10,17 @@ rust-version.workspace = true
 workspace = true
 
 [dependencies]
+pi-core.workspace = true
+pi-extract = { path = "../pi-extract" }
+pi-triage = { path = "../pi-triage" }
+pdfium-render = { version = "0.9", default-features = false, features = ["pdfium_latest", "thread_safe"] }
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+base64 = "0.22"
+png = "0.17"
+reqwest.workspace = true
+tokio = { workspace = true, features = ["rt-multi-thread", "net", "io-util"] }
+futures.workspace = true
+
+[dev-dependencies]
