@@ -1,0 +1,1921 @@
+[
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {},
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [{\"name\": \"AMCOR_2022_8K.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-08-02T09:30:00.000Z\"}, {\"name\": \"annual-report.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\"}, {\"name\": \"3M_2018_10K.pdf\", \"description\": \"3M 2018 annual report (Form 10-K)\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\", \"metadata\": {\"ticker\": \"MMM\", \"year\": 2018, \"ratio\": 0.5, \"audited\": true}}, {\"name\": \"same.pdf\", \"description\": \"new copy\", \"status\": \"completed\", \"created_at\": \"2026-07-02T10:00:00.000Z\"}, {\"name\": \"same.pdf\", \"description\": \"old copy\", \"status\": \"completed\", \"created_at\": \"2026-07-01T10:00:00.000Z\"}, {\"name\": \"JPMORGAN_2022_10K.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-05T00:00:00.000Z\"}, {\"name\": \"nested-big.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-04T00:00:00.000Z\"}, {\"name\": \"big.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-03T00:00:00.000Z\"}, {\"name\": \"huge.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-02T00:00:00.000Z\"}, {\"name\": \"blanks.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-06-01T00:00:00.000Z\"}], \"sort\": \"time\", \"next_offset\": 10, \"has_more\": true, \"folders\": [], \"next_steps\": {\"summary\": \"Showing 10 document(s) (more available)\", \"options\": [\"Use get_document() with a document name to view details\", \"Results returned ≠ correct results. Verify these documents match the user's actual intent (topic, time period, document type) before proceeding. If they do not match, page through the rest of the library. Do NOT use general knowledge as a substitute.\", \"Use browse_documents() with `offset: next_offset` to load more documents\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "limit": 2
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [{\"name\": \"AMCOR_2022_8K.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-08-02T09:30:00.000Z\"}, {\"name\": \"annual-report.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\"}], \"sort\": \"time\", \"next_offset\": 2, \"has_more\": true, \"folders\": [], \"next_steps\": {\"summary\": \"Showing 2 document(s) (more available)\", \"options\": [\"Use get_document() with a document name to view details\", \"Results returned ≠ correct results. Verify these documents match the user's actual intent (topic, time period, document type) before proceeding. If they do not match, page through the rest of the library. Do NOT use general knowledge as a substitute.\", \"Use browse_documents() with `offset: next_offset` to load more documents\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "limit": 2,
+   "offset": 2
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [{\"name\": \"3M_2018_10K.pdf\", \"description\": \"3M 2018 annual report (Form 10-K)\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\", \"metadata\": {\"ticker\": \"MMM\", \"year\": 2018, \"ratio\": 0.5, \"audited\": true}}, {\"name\": \"same.pdf\", \"description\": \"new copy\", \"status\": \"completed\", \"created_at\": \"2026-07-02T10:00:00.000Z\"}], \"sort\": \"time\", \"next_offset\": 4, \"has_more\": true, \"folders\": [], \"next_steps\": {\"summary\": \"Showing 2 document(s) (more available)\", \"options\": [\"Use get_document() with a document name to view details\", \"Results returned ≠ correct results. Verify these documents match the user's actual intent (topic, time period, document type) before proceeding. If they do not match, page through the rest of the library. Do NOT use general knowledge as a substitute.\", \"Use browse_documents() with `offset: next_offset` to load more documents\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "limit": "3"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [{\"name\": \"AMCOR_2022_8K.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-08-02T09:30:00.000Z\"}, {\"name\": \"annual-report.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\"}, {\"name\": \"3M_2018_10K.pdf\", \"description\": \"3M 2018 annual report (Form 10-K)\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\", \"metadata\": {\"ticker\": \"MMM\", \"year\": 2018, \"ratio\": 0.5, \"audited\": true}}], \"sort\": \"time\", \"next_offset\": 3, \"has_more\": true, \"folders\": [], \"next_steps\": {\"summary\": \"Showing 3 document(s) (more available)\", \"options\": [\"Use get_document() with a document name to view details\", \"Results returned ≠ correct results. Verify these documents match the user's actual intent (topic, time period, document type) before proceeding. If they do not match, page through the rest of the library. Do NOT use general knowledge as a substitute.\", \"Use browse_documents() with `offset: next_offset` to load more documents\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "limit": 2.7
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [{\"name\": \"AMCOR_2022_8K.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-08-02T09:30:00.000Z\"}, {\"name\": \"annual-report.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\"}], \"sort\": \"time\", \"next_offset\": 2, \"has_more\": true, \"folders\": [], \"next_steps\": {\"summary\": \"Showing 2 document(s) (more available)\", \"options\": [\"Use get_document() with a document name to view details\", \"Results returned ≠ correct results. Verify these documents match the user's actual intent (topic, time period, document type) before proceeding. If they do not match, page through the rest of the library. Do NOT use general knowledge as a substitute.\", \"Use browse_documents() with `offset: next_offset` to load more documents\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "limit": "abc"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"offset and limit must be numbers\", \"errorCode\": \"INVALID_INPUT\", \"next_steps\": {\"summary\": \"Invalid pagination parameters\", \"options\": [\"Pass integer offset and limit values\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "offset": -5,
+   "limit": 1
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [{\"name\": \"AMCOR_2022_8K.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-08-02T09:30:00.000Z\"}], \"sort\": \"time\", \"next_offset\": 1, \"has_more\": true, \"folders\": [], \"next_steps\": {\"summary\": \"Showing 1 document(s) (more available)\", \"options\": [\"Use get_document() with a document name to view details\", \"Results returned ≠ correct results. Verify these documents match the user's actual intent (topic, time period, document type) before proceeding. If they do not match, page through the rest of the library. Do NOT use general knowledge as a substitute.\", \"Use browse_documents() with `offset: next_offset` to load more documents\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "limit": 0
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [{\"name\": \"AMCOR_2022_8K.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-08-02T09:30:00.000Z\"}], \"sort\": \"time\", \"next_offset\": 1, \"has_more\": true, \"folders\": [], \"next_steps\": {\"summary\": \"Showing 1 document(s) (more available)\", \"options\": [\"Use get_document() with a document name to view details\", \"Results returned ≠ correct results. Verify these documents match the user's actual intent (topic, time period, document type) before proceeding. If they do not match, page through the rest of the library. Do NOT use general knowledge as a substitute.\", \"Use browse_documents() with `offset: next_offset` to load more documents\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "limit": 100
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [{\"name\": \"AMCOR_2022_8K.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-08-02T09:30:00.000Z\"}, {\"name\": \"annual-report.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\"}, {\"name\": \"3M_2018_10K.pdf\", \"description\": \"3M 2018 annual report (Form 10-K)\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\", \"metadata\": {\"ticker\": \"MMM\", \"year\": 2018, \"ratio\": 0.5, \"audited\": true}}, {\"name\": \"same.pdf\", \"description\": \"new copy\", \"status\": \"completed\", \"created_at\": \"2026-07-02T10:00:00.000Z\"}, {\"name\": \"same.pdf\", \"description\": \"old copy\", \"status\": \"completed\", \"created_at\": \"2026-07-01T10:00:00.000Z\"}, {\"name\": \"JPMORGAN_2022_10K.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-05T00:00:00.000Z\"}, {\"name\": \"nested-big.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-04T00:00:00.000Z\"}, {\"name\": \"big.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-03T00:00:00.000Z\"}, {\"name\": \"huge.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-02T00:00:00.000Z\"}, {\"name\": \"blanks.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-06-01T00:00:00.000Z\"}, {\"name\": \"bools.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-05-06T00:00:00.000Z\"}, {\"name\": \"weird.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-05-05T00:00:00.000Z\"}, {\"name\": \"nopages.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-05-04T00:00:00.000Z\"}, {\"name\": \"notree.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-05-03T00:00:00.000Z\"}, {\"name\": \"processing.pdf\", \"description\": \"A test document\", \"status\": \"processing\", \"created_at\": \"2026-05-02T00:00:00.000Z\"}, {\"name\": \"failed.pdf\", \"description\": \"A test document\", \"status\": \"failed\", \"created_at\": \"2026-05-01T00:00:00.000Z\"}], \"sort\": \"time\", \"next_offset\": null, \"has_more\": false, \"folders\": [], \"next_steps\": {\"summary\": \"Showing 16 document(s)\", \"options\": [\"Use get_document() with a document name to view details\", \"Results returned ≠ correct results. Verify these documents match the user's actual intent (topic, time period, document type) before proceeding. Do NOT use general knowledge as a substitute.\", \"Some documents on this page are still processing. Use get_document() to check individual status.\", \"Some documents on this page failed processing. Use get_document() to see error details.\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "recursive": true
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [{\"name\": \"AMCOR_2022_8K.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-08-02T09:30:00.000Z\"}, {\"name\": \"annual-report.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\"}, {\"name\": \"3M_2018_10K.pdf\", \"description\": \"3M 2018 annual report (Form 10-K)\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\", \"metadata\": {\"ticker\": \"MMM\", \"year\": 2018, \"ratio\": 0.5, \"audited\": true}}, {\"name\": \"same.pdf\", \"description\": \"new copy\", \"status\": \"completed\", \"created_at\": \"2026-07-02T10:00:00.000Z\"}, {\"name\": \"same.pdf\", \"description\": \"old copy\", \"status\": \"completed\", \"created_at\": \"2026-07-01T10:00:00.000Z\"}, {\"name\": \"JPMORGAN_2022_10K.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-05T00:00:00.000Z\"}, {\"name\": \"nested-big.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-04T00:00:00.000Z\"}, {\"name\": \"big.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-03T00:00:00.000Z\"}, {\"name\": \"huge.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-02T00:00:00.000Z\"}, {\"name\": \"blanks.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-06-01T00:00:00.000Z\"}], \"sort\": \"time\", \"next_offset\": 10, \"has_more\": true, \"next_steps\": {\"summary\": \"Showing 10 document(s) (more available)\", \"options\": [\"Use get_document() with a document name to view details\", \"Results returned ≠ correct results. Verify these documents match the user's actual intent (topic, time period, document type) before proceeding. If they do not match, page through the rest of the library. Do NOT use general knowledge as a substitute.\", \"Use browse_documents() with `offset: next_offset` to load more documents\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "recursive": "false"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [{\"name\": \"AMCOR_2022_8K.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-08-02T09:30:00.000Z\"}, {\"name\": \"annual-report.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\"}, {\"name\": \"3M_2018_10K.pdf\", \"description\": \"3M 2018 annual report (Form 10-K)\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\", \"metadata\": {\"ticker\": \"MMM\", \"year\": 2018, \"ratio\": 0.5, \"audited\": true}}, {\"name\": \"same.pdf\", \"description\": \"new copy\", \"status\": \"completed\", \"created_at\": \"2026-07-02T10:00:00.000Z\"}, {\"name\": \"same.pdf\", \"description\": \"old copy\", \"status\": \"completed\", \"created_at\": \"2026-07-01T10:00:00.000Z\"}, {\"name\": \"JPMORGAN_2022_10K.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-05T00:00:00.000Z\"}, {\"name\": \"nested-big.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-04T00:00:00.000Z\"}, {\"name\": \"big.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-03T00:00:00.000Z\"}, {\"name\": \"huge.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-02T00:00:00.000Z\"}, {\"name\": \"blanks.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-06-01T00:00:00.000Z\"}], \"sort\": \"time\", \"next_offset\": 10, \"has_more\": true, \"folders\": [], \"next_steps\": {\"summary\": \"Showing 10 document(s) (more available)\", \"options\": [\"Use get_document() with a document name to view details\", \"Results returned ≠ correct results. Verify these documents match the user's actual intent (topic, time period, document type) before proceeding. If they do not match, page through the rest of the library. Do NOT use general knowledge as a substitute.\", \"Use browse_documents() with `offset: next_offset` to load more documents\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "sort": "relevance"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Relevance ranking is not supported in local mode yet — use the default time sort.\", \"errorCode\": \"INVALID_INPUT\", \"next_steps\": {\"summary\": \"This local library does not have semantic ranking yet\", \"options\": [\"Retry without sort/query and match the returned names and descriptions against the intent yourself\", \"Page through the full library with `offset: next_offset`\", \"Semantic ranking is available on PageIndex cloud (PageIndexCloudClient with an API key)\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "sort": "banana"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Invalid sort mode — only the default \\\"time\\\" sort is available in local mode.\", \"errorCode\": \"INVALID_INPUT\", \"next_steps\": {\"summary\": \"Invalid sort mode\", \"options\": [\"Use sort=\\\"time\\\" (newest first) or omit sort\", \"Semantic ranking is available on PageIndex cloud (PageIndexCloudClient with an API key)\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "query": "x"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Relevance ranking is not supported in local mode yet — use the default time sort.\", \"errorCode\": \"INVALID_INPUT\", \"next_steps\": {\"summary\": \"This local library does not have semantic ranking yet\", \"options\": [\"Retry without sort/query and match the returned names and descriptions against the intent yourself\", \"Page through the full library with `offset: next_offset`\", \"Semantic ranking is available on PageIndex cloud (PageIndexCloudClient with an API key)\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "query": ""
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [{\"name\": \"AMCOR_2022_8K.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-08-02T09:30:00.000Z\"}, {\"name\": \"annual-report.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\"}, {\"name\": \"3M_2018_10K.pdf\", \"description\": \"3M 2018 annual report (Form 10-K)\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\", \"metadata\": {\"ticker\": \"MMM\", \"year\": 2018, \"ratio\": 0.5, \"audited\": true}}, {\"name\": \"same.pdf\", \"description\": \"new copy\", \"status\": \"completed\", \"created_at\": \"2026-07-02T10:00:00.000Z\"}, {\"name\": \"same.pdf\", \"description\": \"old copy\", \"status\": \"completed\", \"created_at\": \"2026-07-01T10:00:00.000Z\"}, {\"name\": \"JPMORGAN_2022_10K.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-05T00:00:00.000Z\"}, {\"name\": \"nested-big.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-04T00:00:00.000Z\"}, {\"name\": \"big.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-03T00:00:00.000Z\"}, {\"name\": \"huge.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-02T00:00:00.000Z\"}, {\"name\": \"blanks.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-06-01T00:00:00.000Z\"}], \"sort\": \"time\", \"next_offset\": 10, \"has_more\": true, \"folders\": [], \"next_steps\": {\"summary\": \"Showing 10 document(s) (more available)\", \"options\": [\"Use get_document() with a document name to view details\", \"Results returned ≠ correct results. Verify these documents match the user's actual intent (topic, time period, document type) before proceeding. If they do not match, page through the rest of the library. Do NOT use general knowledge as a substitute.\", \"Use browse_documents() with `offset: next_offset` to load more documents\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "folder_id": "f1"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Folders are not supported in local mode yet — omit folder_id.\", \"errorCode\": \"INVALID_INPUT\", \"next_steps\": {\"summary\": \"This local library does not have folders yet\", \"options\": [\"Retry the call without a folder_id\", \"Use browse_documents() to list the library root\", \"Folders are available on PageIndex cloud (PageIndexCloudClient with an API key)\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "folder_id": "root"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [{\"name\": \"AMCOR_2022_8K.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-08-02T09:30:00.000Z\"}, {\"name\": \"annual-report.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\"}, {\"name\": \"3M_2018_10K.pdf\", \"description\": \"3M 2018 annual report (Form 10-K)\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\", \"metadata\": {\"ticker\": \"MMM\", \"year\": 2018, \"ratio\": 0.5, \"audited\": true}}, {\"name\": \"same.pdf\", \"description\": \"new copy\", \"status\": \"completed\", \"created_at\": \"2026-07-02T10:00:00.000Z\"}, {\"name\": \"same.pdf\", \"description\": \"old copy\", \"status\": \"completed\", \"created_at\": \"2026-07-01T10:00:00.000Z\"}, {\"name\": \"JPMORGAN_2022_10K.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-05T00:00:00.000Z\"}, {\"name\": \"nested-big.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-04T00:00:00.000Z\"}, {\"name\": \"big.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-03T00:00:00.000Z\"}, {\"name\": \"huge.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-02T00:00:00.000Z\"}, {\"name\": \"blanks.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-06-01T00:00:00.000Z\"}], \"sort\": \"time\", \"next_offset\": 10, \"has_more\": true, \"folders\": [], \"next_steps\": {\"summary\": \"Showing 10 document(s) (more available)\", \"options\": [\"Use get_document() with a document name to view details\", \"Results returned ≠ correct results. Verify these documents match the user's actual intent (topic, time period, document type) before proceeding. If they do not match, page through the rest of the library. Do NOT use general knowledge as a substitute.\", \"Use browse_documents() with `offset: next_offset` to load more documents\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "folder_id": null
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [{\"name\": \"AMCOR_2022_8K.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-08-02T09:30:00.000Z\"}, {\"name\": \"annual-report.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\"}, {\"name\": \"3M_2018_10K.pdf\", \"description\": \"3M 2018 annual report (Form 10-K)\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\", \"metadata\": {\"ticker\": \"MMM\", \"year\": 2018, \"ratio\": 0.5, \"audited\": true}}, {\"name\": \"same.pdf\", \"description\": \"new copy\", \"status\": \"completed\", \"created_at\": \"2026-07-02T10:00:00.000Z\"}, {\"name\": \"same.pdf\", \"description\": \"old copy\", \"status\": \"completed\", \"created_at\": \"2026-07-01T10:00:00.000Z\"}, {\"name\": \"JPMORGAN_2022_10K.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-05T00:00:00.000Z\"}, {\"name\": \"nested-big.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-04T00:00:00.000Z\"}, {\"name\": \"big.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-03T00:00:00.000Z\"}, {\"name\": \"huge.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-02T00:00:00.000Z\"}, {\"name\": \"blanks.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-06-01T00:00:00.000Z\"}], \"sort\": \"time\", \"next_offset\": 10, \"has_more\": true, \"folders\": [], \"next_steps\": {\"summary\": \"Showing 10 document(s) (more available)\", \"options\": [\"Use get_document() with a document name to view details\", \"Results returned ≠ correct results. Verify these documents match the user's actual intent (topic, time period, document type) before proceeding. If they do not match, page through the rest of the library. Do NOT use general knowledge as a substitute.\", \"Use browse_documents() with `offset: next_offset` to load more documents\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "bogus": 1
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Invalid arguments for browse_documents: got an unexpected keyword argument 'bogus'\", \"errorCode\": \"INVALID_INPUT\", \"next_steps\": {\"summary\": \"Invalid tool arguments\", \"options\": [\"Check the browse_documents() parameter names and types\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "_allowed_ids": [
+    "pi-none"
+   ]
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [{\"name\": \"AMCOR_2022_8K.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-08-02T09:30:00.000Z\"}, {\"name\": \"annual-report.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\"}, {\"name\": \"3M_2018_10K.pdf\", \"description\": \"3M 2018 annual report (Form 10-K)\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\", \"metadata\": {\"ticker\": \"MMM\", \"year\": 2018, \"ratio\": 0.5, \"audited\": true}}, {\"name\": \"same.pdf\", \"description\": \"new copy\", \"status\": \"completed\", \"created_at\": \"2026-07-02T10:00:00.000Z\"}, {\"name\": \"same.pdf\", \"description\": \"old copy\", \"status\": \"completed\", \"created_at\": \"2026-07-01T10:00:00.000Z\"}, {\"name\": \"JPMORGAN_2022_10K.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-05T00:00:00.000Z\"}, {\"name\": \"nested-big.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-04T00:00:00.000Z\"}, {\"name\": \"big.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-03T00:00:00.000Z\"}, {\"name\": \"huge.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-02T00:00:00.000Z\"}, {\"name\": \"blanks.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-06-01T00:00:00.000Z\"}], \"sort\": \"time\", \"next_offset\": 10, \"has_more\": true, \"folders\": [], \"next_steps\": {\"summary\": \"Showing 10 document(s) (more available)\", \"options\": [\"Use get_document() with a document name to view details\", \"Results returned ≠ correct results. Verify these documents match the user's actual intent (topic, time period, document type) before proceeding. If they do not match, page through the rest of the library. Do NOT use general knowledge as a substitute.\", \"Use browse_documents() with `offset: next_offset` to load more documents\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "offset": 999
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [], \"sort\": \"time\", \"next_offset\": null, \"has_more\": false, \"folders\": [], \"next_steps\": {\"summary\": \"Nothing to show\", \"options\": []}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "offset": "1_0"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [{\"name\": \"bools.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-05-06T00:00:00.000Z\"}, {\"name\": \"weird.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-05-05T00:00:00.000Z\"}, {\"name\": \"nopages.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-05-04T00:00:00.000Z\"}, {\"name\": \"notree.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-05-03T00:00:00.000Z\"}, {\"name\": \"processing.pdf\", \"description\": \"A test document\", \"status\": \"processing\", \"created_at\": \"2026-05-02T00:00:00.000Z\"}, {\"name\": \"failed.pdf\", \"description\": \"A test document\", \"status\": \"failed\", \"created_at\": \"2026-05-01T00:00:00.000Z\"}], \"sort\": \"time\", \"next_offset\": null, \"has_more\": false, \"folders\": [], \"next_steps\": {\"summary\": \"Showing 6 document(s)\", \"options\": [\"Use get_document() with a document name to view details\", \"Results returned ≠ correct results. Verify these documents match the user's actual intent (topic, time period, document type) before proceeding. Do NOT use general knowledge as a substitute.\", \"Some documents on this page are still processing. Use get_document() to check individual status.\", \"Some documents on this page failed processing. Use get_document() to see error details.\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "limit": [
+    1
+   ]
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"offset and limit must be numbers\", \"errorCode\": \"INVALID_INPUT\", \"next_steps\": {\"summary\": \"Invalid pagination parameters\", \"options\": [\"Pass integer offset and limit values\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "limit": true
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [{\"name\": \"AMCOR_2022_8K.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-08-02T09:30:00.000Z\"}], \"sort\": \"time\", \"next_offset\": 1, \"has_more\": true, \"folders\": [], \"next_steps\": {\"summary\": \"Showing 1 document(s) (more available)\", \"options\": [\"Use get_document() with a document name to view details\", \"Results returned ≠ correct results. Verify these documents match the user's actual intent (topic, time period, document type) before proceeding. If they do not match, page through the rest of the library. Do NOT use general knowledge as a substitute.\", \"Use browse_documents() with `offset: next_offset` to load more documents\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "sort": 5
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Invalid sort mode — only the default \\\"time\\\" sort is available in local mode.\", \"errorCode\": \"INVALID_INPUT\", \"next_steps\": {\"summary\": \"Invalid sort mode\", \"options\": [\"Use sort=\\\"time\\\" (newest first) or omit sort\", \"Semantic ranking is available on PageIndex cloud (PageIndexCloudClient with an API key)\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {},
+  "doc_ids": [
+   "pi-000c",
+   "pi-0010"
+  ],
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [{\"name\": \"annual-report.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\"}, {\"name\": \"huge.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-02T00:00:00.000Z\"}], \"sort\": \"time\", \"next_offset\": null, \"has_more\": false, \"folders\": [], \"next_steps\": {\"summary\": \"Showing 2 document(s)\", \"options\": [\"Use get_document() with a document name to view details\", \"Results returned ≠ correct results. Verify these documents match the user's actual intent (topic, time period, document type) before proceeding. Do NOT use general knowledge as a substitute.\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {
+   "limit": 1
+  },
+  "doc_ids": [
+   "pi-000c",
+   "pi-0010"
+  ],
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [{\"name\": \"annual-report.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\"}], \"sort\": \"time\", \"next_offset\": 1, \"has_more\": true, \"folders\": [], \"next_steps\": {\"summary\": \"Showing 1 document(s) (more available)\", \"options\": [\"Use get_document() with a document name to view details\", \"Results returned ≠ correct results. Verify these documents match the user's actual intent (topic, time period, document type) before proceeding. If they do not match, page through the rest of the library. Do NOT use general knowledge as a substitute.\", \"Use browse_documents() with `offset: next_offset` to load more documents\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": {},
+  "doc_ids": [],
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [], \"sort\": \"time\", \"next_offset\": null, \"has_more\": false, \"folders\": [], \"next_steps\": {\"summary\": \"Nothing to show\", \"options\": [\"Nothing here. Index documents with PageIndexClient.submit_document() to get started.\"], \"auto_retry\": \"Index a document with PageIndexClient.submit_document() to get started\"}}"
+ },
+ {
+  "store": "many",
+  "tool": "browse_documents",
+  "args": {},
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [{\"name\": \"doc55.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-28T00:00:00.055Z\"}, {\"name\": \"doc27.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-28T00:00:00.027Z\", \"metadata\": {\"i\": 27}}, {\"name\": \"doc54.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-27T00:00:00.054Z\", \"metadata\": {\"i\": 54}}, {\"name\": \"doc26.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-27T00:00:00.026Z\"}, {\"name\": \"doc53.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-26T00:00:00.053Z\"}, {\"name\": \"doc25.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-26T00:00:00.025Z\"}, {\"name\": \"doc52.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-25T00:00:00.052Z\"}, {\"name\": \"doc24.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-25T00:00:00.024Z\", \"metadata\": {\"i\": 24}}, {\"name\": \"doc51.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-24T00:00:00.051Z\", \"metadata\": {\"i\": 51}}, {\"name\": \"doc23.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-24T00:00:00.023Z\"}], \"sort\": \"time\", \"next_offset\": 10, \"has_more\": true, \"folders\": [], \"next_steps\": {\"summary\": \"Showing 10 document(s) (more available)\", \"options\": [\"Use get_document() with a document name to view details\", \"Results returned ≠ correct results. Verify these documents match the user's actual intent (topic, time period, document type) before proceeding. If they do not match, page through the rest of the library. Do NOT use general knowledge as a substitute.\", \"Use browse_documents() with `offset: next_offset` to load more documents\"]}}"
+ },
+ {
+  "store": "many",
+  "tool": "browse_documents",
+  "args": {
+   "limit": 50
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "25562ab1ff5269c27a3088328d50c7e27bac4aca4b69aed045864c12e8856540",
+  "len": 7060,
+  "head": "{\"success\": true, \"documents\": [{\"name\": \"doc55.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-28T00:00:00.055Z\"}, {\"name\": \"doc27.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-28T00:00:00.027Z\", \"metadata\": {\"i\": 27}}, {\"name\": \"doc54.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-27T00:00:00.054Z\", \"metadata\": {\"i\": 54}}, {\"name\": \"doc26.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-27T00:00:00.026Z\"}, {\"name\": \"doc53.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-26T00:00:00.053Z\"}, {\"name\": \"doc25.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-26T00:00:00.025Z\"}, {\"name\": \"doc52.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-25T00:00:00.052Z\"}, {\"name\": \"doc24.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-25T00:00:00.024Z\", \"metadata\": {\"i\": 24}}, {\"name\": \"doc51.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-24T00:00:00.051Z\", \"metadata\": {\"i\": 51}}, {\"name\": \"doc23.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-24T00:00:00.023Z\"}, {\"name\": \"doc50.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-23T00:00:00.050Z\"}, {\"name\": \"doc22.pdf\", \"description"
+ },
+ {
+  "store": "many",
+  "tool": "browse_documents",
+  "args": {
+   "limit": 10,
+   "offset": 20
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [{\"name\": \"doc45.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-18T00:00:00.045Z\", \"metadata\": {\"i\": 45}}, {\"name\": \"doc17.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-18T00:00:00.017Z\"}, {\"name\": \"doc44.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-17T00:00:00.044Z\"}, {\"name\": \"doc16.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-17T00:00:00.016Z\"}, {\"name\": \"doc43.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-16T00:00:00.043Z\"}, {\"name\": \"doc15.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-16T00:00:00.015Z\", \"metadata\": {\"i\": 15}}, {\"name\": \"doc42.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-15T00:00:00.042Z\", \"metadata\": {\"i\": 42}}, {\"name\": \"doc14.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-15T00:00:00.014Z\"}, {\"name\": \"doc41.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-14T00:00:00.041Z\"}, {\"name\": \"doc13.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-14T00:00:00.013Z\"}], \"sort\": \"time\", \"next_offset\": 30, \"has_more\": true, \"folders\": [], \"next_steps\": {\"summary\": \"Showing 10 document(s) (more available)\", \"options\": [\"Use get_document() with a document name to view details\", \"Results returned ≠ correct results. Verify these documents match the user's actual intent (topic, time period, document type) before proceeding. If they do not match, page through the rest of the library. Do NOT use general knowledge as a substitute.\", \"Use browse_documents() with `offset: next_offset` to load more documents\"]}}"
+ },
+ {
+  "store": "many",
+  "tool": "browse_documents",
+  "args": {
+   "limit": 10,
+   "offset": 50
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [{\"name\": \"doc30.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-03T00:00:00.030Z\", \"metadata\": {\"i\": 30}}, {\"name\": \"doc02.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-03T00:00:00.002Z\"}, {\"name\": \"doc29.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-02T00:00:00.029Z\"}, {\"name\": \"doc01.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-02T00:00:00.001Z\"}, {\"name\": \"doc56.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-01T00:00:00.056Z\"}, {\"name\": \"doc28.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-01T00:00:00.028Z\"}, {\"name\": \"doc00.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-01-01T00:00:00.000Z\", \"metadata\": {\"i\": 0}}], \"sort\": \"time\", \"next_offset\": null, \"has_more\": false, \"folders\": [], \"next_steps\": {\"summary\": \"Showing 7 document(s)\", \"options\": [\"Use get_document() with a document name to view details\", \"Results returned ≠ correct results. Verify these documents match the user's actual intent (topic, time period, document type) before proceeding. Do NOT use general knowledge as a substitute.\"]}}"
+ },
+ {
+  "store": "many",
+  "tool": "browse_documents",
+  "args": {
+   "offset": 57
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [], \"sort\": \"time\", \"next_offset\": null, \"has_more\": false, \"folders\": [], \"next_steps\": {\"summary\": \"Nothing to show\", \"options\": []}}"
+ },
+ {
+  "store": "empty",
+  "tool": "browse_documents",
+  "args": {},
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [], \"sort\": \"time\", \"next_offset\": null, \"has_more\": false, \"folders\": [], \"next_steps\": {\"summary\": \"Nothing to show\", \"options\": [\"Nothing here. Index documents with PageIndexClient.submit_document() to get started.\"], \"auto_retry\": \"Index a document with PageIndexClient.submit_document() to get started\"}}"
+ },
+ {
+  "store": "empty",
+  "tool": "browse_documents",
+  "args": {
+   "offset": 5
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [], \"sort\": \"time\", \"next_offset\": null, \"has_more\": false, \"folders\": [], \"next_steps\": {\"summary\": \"Nothing to show\", \"options\": []}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"name\": \"3M_2018_10K.pdf\", \"description\": \"3M 2018 annual report (Form 10-K)\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\", \"page_count\": 160, \"folder_id\": null, \"metadata\": {\"ticker\": \"MMM\", \"year\": 2018, \"ratio\": 0.5, \"audited\": true}, \"next_steps\": {\"summary\": \"Document is ready for analysis and querying.\", \"options\": [\"Document is ready for analysis.\", \"This is a large document with 160 pages.\", \"First explore structure: get_document_structure(doc_name: \\\"3M_2018_10K.pdf\\\")\", \"Then target specific sections: get_page_content(doc_name: \\\"3M_2018_10K.pdf\\\", pages: \\\"1-3\\\")\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "doc_name": "AMCOR_2022_8K.pdf"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"name\": \"AMCOR_2022_8K.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-08-02T09:30:00.000Z\", \"page_count\": 9, \"folder_id\": null, \"next_steps\": {\"summary\": \"Document is ready for analysis and querying.\", \"options\": [\"Document is ready for analysis.\", \"This document has 9 pages.\", \"First explore structure: get_document_structure(doc_name: \\\"AMCOR_2022_8K.pdf\\\")\", \"Then extract key pages: get_page_content(doc_name: \\\"AMCOR_2022_8K.pdf\\\", pages: \\\"1,5,10\\\")\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "doc_name": "annual-report.pdf"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"name\": \"annual-report.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\", \"page_count\": 2, \"folder_id\": null, \"next_steps\": {\"summary\": \"Document is ready for analysis and querying.\", \"options\": [\"Document is ready for analysis.\", \"This is a short document with 2 pages.\", \"First explore structure: get_document_structure(doc_name: \\\"annual-report.pdf\\\")\", \"Then extract all content: get_page_content(doc_name: \\\"annual-report.pdf\\\", pages: \\\"1-2\\\")\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "doc_name": "same.pdf"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"name\": \"same.pdf\", \"description\": \"new copy\", \"status\": \"completed\", \"created_at\": \"2026-07-02T10:00:00.000Z\", \"page_count\": 2, \"folder_id\": null, \"next_steps\": {\"summary\": \"Document is ready for analysis and querying.\", \"options\": [\"Document is ready for analysis.\", \"This is a short document with 2 pages.\", \"First explore structure: get_document_structure(doc_name: \\\"same.pdf\\\")\", \"Then extract all content: get_page_content(doc_name: \\\"same.pdf\\\", pages: \\\"1-2\\\")\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "doc_name": "blanks.pdf"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"name\": \"blanks.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-06-01T00:00:00.000Z\", \"page_count\": 3, \"folder_id\": null, \"next_steps\": {\"summary\": \"Document is ready for analysis and querying.\", \"options\": [\"Document is ready for analysis.\", \"This is a short document with 3 pages.\", \"First explore structure: get_document_structure(doc_name: \\\"blanks.pdf\\\")\", \"Then extract all content: get_page_content(doc_name: \\\"blanks.pdf\\\", pages: \\\"1-3\\\")\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "doc_name": "huge.pdf"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"name\": \"huge.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-02T00:00:00.000Z\", \"page_count\": 4, \"folder_id\": null, \"next_steps\": {\"summary\": \"Document is ready for analysis and querying.\", \"options\": [\"Document is ready for analysis.\", \"This is a short document with 4 pages.\", \"First explore structure: get_document_structure(doc_name: \\\"huge.pdf\\\")\", \"Then extract all content: get_page_content(doc_name: \\\"huge.pdf\\\", pages: \\\"1-4\\\")\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "doc_name": "big.pdf"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"name\": \"big.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-03T00:00:00.000Z\", \"page_count\": 60, \"folder_id\": null, \"next_steps\": {\"summary\": \"Document is ready for analysis and querying.\", \"options\": [\"Document is ready for analysis.\", \"This is a large document with 60 pages.\", \"First explore structure: get_document_structure(doc_name: \\\"big.pdf\\\")\", \"Then target specific sections: get_page_content(doc_name: \\\"big.pdf\\\", pages: \\\"1-3\\\")\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "doc_name": "failed.pdf"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"name\": \"failed.pdf\", \"description\": \"A test document\", \"status\": \"failed\", \"created_at\": \"2026-05-01T00:00:00.000Z\", \"page_count\": 2, \"folder_id\": null, \"next_steps\": {\"summary\": \"Document processing has failed.\", \"options\": [\"Document processing failed. Index the document again with PageIndexClient.submit_document().\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "doc_name": "processing.pdf"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"name\": \"processing.pdf\", \"description\": \"A test document\", \"status\": \"processing\", \"created_at\": \"2026-05-02T00:00:00.000Z\", \"page_count\": 2, \"folder_id\": null, \"next_steps\": {\"summary\": \"Document is still being processed.\", \"options\": [\"Document is still processing. Processing status can be checked later.\"], \"auto_retry\": \"Document processing status can be monitored periodically\"}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "doc_name": "weird.pdf"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"name\": \"weird.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-05-05T00:00:00.000Z\", \"page_count\": null, \"folder_id\": null, \"next_steps\": {\"summary\": \"Document is ready for analysis and querying.\", \"options\": [\"Document is ready for analysis.\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "doc_name": "doc05.pdf"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Document not found. Did you mean: \\\"weird.pdf\\\", \\\"bools.pdf\\\", \\\"notree.pdf\\\"?\", \"errorCode\": \"NOT_FOUND\", \"doc_name\": \"doc05.pdf\", \"similar_files\": [\"weird.pdf\", \"bools.pdf\", \"notree.pdf\"], \"next_steps\": {\"summary\": \"The requested document does not exist or is not accessible\", \"options\": [\"Verify the document name is correct\", \"Use browse_documents() to see your recent documents\", \"Check if the document was deleted\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "doc_name": "anual-report.pdf"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Document not found. Did you mean: \\\"annual-report.pdf\\\", \\\"notree.pdf\\\", \\\"failed.pdf\\\"?\", \"errorCode\": \"NOT_FOUND\", \"doc_name\": \"anual-report.pdf\", \"similar_files\": [\"annual-report.pdf\", \"notree.pdf\", \"failed.pdf\"], \"next_steps\": {\"summary\": \"The requested document does not exist or is not accessible\", \"options\": [\"Verify the document name is correct\", \"Use browse_documents() to see your recent documents\", \"Check if the document was deleted\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "doc_name": "zzz-nothing.qqq"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Document not found or you do not have access to it\", \"errorCode\": \"NOT_FOUND\", \"doc_name\": \"zzz-nothing.qqq\", \"similar_files\": [], \"next_steps\": {\"summary\": \"The requested document does not exist or is not accessible\", \"options\": [\"Verify the document name is correct\", \"Use browse_documents() to see your recent documents\", \"Check if the document was deleted\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "doc_name": "3M_2018_10K"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Document not found. Did you mean: \\\"3M_2018_10K.pdf\\\", \\\"JPMORGAN_2022_10K.pdf\\\"?\", \"errorCode\": \"NOT_FOUND\", \"doc_name\": \"3M_2018_10K\", \"similar_files\": [\"3M_2018_10K.pdf\", \"JPMORGAN_2022_10K.pdf\"], \"next_steps\": {\"summary\": \"The requested document does not exist or is not accessible\", \"options\": [\"Verify the document name is correct\", \"Use browse_documents() to see your recent documents\", \"Check if the document was deleted\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "doc_name": "big"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Document not found. Did you mean: \\\"big.pdf\\\"?\", \"errorCode\": \"NOT_FOUND\", \"doc_name\": \"big\", \"similar_files\": [\"big.pdf\"], \"next_steps\": {\"summary\": \"The requested document does not exist or is not accessible\", \"options\": [\"Verify the document name is correct\", \"Use browse_documents() to see your recent documents\", \"Check if the document was deleted\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "doc_name": 123
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Document not found or you do not have access to it\", \"errorCode\": \"NOT_FOUND\", \"doc_name\": 123, \"similar_files\": [], \"next_steps\": {\"summary\": \"The requested document does not exist or is not accessible\", \"options\": [\"Verify the document name is correct\", \"Use browse_documents() to see your recent documents\", \"Check if the document was deleted\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "doc_name": [
+    "x"
+   ]
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Document not found or you do not have access to it\", \"errorCode\": \"NOT_FOUND\", \"doc_name\": [\"x\"], \"similar_files\": [], \"next_steps\": {\"summary\": \"The requested document does not exist or is not accessible\", \"options\": [\"Verify the document name is correct\", \"Use browse_documents() to see your recent documents\", \"Check if the document was deleted\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "doc_name": "x",
+   "folder_id": "f"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Folders are not supported in local mode yet — omit folder_id.\", \"errorCode\": \"INVALID_INPUT\", \"next_steps\": {\"summary\": \"This local library does not have folders yet\", \"options\": [\"Retry the call without a folder_id\", \"Use browse_documents() to list the library root\", \"Folders are available on PageIndex cloud (PageIndexCloudClient with an API key)\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "doc_name": "same.pdf",
+   "folder_id": "root"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"name\": \"same.pdf\", \"description\": \"new copy\", \"status\": \"completed\", \"created_at\": \"2026-07-02T10:00:00.000Z\", \"page_count\": 2, \"folder_id\": null, \"next_steps\": {\"summary\": \"Document is ready for analysis and querying.\", \"options\": [\"Document is ready for analysis.\", \"This is a short document with 2 pages.\", \"First explore structure: get_document_structure(doc_name: \\\"same.pdf\\\")\", \"Then extract all content: get_page_content(doc_name: \\\"same.pdf\\\", pages: \\\"1-2\\\")\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {},
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Invalid arguments for get_document: missing a required argument: 'doc_name'\", \"errorCode\": \"INVALID_INPUT\", \"next_steps\": {\"summary\": \"Invalid tool arguments\", \"options\": [\"Check the get_document() parameter names and types\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "doc_name": "same.pdf",
+   "wait_for_completion": "false"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"name\": \"same.pdf\", \"description\": \"new copy\", \"status\": \"completed\", \"created_at\": \"2026-07-02T10:00:00.000Z\", \"page_count\": 2, \"folder_id\": null, \"next_steps\": {\"summary\": \"Document is ready for analysis and querying.\", \"options\": [\"Document is ready for analysis.\", \"This is a short document with 2 pages.\", \"First explore structure: get_document_structure(doc_name: \\\"same.pdf\\\")\", \"Then extract all content: get_page_content(doc_name: \\\"same.pdf\\\", pages: \\\"1-2\\\")\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "doc_name": "same.pdf",
+   "bogus": 1
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Invalid arguments for get_document: got an unexpected keyword argument 'bogus'\", \"errorCode\": \"INVALID_INPUT\", \"next_steps\": {\"summary\": \"Invalid tool arguments\", \"options\": [\"Check the get_document() parameter names and types\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "bogus": 1
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Invalid arguments for get_document: missing a required argument: 'doc_name'\", \"errorCode\": \"INVALID_INPUT\", \"next_steps\": {\"summary\": \"Invalid tool arguments\", \"options\": [\"Check the get_document() parameter names and types\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": {
+   "doc_name": "huge.pdf"
+  },
+  "doc_ids": [
+   "pi-000c"
+  ],
+  "is_error": true,
+  "text": "{\"error\": \"Document not found or you do not have access to it\", \"errorCode\": \"NOT_FOUND\", \"doc_name\": \"huge.pdf\", \"similar_files\": [], \"next_steps\": {\"summary\": \"The requested document does not exist or is not accessible\", \"options\": [\"Verify the document name is correct\", \"Use browse_documents() to see your recent documents\", \"Check if the document was deleted\"]}}"
+ },
+ {
+  "store": "many",
+  "tool": "get_document",
+  "args": {
+   "doc_name": "doc5.pdf"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Document not found. Did you mean: \\\"doc56.pdf\\\", \\\"doc55.pdf\\\", \\\"doc54.pdf\\\"?\", \"errorCode\": \"NOT_FOUND\", \"doc_name\": \"doc5.pdf\", \"similar_files\": [\"doc56.pdf\", \"doc55.pdf\", \"doc54.pdf\"], \"next_steps\": {\"summary\": \"The requested document does not exist or is not accessible\", \"options\": [\"Verify the document name is correct\", \"Use browse_documents() to see your recent documents\", \"Check if the document was deleted\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "729ccd3556c526638142132e3daa0606ff08f2c2e72c396502c43b3835ed9dbd",
+  "len": 7598,
+  "head": "{\"success\": true, \"doc_name\": \"3M_2018_10K.pdf\", \"structure\": [{\"title\": \"Preface\", \"node_id\": \"0000\", \"start_index\": 1, \"end_index\": 84}, {\"title\": \"Reconciliation of Effective Income Tax Rate\", \"node_id\": \"0001\", \"start_index\": 85, \"end_index\": 86}, {\"title\": \"Federal, State and Foreign Tax\", \"node_id\": \"0002\", \"start_index\": 86, \"end_index\": 90}, {\"title\": \"Long-Term Debt Maturities and Extinguishments; Floating Rate Notes\", \"node_id\": \"0003\", \"start_index\": 90, \"end_index\": 90, \"key_items\": [\"Long-Term Debt Maturities and Extinguishments\", \"Floating Rate Notes\"], \"_same_page\": true}, {\"title\": \"NOTE 13. Pension and Postretirement Benefit Plans\", \"node_id\": \"0004\", \"start_index\": 90, \"end_index\": 94}, {\"title\": \"N/A\", \"node_id\": \"0005\", \"start_index\": 94, \"end_index\": 99}, {\"title\": \"NOTE 14. Derivatives\", \"node_id\": \"0006\", \"start_index\": 99, \"end_index\": 106, \"nodes\": [{\"title\": \"Cash Flow Hedging - Foreign Currency Forward and Option Contracts\", \"node_id\": \"0007\", \"start_index\": 99, \"end_index\": 100}, {\"title\": \"Cash Flow Hedging — Interest Rate Contracts\", \"node_id\": \"0008\", \"start_index\": 100, \"end_index\": 101}, {\"title\": \"Fair Value Hedging - Interest Rate Swaps\", \"node_id\": \"0009\", \"start_index\": 101, \"end_index\": 106}]}, {\"title\": \"NOTE 15. Fair Value Measurements\", \"node_id\": \"0010\", \"start_index\": 106, \"end_index\": 121, \"nodes\": [{\"title\": \"Assets and Liabilities that are Measured at Fair Value on a Recurring Basis:\", \"node_id\": \"0011\", \"start_index\": 106, \"end_i"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "AMCOR_2022_8K.pdf"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"AMCOR_2022_8K.pdf\", \"structure\": [{\"title\": \"Trading Symbol(s)\", \"node_id\": \"0000\", \"start_index\": 1, \"end_index\": 2, \"key_items\": [\"Item 8.01; Financial Statements and Exhibits.\", \"Item 8.01\", \"Financial Statements and Exhibits.\"]}, {\"title\": \"Description\", \"node_id\": \"0001\", \"start_index\": 2, \"end_index\": 2}, {\"title\": \"SIGNATURES\", \"node_id\": \"0002\", \"start_index\": 3, \"end_index\": 9, \"nodes\": [{\"title\": \"AMCOR PLC\", \"node_id\": \"0003\", \"start_index\": 3, \"end_index\": 9, \"nodes\": [{\"title\": \"SECOND SUPPLEMENTAL INDENTURE; RECITALS\", \"node_id\": \"0004\", \"start_index\": 4, \"end_index\": 4, \"key_items\": [\"SECOND SUPPLEMENTAL INDENTURE\", \"RECITALS\"], \"_same_page\": true}, {\"title\": \"ARTICLE ONE\", \"node_id\": \"0005\", \"start_index\": 4, \"end_index\": 5}, {\"title\": \"ARTICLE TWO\", \"node_id\": \"0006\", \"start_index\": 5, \"end_index\": 7}, {\"title\": \"FIRST SUPPLEMENTAL INDENTURE; RECITALS\", \"node_id\": \"0007\", \"start_index\": 7, \"end_index\": 7, \"key_items\": [\"FIRST SUPPLEMENTAL INDENTURE\", \"RECITALS\"], \"_same_page\": true}, {\"title\": \"ARTICLE ONE\", \"node_id\": \"0008\", \"start_index\": 7, \"end_index\": 8}, {\"title\": \"ARTICLE TWO\", \"node_id\": \"0009\", \"start_index\": 8, \"end_index\": 9}]}]}], \"next_steps\": {\"summary\": \"Document structure retrieved successfully.\", \"options\": [\"Use get_page_content() to extract specific content from pages\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "annual-report.pdf"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"annual-report.pdf\", \"structure\": [{\"title\": \"Doc\", \"node_id\": \"0000\", \"start_index\": 1, \"end_index\": 2, \"summary\": \"root summary\", \"nodes\": [{\"title\": \"Intro\", \"node_id\": \"0001\", \"start_index\": 1, \"end_index\": 1, \"summary\": \"intro summary\"}, {\"title\": \"Body\", \"node_id\": \"0002\", \"start_index\": 2, \"end_index\": 2, \"summary\": \"body summary\", \"key_items\": [\"a\", \"b\"]}]}], \"next_steps\": {\"summary\": \"Document structure retrieved successfully.\", \"options\": [\"Use get_page_content() to extract specific content from pages\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "same.pdf"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"same.pdf\", \"structure\": [{\"title\": \"Doc\", \"node_id\": \"0000\", \"start_index\": 1, \"end_index\": 2, \"summary\": \"root summary\", \"nodes\": [{\"title\": \"Intro\", \"node_id\": \"0001\", \"start_index\": 1, \"end_index\": 1, \"summary\": \"intro summary\"}, {\"title\": \"Body\", \"node_id\": \"0002\", \"start_index\": 2, \"end_index\": 2, \"summary\": \"body summary\", \"key_items\": [\"a\", \"b\"]}]}], \"next_steps\": {\"summary\": \"Document structure retrieved successfully.\", \"options\": [\"Use get_page_content() to extract specific content from pages\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "blanks.pdf"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"blanks.pdf\", \"structure\": [{\"title\": \"Doc\", \"node_id\": \"0000\", \"start_index\": 1, \"end_index\": 2, \"summary\": \"root summary\", \"nodes\": [{\"title\": \"Intro\", \"node_id\": \"0001\", \"start_index\": 1, \"end_index\": 1, \"summary\": \"intro summary\"}, {\"title\": \"Body\", \"node_id\": \"0002\", \"start_index\": 2, \"end_index\": 2, \"summary\": \"body summary\", \"key_items\": [\"a\", \"b\"]}]}], \"next_steps\": {\"summary\": \"Document structure retrieved successfully.\", \"options\": [\"Use get_page_content() to extract specific content from pages\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "huge.pdf"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"huge.pdf\", \"structure\": [{\"title\": \"Doc\", \"node_id\": \"0000\", \"start_index\": 1, \"end_index\": 2, \"summary\": \"root summary\", \"nodes\": [{\"title\": \"Intro\", \"node_id\": \"0001\", \"start_index\": 1, \"end_index\": 1, \"summary\": \"intro summary\"}, {\"title\": \"Body\", \"node_id\": \"0002\", \"start_index\": 2, \"end_index\": 2, \"summary\": \"body summary\", \"key_items\": [\"a\", \"b\"]}]}], \"next_steps\": {\"summary\": \"Document structure retrieved successfully.\", \"options\": [\"Use get_page_content() to extract specific content from pages\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "big.pdf"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "bc5755bb425943ccd63076287895c5e3eff3551844520c7501c77b86bb244ab1",
+  "len": 94480,
+  "head": "{\"success\": true, \"doc_name\": \"big.pdf\", \"total_parts\": 3, \"structure\": [{\"title\": \"Chapter 0\", \"node_id\": \"0000\", \"start_index\": 1, \"end_index\": 1, \"summary\": \"sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "failed.pdf"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Document processing failed. Current status: failed\", \"errorCode\": \"INVALID_INPUT\", \"doc_name\": \"failed.pdf\", \"next_steps\": {\"summary\": \"Document processing has failed\", \"options\": [\"Index the document again with PageIndexClient.submit_document()\", \"Use browse_documents() to work with other documents\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "processing.pdf"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Document is not ready for structure retrieval. Current status: processing\", \"errorCode\": \"INVALID_INPUT\", \"doc_name\": \"processing.pdf\", \"next_steps\": {\"summary\": \"Document is still processing\", \"options\": [\"Wait for document processing to complete\", \"Check status with browse_documents() or get_document()\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "weird.pdf"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"weird.pdf\", \"structure\": [{\"title\": \"Only\", \"page_index\": 3, \"nodes\": [], \"zeta\": 1}], \"next_steps\": {\"summary\": \"Document structure retrieved successfully.\", \"options\": [\"Use get_page_content() to extract specific content from pages\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "doc05.pdf"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Document not found. Did you mean: \\\"weird.pdf\\\", \\\"bools.pdf\\\", \\\"notree.pdf\\\"?\", \"errorCode\": \"NOT_FOUND\", \"doc_name\": \"doc05.pdf\", \"similar_files\": [\"weird.pdf\", \"bools.pdf\", \"notree.pdf\"], \"next_steps\": {\"summary\": \"The requested document does not exist or is not accessible\", \"options\": [\"Verify the document name is correct\", \"Use browse_documents() to see your recent documents\", \"Check if the document was deleted\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "nested-big.pdf"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "f9007da54c9fabf6072626655e968b0ffda064439b6ac90addee815ec669122a",
+  "len": 23865,
+  "head": "{\"success\": true, \"doc_name\": \"nested-big.pdf\", \"total_parts\": 6, \"structure\": [{\"title\": \"Root\", \"node_id\": \"0000\", \"start_index\": 1, \"end_index\": 2, \"summary\": \"Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root."
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "JPMORGAN_2022_10K.pdf"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "3161f389961da1275084f60ec360a6b38a293798bb100fe36b8e5ad68c1c9b50",
+  "len": 87631,
+  "head": "{\"success\": true, \"doc_name\": \"JPMORGAN_2022_10K.pdf\", \"total_parts\": 2, \"structure\": [{\"title\": \"Form 10-K Cover\", \"node_id\": \"0000\", \"start_index\": 1, \"end_index\": 2, \"summary\": \"Form 10-K Cover. Form 10-K Cover. \"}, {\"title\": \"Form 10-K Index\", \"node_id\": \"0001\", \"start_index\": 2, \"end_index\": 3, \"summary\": \"Form 10-K Index. Form 10-K Index. \"}, {\"title\": \"Part I\", \"node_id\": \"0002\", \"start_index\": 3, \"end_index\": 36, \"summary\": \"Part I. Part I. \", \"nodes\": [{\"title\": \"Item 1. Business.\", \"node_id\": \"0003\", \"start_index\": 3, \"end_index\": 11, \"summary\": \"Item 1. Business.. Item 1. Business.. \", \"nodes\": [{\"title\": \"Overview; Business segments\", \"node_id\": \"0004\", \"start_index\": 3, \"end_index\": 3, \"summary\": \"Overview; Business segments. Overview; Business segments. \", \"key_items\": [\"Overview\", \"Business segments\"], \"_same_page\": true}, {\"title\": \"Competition\", \"node_id\": \"0005\", \"start_index\": 3, \"end_index\": 4, \"summary\": \"Competition. Competition. \", \"key_items\": [\"Item 1. Business.\", \"Business segments\"]}, {\"title\": \"Human Capital\", \"node_id\": \"0006\", \"start_index\": 4, \"end_index\": 6, \"summary\": \"Human Capital. Human Capital. \", \"key_items\": [\"Global workforce\", \"Diversity, equity and inclusion\", \"Firm culture; Attracting and retaining employees; Developing employees\", \"Firm culture\", \"Attracting and retaining employees\", \"Developing employees\", \"Compensation and benefits\"]}, {\"title\": \"Supervision and regulation\", \"node_id\": \"0007\", \"start_index\": 6, \"end_index\": 11, \"s"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "notree.pdf"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Failed to retrieve document structure: Failed to get tree result: stored document data is unreadable.\", \"errorCode\": \"INTERNAL_ERROR\", \"doc_name\": \"notree.pdf\", \"next_steps\": {\"summary\": \"Failed to retrieve document structure due to an error\", \"options\": [\"The document may not exist or is not accessible\", \"Check if the document name is correct\", \"Try again in a few moments\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "nopages.pdf"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"nopages.pdf\", \"structure\": [{\"title\": \"Doc\", \"node_id\": \"0000\", \"start_index\": 1, \"end_index\": 2, \"summary\": \"root summary\", \"nodes\": [{\"title\": \"Intro\", \"node_id\": \"0001\", \"start_index\": 1, \"end_index\": 1, \"summary\": \"intro summary\"}, {\"title\": \"Body\", \"node_id\": \"0002\", \"start_index\": 2, \"end_index\": 2, \"summary\": \"body summary\", \"key_items\": [\"a\", \"b\"]}]}], \"next_steps\": {\"summary\": \"Document structure retrieved successfully.\", \"options\": [\"Use get_page_content() to extract specific content from pages\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "bools.pdf"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"bools.pdf\", \"structure\": [{\"title\": \"Doc\", \"node_id\": \"0000\", \"start_index\": 1, \"end_index\": 2, \"summary\": \"root summary\", \"nodes\": [{\"title\": \"Intro\", \"node_id\": \"0001\", \"start_index\": 1, \"end_index\": 1, \"summary\": \"intro summary\"}, {\"title\": \"Body\", \"node_id\": \"0002\", \"start_index\": 2, \"end_index\": 2, \"summary\": \"body summary\", \"key_items\": [\"a\", \"b\"]}]}], \"next_steps\": {\"summary\": \"Document structure retrieved successfully.\", \"options\": [\"Use get_page_content() to extract specific content from pages\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "missing.pdf"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Document not found. Did you mean: \\\"processing.pdf\\\", \\\"big.pdf\\\", \\\"nopages.pdf\\\"?\", \"errorCode\": \"NOT_FOUND\", \"doc_name\": \"missing.pdf\", \"similar_files\": [\"processing.pdf\", \"big.pdf\", \"nopages.pdf\"], \"next_steps\": {\"summary\": \"The requested document does not exist or is not accessible\", \"options\": [\"Verify the document name is correct\", \"Use browse_documents() to see your recent documents\", \"Check if the document was deleted\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "big.pdf",
+   "part": 2
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "3beaade538ee9db75608d7c397975a5e6c714a2bb555d9d9678bd4aabdc11001",
+  "len": 94508,
+  "head": "{\"success\": true, \"doc_name\": \"big.pdf\", \"total_parts\": 3, \"structure\": [{\"title\": \"Chapter 23\", \"node_id\": \"0023\", \"start_index\": 24, \"end_index\": 24, \"summary\": \"ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "big.pdf",
+   "part": 3
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "918db216656f2122a308a1365c0649d7ffcb30655bf2d257ae6a10a13d98edb6",
+  "len": 57619,
+  "head": "{\"success\": true, \"doc_name\": \"big.pdf\", \"total_parts\": 3, \"structure\": [{\"title\": \"Chapter 46\", \"node_id\": \"0046\", \"start_index\": 47, \"end_index\": 47, \"summary\": \"ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "big.pdf",
+   "part": 4
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "918db216656f2122a308a1365c0649d7ffcb30655bf2d257ae6a10a13d98edb6",
+  "len": 57619,
+  "head": "{\"success\": true, \"doc_name\": \"big.pdf\", \"total_parts\": 3, \"structure\": [{\"title\": \"Chapter 46\", \"node_id\": \"0046\", \"start_index\": 47, \"end_index\": 47, \"summary\": \"ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "big.pdf",
+   "part": 999
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "918db216656f2122a308a1365c0649d7ffcb30655bf2d257ae6a10a13d98edb6",
+  "len": 57619,
+  "head": "{\"success\": true, \"doc_name\": \"big.pdf\", \"total_parts\": 3, \"structure\": [{\"title\": \"Chapter 46\", \"node_id\": \"0046\", \"start_index\": 47, \"end_index\": 47, \"summary\": \"ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "big.pdf",
+   "part": 0
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "bc5755bb425943ccd63076287895c5e3eff3551844520c7501c77b86bb244ab1",
+  "len": 94480,
+  "head": "{\"success\": true, \"doc_name\": \"big.pdf\", \"total_parts\": 3, \"structure\": [{\"title\": \"Chapter 0\", \"node_id\": \"0000\", \"start_index\": 1, \"end_index\": 1, \"summary\": \"sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "big.pdf",
+   "part": -1
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "bc5755bb425943ccd63076287895c5e3eff3551844520c7501c77b86bb244ab1",
+  "len": 94480,
+  "head": "{\"success\": true, \"doc_name\": \"big.pdf\", \"total_parts\": 3, \"structure\": [{\"title\": \"Chapter 0\", \"node_id\": \"0000\", \"start_index\": 1, \"end_index\": 1, \"summary\": \"sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "big.pdf",
+   "part": "2"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "3beaade538ee9db75608d7c397975a5e6c714a2bb555d9d9678bd4aabdc11001",
+  "len": 94508,
+  "head": "{\"success\": true, \"doc_name\": \"big.pdf\", \"total_parts\": 3, \"structure\": [{\"title\": \"Chapter 23\", \"node_id\": \"0023\", \"start_index\": 24, \"end_index\": 24, \"summary\": \"ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "big.pdf",
+   "part": "x"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "bc5755bb425943ccd63076287895c5e3eff3551844520c7501c77b86bb244ab1",
+  "len": 94480,
+  "head": "{\"success\": true, \"doc_name\": \"big.pdf\", \"total_parts\": 3, \"structure\": [{\"title\": \"Chapter 0\", \"node_id\": \"0000\", \"start_index\": 1, \"end_index\": 1, \"summary\": \"sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "big.pdf",
+   "part": 2.9
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "3beaade538ee9db75608d7c397975a5e6c714a2bb555d9d9678bd4aabdc11001",
+  "len": 94508,
+  "head": "{\"success\": true, \"doc_name\": \"big.pdf\", \"total_parts\": 3, \"structure\": [{\"title\": \"Chapter 23\", \"node_id\": \"0023\", \"start_index\": 24, \"end_index\": 24, \"summary\": \"ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "big.pdf",
+   "part": null
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "bc5755bb425943ccd63076287895c5e3eff3551844520c7501c77b86bb244ab1",
+  "len": 94480,
+  "head": "{\"success\": true, \"doc_name\": \"big.pdf\", \"total_parts\": 3, \"structure\": [{\"title\": \"Chapter 0\", \"node_id\": \"0000\", \"start_index\": 1, \"end_index\": 1, \"summary\": \"sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "nested-big.pdf",
+   "part": 2
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "8480905d1e9adf6705db2aa715a6a336422291df2dd9acae37ecdcd6f6256a25",
+  "len": 93765,
+  "head": "{\"success\": true, \"doc_name\": \"nested-big.pdf\", \"total_parts\": 6, \"structure\": [{\"title\": \"Root\", \"node_id\": \"0000\", \"start_index\": 1, \"end_index\": 2, \"summary\": \"Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root."
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "JPMORGAN_2022_10K.pdf",
+   "part": 2
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "f8ad3995e8b555c660c9f9573402833767afc5f9f88286d16d7db46c2e0df32e",
+  "len": 9763,
+  "head": "{\"success\": true, \"doc_name\": \"JPMORGAN_2022_10K.pdf\", \"total_parts\": 2, \"structure\": [{\"title\": \"Exhibit 10.18\", \"node_id\": \"0349\", \"start_index\": 331, \"end_index\": 377, \"summary\": \"Exhibit 10.18. Exhibit 10.18. \", \"nodes\": [{\"title\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award Operating Committee\", \"node_id\": \"0350\", \"start_index\": 331, \"end_index\": 341, \"summary\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award Operating Committee. JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award Operating Committee. \", \"key_items\": [\"Exhibit 10.18\", \"Dividend Equivalents\", \"Portion of Your Awards Subject to Continued Vesting:; Conditions for Continued Vesting of Awards:; Satisfaction of Conditions:\", \"Portion of Your Awards Subject to Continued Vesting:\", \"Conditions for Continued Vesting of Awards:\", \"Satisfaction of Conditions:\", \"Failure to Satisfy Conditions:\"]}, {\"title\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award UK Operating Committee\", \"node_id\": \"0351\", \"start_index\": 341, \"end_index\": 352, \"summary\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award UK Operating Committee. JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award UK Operating Committee. \", \"nodes\": [{\"title\": \"Dividend Equivalents\", \"node_id\": \"0352\", \"start_index\": 341, \"end_index\": 342, \"summary\": \"Dividend Equivalents. Dividend Equivalents. \"}, {\"title\": \"EMEA Malus and Clawback Policy"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "nested-big.pdf",
+   "part": 3
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "b3ee739af9c3704ed6c24363e3196665a9463de1a1a4cfc441a04d10fc82937f",
+  "len": 38127,
+  "head": "{\"success\": true, \"doc_name\": \"nested-big.pdf\", \"total_parts\": 6, \"structure\": [{\"title\": \"Root\", \"node_id\": \"0000\", \"start_index\": 1, \"end_index\": 2, \"summary\": \"Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root."
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "JPMORGAN_2022_10K.pdf",
+   "part": 3
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "f8ad3995e8b555c660c9f9573402833767afc5f9f88286d16d7db46c2e0df32e",
+  "len": 9763,
+  "head": "{\"success\": true, \"doc_name\": \"JPMORGAN_2022_10K.pdf\", \"total_parts\": 2, \"structure\": [{\"title\": \"Exhibit 10.18\", \"node_id\": \"0349\", \"start_index\": 331, \"end_index\": 377, \"summary\": \"Exhibit 10.18. Exhibit 10.18. \", \"nodes\": [{\"title\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award Operating Committee\", \"node_id\": \"0350\", \"start_index\": 331, \"end_index\": 341, \"summary\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award Operating Committee. JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award Operating Committee. \", \"key_items\": [\"Exhibit 10.18\", \"Dividend Equivalents\", \"Portion of Your Awards Subject to Continued Vesting:; Conditions for Continued Vesting of Awards:; Satisfaction of Conditions:\", \"Portion of Your Awards Subject to Continued Vesting:\", \"Conditions for Continued Vesting of Awards:\", \"Satisfaction of Conditions:\", \"Failure to Satisfy Conditions:\"]}, {\"title\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award UK Operating Committee\", \"node_id\": \"0351\", \"start_index\": 341, \"end_index\": 352, \"summary\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award UK Operating Committee. JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award UK Operating Committee. \", \"nodes\": [{\"title\": \"Dividend Equivalents\", \"node_id\": \"0352\", \"start_index\": 341, \"end_index\": 342, \"summary\": \"Dividend Equivalents. Dividend Equivalents. \"}, {\"title\": \"EMEA Malus and Clawback Policy"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "nested-big.pdf",
+   "part": 4
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "a6ee2c143b6e55127c59ff75bee9062c06d92fed109639138eca0693c0c4e734",
+  "len": 94958,
+  "head": "{\"success\": true, \"doc_name\": \"nested-big.pdf\", \"total_parts\": 6, \"structure\": [{\"title\": \"Root\", \"node_id\": \"0000\", \"start_index\": 1, \"end_index\": 2, \"summary\": \"Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root."
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "JPMORGAN_2022_10K.pdf",
+   "part": 4
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "f8ad3995e8b555c660c9f9573402833767afc5f9f88286d16d7db46c2e0df32e",
+  "len": 9763,
+  "head": "{\"success\": true, \"doc_name\": \"JPMORGAN_2022_10K.pdf\", \"total_parts\": 2, \"structure\": [{\"title\": \"Exhibit 10.18\", \"node_id\": \"0349\", \"start_index\": 331, \"end_index\": 377, \"summary\": \"Exhibit 10.18. Exhibit 10.18. \", \"nodes\": [{\"title\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award Operating Committee\", \"node_id\": \"0350\", \"start_index\": 331, \"end_index\": 341, \"summary\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award Operating Committee. JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award Operating Committee. \", \"key_items\": [\"Exhibit 10.18\", \"Dividend Equivalents\", \"Portion of Your Awards Subject to Continued Vesting:; Conditions for Continued Vesting of Awards:; Satisfaction of Conditions:\", \"Portion of Your Awards Subject to Continued Vesting:\", \"Conditions for Continued Vesting of Awards:\", \"Satisfaction of Conditions:\", \"Failure to Satisfy Conditions:\"]}, {\"title\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award UK Operating Committee\", \"node_id\": \"0351\", \"start_index\": 341, \"end_index\": 352, \"summary\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award UK Operating Committee. JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award UK Operating Committee. \", \"nodes\": [{\"title\": \"Dividend Equivalents\", \"node_id\": \"0352\", \"start_index\": 341, \"end_index\": 342, \"summary\": \"Dividend Equivalents. Dividend Equivalents. \"}, {\"title\": \"EMEA Malus and Clawback Policy"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "nested-big.pdf",
+   "part": 5
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "46d9b98f2cae713ccfe77f4393a60a7063b8b8e5c14eb473b60e4ade99f52f7c",
+  "len": 42411,
+  "head": "{\"success\": true, \"doc_name\": \"nested-big.pdf\", \"total_parts\": 6, \"structure\": [{\"title\": \"Root\", \"node_id\": \"0000\", \"start_index\": 1, \"end_index\": 2, \"summary\": \"Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root. Root."
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "JPMORGAN_2022_10K.pdf",
+   "part": 5
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "f8ad3995e8b555c660c9f9573402833767afc5f9f88286d16d7db46c2e0df32e",
+  "len": 9763,
+  "head": "{\"success\": true, \"doc_name\": \"JPMORGAN_2022_10K.pdf\", \"total_parts\": 2, \"structure\": [{\"title\": \"Exhibit 10.18\", \"node_id\": \"0349\", \"start_index\": 331, \"end_index\": 377, \"summary\": \"Exhibit 10.18. Exhibit 10.18. \", \"nodes\": [{\"title\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award Operating Committee\", \"node_id\": \"0350\", \"start_index\": 331, \"end_index\": 341, \"summary\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award Operating Committee. JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award Operating Committee. \", \"key_items\": [\"Exhibit 10.18\", \"Dividend Equivalents\", \"Portion of Your Awards Subject to Continued Vesting:; Conditions for Continued Vesting of Awards:; Satisfaction of Conditions:\", \"Portion of Your Awards Subject to Continued Vesting:\", \"Conditions for Continued Vesting of Awards:\", \"Satisfaction of Conditions:\", \"Failure to Satisfy Conditions:\"]}, {\"title\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award UK Operating Committee\", \"node_id\": \"0351\", \"start_index\": 341, \"end_index\": 352, \"summary\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award UK Operating Committee. JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award UK Operating Committee. \", \"nodes\": [{\"title\": \"Dividend Equivalents\", \"node_id\": \"0352\", \"start_index\": 341, \"end_index\": 342, \"summary\": \"Dividend Equivalents. Dividend Equivalents. \"}, {\"title\": \"EMEA Malus and Clawback Policy"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "nested-big.pdf",
+   "part": 6
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"nested-big.pdf\", \"total_parts\": 6, \"structure\": [{\"title\": \"Tail\", \"node_id\": \"0999\", \"start_index\": 2, \"end_index\": 2, \"summary\": \"Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. \"}], \"pagination\": {\"part\": 6, \"total_parts\": 6, \"has_more\": false}, \"next_steps\": {\"summary\": \"All parts retrieved for current pagination.\", \"options\": [\"Use get_page_content() to extract specific content from pages\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "JPMORGAN_2022_10K.pdf",
+   "part": 6
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "f8ad3995e8b555c660c9f9573402833767afc5f9f88286d16d7db46c2e0df32e",
+  "len": 9763,
+  "head": "{\"success\": true, \"doc_name\": \"JPMORGAN_2022_10K.pdf\", \"total_parts\": 2, \"structure\": [{\"title\": \"Exhibit 10.18\", \"node_id\": \"0349\", \"start_index\": 331, \"end_index\": 377, \"summary\": \"Exhibit 10.18. Exhibit 10.18. \", \"nodes\": [{\"title\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award Operating Committee\", \"node_id\": \"0350\", \"start_index\": 331, \"end_index\": 341, \"summary\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award Operating Committee. JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award Operating Committee. \", \"key_items\": [\"Exhibit 10.18\", \"Dividend Equivalents\", \"Portion of Your Awards Subject to Continued Vesting:; Conditions for Continued Vesting of Awards:; Satisfaction of Conditions:\", \"Portion of Your Awards Subject to Continued Vesting:\", \"Conditions for Continued Vesting of Awards:\", \"Satisfaction of Conditions:\", \"Failure to Satisfy Conditions:\"]}, {\"title\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award UK Operating Committee\", \"node_id\": \"0351\", \"start_index\": 341, \"end_index\": 352, \"summary\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award UK Operating Committee. JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award UK Operating Committee. \", \"nodes\": [{\"title\": \"Dividend Equivalents\", \"node_id\": \"0352\", \"start_index\": 341, \"end_index\": 342, \"summary\": \"Dividend Equivalents. Dividend Equivalents. \"}, {\"title\": \"EMEA Malus and Clawback Policy"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "nested-big.pdf",
+   "part": 7
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"nested-big.pdf\", \"total_parts\": 6, \"structure\": [{\"title\": \"Tail\", \"node_id\": \"0999\", \"start_index\": 2, \"end_index\": 2, \"summary\": \"Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. Tail. \"}], \"pagination\": {\"part\": 6, \"total_parts\": 6, \"has_more\": false}, \"next_steps\": {\"summary\": \"All parts retrieved for current pagination.\", \"options\": [\"Use get_page_content() to extract specific content from pages\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document_structure",
+  "args": {
+   "doc_name": "JPMORGAN_2022_10K.pdf",
+   "part": 7
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "f8ad3995e8b555c660c9f9573402833767afc5f9f88286d16d7db46c2e0df32e",
+  "len": 9763,
+  "head": "{\"success\": true, \"doc_name\": \"JPMORGAN_2022_10K.pdf\", \"total_parts\": 2, \"structure\": [{\"title\": \"Exhibit 10.18\", \"node_id\": \"0349\", \"start_index\": 331, \"end_index\": 377, \"summary\": \"Exhibit 10.18. Exhibit 10.18. \", \"nodes\": [{\"title\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award Operating Committee\", \"node_id\": \"0350\", \"start_index\": 331, \"end_index\": 341, \"summary\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award Operating Committee. JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award Operating Committee. \", \"key_items\": [\"Exhibit 10.18\", \"Dividend Equivalents\", \"Portion of Your Awards Subject to Continued Vesting:; Conditions for Continued Vesting of Awards:; Satisfaction of Conditions:\", \"Portion of Your Awards Subject to Continued Vesting:\", \"Conditions for Continued Vesting of Awards:\", \"Satisfaction of Conditions:\", \"Failure to Satisfy Conditions:\"]}, {\"title\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award UK Operating Committee\", \"node_id\": \"0351\", \"start_index\": 341, \"end_index\": 352, \"summary\": \"JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award UK Operating Committee. JPMorgan Chase LTIP Terms & Conditions of January 17, 2023 RSU Award UK Operating Committee. \", \"nodes\": [{\"title\": \"Dividend Equivalents\", \"node_id\": \"0352\", \"start_index\": 341, \"end_index\": 342, \"summary\": \"Dividend Equivalents. Dividend Equivalents. \"}, {\"title\": \"EMEA Malus and Clawback Policy"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": "1-3"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"3M_2018_10K.pdf\", \"total_pages\": 160, \"requested_pages\": \"1-3\", \"returned_pages\": \"1-3\", \"content\": [{\"page\": 1, \"text\": \"low\\nUNITED STATES SECURITIES AND EXCHANGE COMMISSION\\nWashington, D.C. 20549\\nFORM 10-K\\n☒ ANNUAL REPOR\"}, {\"page\": 2, \"text\": \"Table of Contents\\n3M COMPANY FORM 10-K For the Year Ended December 31, 2018\\nPursuant to Part IV, Ite\"}, {\"page\": 3, \"text\": \"Table of Contents\\nBeginning Page\\nITEM 8\\nFinancial Statements and Supplementary Data (continued) Cons\"}], \"next_steps\": {\"summary\": \"Successfully retrieved content for 3 pages.\", \"options\": [\"Use get_document_structure() to understand document organization\", \"Request additional pages as needed\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": "1,99"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"3M_2018_10K.pdf\", \"total_pages\": 160, \"requested_pages\": \"1,99\", \"returned_pages\": \"1,99\", \"content\": [{\"page\": 1, \"text\": \"low\\nUNITED STATES SECURITIES AND EXCHANGE COMMISSION\\nWashington, D.C. 20549\\nFORM 10-K\\n☒ ANNUAL REPOR\"}, {\"page\": 99, \"text\": \"Table of Contents\\nEquities consist primarily of mandates in public equity securities managed to vari\"}], \"next_steps\": {\"summary\": \"Successfully retrieved content for 2 pages.\", \"options\": [\"Use get_document_structure() to understand document organization\", \"Request additional pages as needed\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": "99"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"3M_2018_10K.pdf\", \"total_pages\": 160, \"requested_pages\": \"99\", \"returned_pages\": \"99\", \"content\": [{\"page\": 99, \"text\": \"Table of Contents\\nEquities consist primarily of mandates in public equity securities managed to vari\"}], \"next_steps\": {\"summary\": \"Successfully retrieved content for 1 page.\", \"options\": [\"Use get_document_structure() to understand document organization\", \"Request additional pages as needed\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": "5-9"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"3M_2018_10K.pdf\", \"total_pages\": 160, \"requested_pages\": \"5-9\", \"returned_pages\": \"5-9\", \"content\": [{\"page\": 5, \"text\": \"Table of Contents\\nbusiness, and in October 2016 sold the assets of its adhesive-backed temporary pro\"}, {\"page\": 6, \"text\": \"Table of Contents\\nworkflow solutions to transform traditional impression and analog processes. In he\"}, {\"page\": 7, \"text\": \"Table of Contents\\nResearch and Patents\\nResearch and product development constitutes an important par\"}, {\"page\": 8, \"text\": \"Table of Contents\\nWhile the Company cannot predict with certainty the future costs of such cleanup a\"}, {\"page\": 9, \"text\": \"Table of Contents\\nYear Elected to Present Position\\nName\\nAge\\nPresent Position\\nJon T. Lindekugel\\n2018\\n\"}], \"next_steps\": {\"summary\": \"Successfully retrieved content for 5 pages.\", \"options\": [\"Use get_document_structure() to understand document organization\", \"Request additional pages as needed\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": "1,5-9"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"3M_2018_10K.pdf\", \"total_pages\": 160, \"requested_pages\": \"1,5-9\", \"returned_pages\": \"1,5-9\", \"content\": [{\"page\": 1, \"text\": \"low\\nUNITED STATES SECURITIES AND EXCHANGE COMMISSION\\nWashington, D.C. 20549\\nFORM 10-K\\n☒ ANNUAL REPOR\"}, {\"page\": 5, \"text\": \"Table of Contents\\nbusiness, and in October 2016 sold the assets of its adhesive-backed temporary pro\"}, {\"page\": 6, \"text\": \"Table of Contents\\nworkflow solutions to transform traditional impression and analog processes. In he\"}, {\"page\": 7, \"text\": \"Table of Contents\\nResearch and Patents\\nResearch and product development constitutes an important par\"}, {\"page\": 8, \"text\": \"Table of Contents\\nWhile the Company cannot predict with certainty the future costs of such cleanup a\"}, {\"page\": 9, \"text\": \"Table of Contents\\nYear Elected to Present Position\\nName\\nAge\\nPresent Position\\nJon T. Lindekugel\\n2018\\n\"}], \"next_steps\": {\"summary\": \"Successfully retrieved content for 6 pages.\", \"options\": [\"Use get_document_structure() to understand document organization\", \"Request additional pages as needed\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": "1,5,9"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"3M_2018_10K.pdf\", \"total_pages\": 160, \"requested_pages\": \"1,5,9\", \"returned_pages\": \"1,5,9\", \"content\": [{\"page\": 1, \"text\": \"low\\nUNITED STATES SECURITIES AND EXCHANGE COMMISSION\\nWashington, D.C. 20549\\nFORM 10-K\\n☒ ANNUAL REPOR\"}, {\"page\": 5, \"text\": \"Table of Contents\\nbusiness, and in October 2016 sold the assets of its adhesive-backed temporary pro\"}, {\"page\": 9, \"text\": \"Table of Contents\\nYear Elected to Present Position\\nName\\nAge\\nPresent Position\\nJon T. Lindekugel\\n2018\\n\"}], \"next_steps\": {\"summary\": \"Successfully retrieved content for 3 pages.\", \"options\": [\"Use get_document_structure() to understand document organization\", \"Request additional pages as needed\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": "abc"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Invalid page specification format\", \"errorCode\": \"INVALID_INPUT\", \"doc_name\": \"3M_2018_10K.pdf\", \"next_steps\": {\"summary\": \"Failed to parse the pages parameter\", \"options\": [\"Use valid formats: \\\"5\\\", \\\"3,7,10\\\", \\\"5-10\\\", or \\\"1-3,7,9-12\\\"\", \"Ensure page numbers are positive integers\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": "5-3"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Invalid page specification format\", \"errorCode\": \"INVALID_INPUT\", \"doc_name\": \"3M_2018_10K.pdf\", \"next_steps\": {\"summary\": \"Failed to parse the pages parameter\", \"options\": [\"Use valid formats: \\\"5\\\", \\\"3,7,10\\\", \\\"5-10\\\", or \\\"1-3,7,9-12\\\"\", \"Ensure page numbers are positive integers\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": "1,,2"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Invalid page specification format\", \"errorCode\": \"INVALID_INPUT\", \"doc_name\": \"3M_2018_10K.pdf\", \"next_steps\": {\"summary\": \"Failed to parse the pages parameter\", \"options\": [\"Use valid formats: \\\"5\\\", \\\"3,7,10\\\", \\\"5-10\\\", or \\\"1-3,7,9-12\\\"\", \"Ensure page numbers are positive integers\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": "-3"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Invalid page specification format\", \"errorCode\": \"INVALID_INPUT\", \"doc_name\": \"3M_2018_10K.pdf\", \"next_steps\": {\"summary\": \"Failed to parse the pages parameter\", \"options\": [\"Use valid formats: \\\"5\\\", \\\"3,7,10\\\", \\\"5-10\\\", or \\\"1-3,7,9-12\\\"\", \"Ensure page numbers are positive integers\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": ""
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Invalid page specification format\", \"errorCode\": \"INVALID_INPUT\", \"doc_name\": \"3M_2018_10K.pdf\", \"next_steps\": {\"summary\": \"Failed to parse the pages parameter\", \"options\": [\"Use valid formats: \\\"5\\\", \\\"3,7,10\\\", \\\"5-10\\\", or \\\"1-3,7,9-12\\\"\", \"Ensure page numbers are positive integers\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": "0"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Invalid page numbers. Page numbers must be positive integers\", \"errorCode\": \"INVALID_INPUT\", \"doc_name\": \"3M_2018_10K.pdf\", \"next_steps\": {\"summary\": \"Invalid page numbers provided\", \"options\": [\"Page numbers must be positive integers (>= 1)\", \"Check the page specification format\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": "1-3, 7"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"3M_2018_10K.pdf\", \"total_pages\": 160, \"requested_pages\": \"1-3,7\", \"returned_pages\": \"1-3,7\", \"content\": [{\"page\": 1, \"text\": \"low\\nUNITED STATES SECURITIES AND EXCHANGE COMMISSION\\nWashington, D.C. 20549\\nFORM 10-K\\n☒ ANNUAL REPOR\"}, {\"page\": 2, \"text\": \"Table of Contents\\n3M COMPANY FORM 10-K For the Year Ended December 31, 2018\\nPursuant to Part IV, Ite\"}, {\"page\": 3, \"text\": \"Table of Contents\\nBeginning Page\\nITEM 8\\nFinancial Statements and Supplementary Data (continued) Cons\"}, {\"page\": 7, \"text\": \"Table of Contents\\nResearch and Patents\\nResearch and product development constitutes an important par\"}], \"next_steps\": {\"summary\": \"Successfully retrieved content for 4 pages.\", \"options\": [\"Use get_document_structure() to understand document organization\", \"Request additional pages as needed\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": "1-100000"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Too many pages requested (over 10000)\", \"errorCode\": \"INVALID_INPUT\", \"doc_name\": \"3M_2018_10K.pdf\", \"next_steps\": {\"summary\": \"The page specification spans too many pages\", \"options\": [\"Request a narrower page range\", \"The response holds only a few pages per call - page through with several smaller requests\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": 5
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Invalid page specification format\", \"errorCode\": \"INVALID_INPUT\", \"doc_name\": \"3M_2018_10K.pdf\", \"next_steps\": {\"summary\": \"Failed to parse the pages parameter\", \"options\": [\"Use valid formats: \\\"5\\\", \\\"3,7,10\\\", \\\"5-10\\\", or \\\"1-3,7,9-12\\\"\", \"Ensure page numbers are positive integers\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": "1_0"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Invalid page specification format\", \"errorCode\": \"INVALID_INPUT\", \"doc_name\": \"3M_2018_10K.pdf\", \"next_steps\": {\"summary\": \"Failed to parse the pages parameter\", \"options\": [\"Use valid formats: \\\"5\\\", \\\"3,7,10\\\", \\\"5-10\\\", or \\\"1-3,7,9-12\\\"\", \"Ensure page numbers are positive integers\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": "160"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"3M_2018_10K.pdf\", \"total_pages\": 160, \"requested_pages\": \"160\", \"returned_pages\": \"160\", \"content\": [{\"page\": 160, \"text\": \"EXHIBIT 95\\nMINE SAFETY DISCLOSURES\\nFor the year 2018, the Company has the following mine safety info\"}], \"next_steps\": {\"summary\": \"Successfully retrieved content for 1 page.\", \"options\": [\"Use get_document_structure() to understand document organization\", \"Request additional pages as needed\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": "150-165"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"3M_2018_10K.pdf\", \"total_pages\": 160, \"requested_pages\": \"150-165\", \"returned_pages\": \"150-160\", \"content\": [{\"page\": 150, \"text\": \"Participant understands that Data will be transferred to Fidelity Investments, or such other stock p\"}, {\"page\": 151, \"text\": \"3.12 Waiver. Participant acknowledges that a waiver by the Company of breach of any provision of thi\"}, {\"page\": 152, \"text\": \"EXHIBIT 21\\n3M COMPANY AND CONSOLIDATED SUBSIDIARIES (PARENT AND SUBSIDIARIES) AS OF DECEMBER 31, 201\"}, {\"page\": 153, \"text\": \"Name of Company 3M Japan Products Limited 3M Korea Ltd 3M Asset Management S.a.r.l. 3M Global Capita\"}, {\"page\": 154, \"text\": \"EXHIBIT 23\\nCONSENT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM\\nWe hereby consent to the incorpo\"}, {\"page\": 155, \"text\": \"EXHIBIT 24\\nPOWER OF ATTORNEY\\nEach of the undersigned Directors and the Principal Executive, Principa\"}, {\"page\": 156, \"text\": \"EXHIBIT 31.1\\nSARBANES-OXLEY SECTION 302 CERTIFICATION\\nI, Michael F. Roman, certify that:\\n1. I have r\"}, {\"page\": 157, \"text\": \"EXHIBIT 31.2\\nSARBANES-OXLEY SECTION 302 CERTIFICATION\\nI, Nicholas C. Gangestad, certify that:\\n1. I h\"}, {\"page\": 158, \"text\": \"EXHIBIT 32.1\\nSARBANES-OXLEY SECTION 906 CERTIFICATION\\nIn connection with the Annual Report of 3M Com\"}, {\"page\": 159, \"text\": \"EXHIBIT 32.2\\nSARBANES-OXLEY SECTION 906 CERTIFICATION\\nIn connection with the Annual Report of 3M Com\"}, {\"page\": 160, \"text\": \"EXHIBIT 95\\nMINE SAFETY DISCLOSURES\\nFor the year 2018, the Company has the following mine safety info\"}], \"next_steps\": {\"summary\": \"Retrieved 11 of 16 requested pages. Pages 161-165 were out of range.\", \"options\": [\"Document has 160 pages total - request pages 1-160\", \"Use get_document_structure() to understand document organization\", \"Request additional pages as needed\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": "99999999999999999999"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"All requested pages are out of range. Document has 160 pages, but you requested pages: 99999999999999999999\", \"errorCode\": \"INVALID_INPUT\", \"doc_name\": \"3M_2018_10K.pdf\", \"max_pages\": 160, \"requested_pages\": \"99999999999999999999\", \"next_steps\": {\"summary\": \"All requested pages are out of range for this document\", \"options\": [\"Request pages between 1 and 160\", \"Use get_document() to check document page count\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": "1-6000,5001-10001"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Too many pages requested (over 10000)\", \"errorCode\": \"INVALID_INPUT\", \"doc_name\": \"3M_2018_10K.pdf\", \"next_steps\": {\"summary\": \"The page specification spans too many pages\", \"options\": [\"Request a narrower page range\", \"The response holds only a few pages per call - page through with several smaller requests\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": " 1"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Invalid page specification format\", \"errorCode\": \"INVALID_INPUT\", \"doc_name\": \"3M_2018_10K.pdf\", \"next_steps\": {\"summary\": \"Failed to parse the pages parameter\", \"options\": [\"Use valid formats: \\\"5\\\", \\\"3,7,10\\\", \\\"5-10\\\", or \\\"1-3,7,9-12\\\"\", \"Ensure page numbers are positive integers\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": "1\n"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Invalid page specification format\", \"errorCode\": \"INVALID_INPUT\", \"doc_name\": \"3M_2018_10K.pdf\", \"next_steps\": {\"summary\": \"Failed to parse the pages parameter\", \"options\": [\"Use valid formats: \\\"5\\\", \\\"3,7,10\\\", \\\"5-10\\\", or \\\"1-3,7,9-12\\\"\", \"Ensure page numbers are positive integers\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf",
+   "pages": [
+    "1"
+   ]
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Invalid page specification format\", \"errorCode\": \"INVALID_INPUT\", \"doc_name\": \"3M_2018_10K.pdf\", \"next_steps\": {\"summary\": \"Failed to parse the pages parameter\", \"options\": [\"Use valid formats: \\\"5\\\", \\\"3,7,10\\\", \\\"5-10\\\", or \\\"1-3,7,9-12\\\"\", \"Ensure page numbers are positive integers\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "huge.pdf",
+   "pages": "1-2"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "c9957bb09d299932fd4da0d308e1a9072b4561b6f90faae391679c3ae9916ae4",
+  "len": 60414,
+  "head": "{\"success\": true, \"doc_name\": \"huge.pdf\", \"total_pages\": 4, \"requested_pages\": \"1-2\", \"returned_pages\": \"1\", \"content\": [{\"page\": 1, \"text\": \"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\""
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "huge.pdf",
+   "pages": "1-4"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "a8004b9a1adad759a7127b205336bdb5ea0e924912c08d44c707d323ac946f26",
+  "len": 60450,
+  "head": "{\"success\": true, \"doc_name\": \"huge.pdf\", \"total_pages\": 4, \"requested_pages\": \"1-4\", \"returned_pages\": \"1,4\", \"content\": [{\"page\": 1, \"text\": \"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\""
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "huge.pdf",
+   "pages": "1-2,99"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "91d0d389b2c4fbd60b87dd1d61b27f40ca7479e34c0158bea9748ead40ccb516",
+  "len": 60495,
+  "head": "{\"success\": true, \"doc_name\": \"huge.pdf\", \"total_pages\": 4, \"requested_pages\": \"1-2,99\", \"returned_pages\": \"1\", \"content\": [{\"page\": 1, \"text\": \"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "huge.pdf",
+   "pages": "3-4"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "53f047fd5bce8073785e30bd0fc888197209646702602da61d2aea128978670c",
+  "len": 96414,
+  "head": "{\"success\": true, \"doc_name\": \"huge.pdf\", \"total_pages\": 4, \"requested_pages\": \"3-4\", \"returned_pages\": \"3\", \"content\": [{\"page\": 3, \"text\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "huge.pdf",
+   "pages": "2,4"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "sha256": "14830a54fc7a935610ea94ed3392f51cd5b625c1f4327939350514afda71fbd1",
+  "len": 40371,
+  "head": "{\"success\": true, \"doc_name\": \"huge.pdf\", \"total_pages\": 4, \"requested_pages\": \"2,4\", \"returned_pages\": \"2,4\", \"content\": [{\"page\": 2, \"text\": \"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\""
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "blanks.pdf",
+   "pages": "1-3"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"blanks.pdf\", \"total_pages\": 3, \"requested_pages\": \"1-3\", \"returned_pages\": \"1-3\", \"content\": [{\"page\": 1, \"text\": \"\"}, {\"page\": 2, \"text\": \"tab\\there \\\"quoted\\\" back\\\\slash \\u0001\\u001f é 中文 😀  \"}, {\"page\": 3, \"text\": \"third\"}], \"next_steps\": {\"summary\": \"Successfully retrieved content for 3 pages.\", \"options\": [\"Use get_document_structure() to understand document organization\", \"Request additional pages as needed\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "weird.pdf",
+   "pages": "1-5"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"weird.pdf\", \"total_pages\": 4, \"requested_pages\": \"1-5\", \"returned_pages\": \"1-4\", \"content\": [{\"page\": 1, \"text\": \"one again\"}, {\"page\": 2, \"text\": \"Page 2 content not available\"}, {\"page\": 3, \"text\": \"Page 3 content not available\"}, {\"page\": 4, \"text\": \"Page 4 content not available\"}], \"next_steps\": {\"summary\": \"Retrieved 4 of 5 requested pages. Pages 5 were out of range.\", \"options\": [\"Document has 4 pages total - request pages 1-4\", \"Use get_document_structure() to understand document organization\", \"Request additional pages as needed\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "weird.pdf",
+   "pages": "2"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"weird.pdf\", \"total_pages\": 4, \"requested_pages\": \"2\", \"returned_pages\": \"2\", \"content\": [{\"page\": 2, \"text\": \"Page 2 content not available\"}], \"next_steps\": {\"summary\": \"Successfully retrieved content for 1 page.\", \"options\": [\"Use get_document_structure() to understand document organization\", \"Request additional pages as needed\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "bools.pdf",
+   "pages": "1"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"bools.pdf\", \"total_pages\": true, \"requested_pages\": \"1\", \"returned_pages\": \"1\", \"content\": [{\"page\": 1, \"text\": \"bool one\"}], \"next_steps\": {\"summary\": \"Successfully retrieved content for 1 page.\", \"options\": [\"Use get_document_structure() to understand document organization\", \"Request additional pages as needed\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "bools.pdf",
+   "pages": "2"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"All requested pages are out of range. Document has True pages, but you requested pages: 2\", \"errorCode\": \"INVALID_INPUT\", \"doc_name\": \"bools.pdf\", \"max_pages\": true, \"requested_pages\": \"2\", \"next_steps\": {\"summary\": \"All requested pages are out of range for this document\", \"options\": [\"Request pages between 1 and True\", \"Use get_document() to check document page count\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "nopages.pdf",
+   "pages": "1"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Failed to retrieve page content: Failed to get OCR result: stored document has no page content.\", \"errorCode\": \"INTERNAL_ERROR\", \"doc_name\": \"nopages.pdf\", \"next_steps\": {\"summary\": \"Unable to retrieve page content due to a service issue.\", \"options\": [\"Verify the document name is correct using browse_documents()\", \"Check if the document processing is complete with get_document()\", \"Ensure the requested page numbers are valid\"], \"auto_retry\": \"This may be a temporary issue - you can try the request again\"}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "failed.pdf",
+   "pages": "1"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Document processing failed. Current status: failed\", \"errorCode\": \"INVALID_INPUT\", \"doc_name\": \"failed.pdf\", \"next_steps\": {\"summary\": \"Document processing has failed\", \"options\": [\"Index the document again with PageIndexClient.submit_document()\", \"Use browse_documents() to work with other documents\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "processing.pdf",
+   "pages": "1"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Document is not ready for page content retrieval. Current status: processing\", \"errorCode\": \"INVALID_INPUT\", \"doc_name\": \"processing.pdf\", \"next_steps\": {\"summary\": \"Document is still processing\", \"options\": [\"Wait for document processing to complete\", \"Check status with browse_documents() or get_document()\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "same.pdf",
+   "pages": "1-2"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"same.pdf\", \"total_pages\": 2, \"requested_pages\": \"1-2\", \"returned_pages\": \"1-2\", \"content\": [{\"page\": 1, \"text\": \"Page one text about apples\"}, {\"page\": 2, \"text\": \"Page two text about bananas\"}], \"next_steps\": {\"summary\": \"Successfully retrieved content for 2 pages.\", \"options\": [\"Use get_document_structure() to understand document organization\", \"Request additional pages as needed\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "AMCOR_2022_8K.pdf",
+   "pages": "1-9"
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"doc_name\": \"AMCOR_2022_8K.pdf\", \"total_pages\": 9, \"requested_pages\": \"1-9\", \"returned_pages\": \"1-9\", \"content\": [{\"page\": 1, \"text\": \"UNITED STATES SECURITIES AND EXCHANGE COMMISSION\\nWashington, D.C. 20549\\nFORM 8-K\\nCURRENT REPORT Pursuant to Section 13 or 15(d) of the Securities Exchange Act of 1934\\nDate of Report (Date of earliest \"}, {\"page\": 2, \"text\": \"Item 8.01\\nOther Events.\\nOn June 30, 2022, Amcor Finance (USA), Inc. (the “Former Issuer”) and Amcor Flexibles North America, Inc. (the “Substitute Issuer”), each a wholly-owned subsidiary of Amcor plc\"}, {\"page\": 3, \"text\": \"SIGNATURES\\nPursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned hereunto duly authorized.\\nAMCOR\"}, {\"page\": 4, \"text\": \"Exhibit 4.6\\nSECOND SUPPLEMENTAL INDENTURE\\nThis SECOND SUPPLEMENTAL INDENTURE, dated as of June 30, 2022 (the “Supplemental Indenture”), among Amcor Finance (USA), Inc., a Delaware corporation (herein \"}, {\"page\": 5, \"text\": \"Section 102. Submission to Jurisdiction; Appointment of Agent for Service of Process.\\nThe Substitute Issuer hereby appoints C T Corporation acting through its office at 28 Liberty Street, New York, Ne\"}, {\"page\": 6, \"text\": \"IN WITNESS WHEREOF, the parties hereto have caused this Supplemental Indenture to be duly executed as of the day and year first\\nabove written.\\nAMCOR FINANCE (USA), INC.\\nBy: /s/ Robert Mermelstein Name\"}, {\"page\": 7, \"text\": \"Exhibit 4.7\\nFIRST SUPPLEMENTAL INDENTURE\\nThis FIRST SUPPLEMENTAL INDENTURE, dated as of June 30, 2022 (the “Supplemental Indenture”), among Amcor Finance (USA), Inc., a Delaware corporation (herein ca\"}, {\"page\": 8, \"text\": \"Section 102. Submission to Jurisdiction; Appointment of Agent for Service of Process.\\nThe Substitute Issuer hereby appoints C T Corporation acting through its office at 28 Liberty Street, New York, Ne\"}, {\"page\": 9, \"text\": \"IN WITNESS WHEREOF, the parties hereto have caused this Supplemental Indenture to be duly executed as of the day and year first\\nabove written.\\nAMCOR FINANCE (USA), INC.\\nBy: /s/ Robert Mermelstein Name\"}], \"next_steps\": {\"summary\": \"Successfully retrieved content for 9 pages.\", \"options\": [\"Use get_document_structure() to understand document organization\", \"Request additional pages as needed\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "missing.pdf",
+   "pages": "1"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Document not found. Did you mean: \\\"processing.pdf\\\", \\\"big.pdf\\\", \\\"nopages.pdf\\\"?\", \"errorCode\": \"NOT_FOUND\", \"doc_name\": \"missing.pdf\", \"similar_files\": [\"processing.pdf\", \"big.pdf\", \"nopages.pdf\"], \"next_steps\": {\"summary\": \"The requested document does not exist or is not accessible\", \"options\": [\"Verify the document name is correct\", \"Use browse_documents() to see your recent documents\", \"Check if the document was deleted\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "3M_2018_10K.pdf"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Invalid arguments for get_page_content: missing a required argument: 'pages'\", \"errorCode\": \"INVALID_INPUT\", \"next_steps\": {\"summary\": \"Invalid tool arguments\", \"options\": [\"Check the get_page_content() parameter names and types\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "pages": "1"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Invalid arguments for get_page_content: missing a required argument: 'doc_name'\", \"errorCode\": \"INVALID_INPUT\", \"next_steps\": {\"summary\": \"Invalid tool arguments\", \"options\": [\"Check the get_page_content() parameter names and types\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_page_content",
+  "args": {
+   "doc_name": "huge.pdf",
+   "pages": "1"
+  },
+  "doc_ids": [
+   "pi-000c"
+  ],
+  "is_error": true,
+  "text": "{\"error\": \"Document not found or you do not have access to it\", \"errorCode\": \"NOT_FOUND\", \"doc_name\": \"huge.pdf\", \"similar_files\": [], \"next_steps\": {\"summary\": \"The requested document does not exist or is not accessible\", \"options\": [\"Verify the document name is correct\", \"Use browse_documents() to see your recent documents\", \"Check if the document was deleted\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "remove_document",
+  "args": {
+   "doc_names": [
+    "annual-report.pdf",
+    "ghost.pdf"
+   ]
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"results\": [{\"doc_name\": \"annual-report.pdf\", \"status\": \"deleted\"}, {\"doc_name\": \"ghost.pdf\", \"status\": \"not_found\"}], \"next_steps\": {\"summary\": \"Deleted 1 of 2 document(s).\", \"options\": [\"Use browse_documents() to review the remaining library\"]}}",
+  "remaining": [
+   "AMCOR_2022_8K.pdf",
+   "3M_2018_10K.pdf",
+   "same.pdf",
+   "same.pdf",
+   "JPMORGAN_2022_10K.pdf",
+   "nested-big.pdf",
+   "big.pdf",
+   "huge.pdf",
+   "blanks.pdf",
+   "bools.pdf",
+   "weird.pdf",
+   "nopages.pdf",
+   "notree.pdf",
+   "processing.pdf",
+   "failed.pdf"
+  ]
+ },
+ {
+  "store": "main",
+  "tool": "remove_document",
+  "args": {
+   "doc_names": []
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"At least one document name is required\", \"errorCode\": \"INVALID_INPUT\", \"next_steps\": {\"summary\": \"No document names provided\", \"options\": [\"Pass doc_names as a non-empty array\"]}}",
+  "remaining": [
+   "AMCOR_2022_8K.pdf",
+   "annual-report.pdf",
+   "3M_2018_10K.pdf",
+   "same.pdf",
+   "same.pdf",
+   "JPMORGAN_2022_10K.pdf",
+   "nested-big.pdf",
+   "big.pdf",
+   "huge.pdf",
+   "blanks.pdf",
+   "bools.pdf",
+   "weird.pdf",
+   "nopages.pdf",
+   "notree.pdf",
+   "processing.pdf",
+   "failed.pdf"
+  ]
+ },
+ {
+  "store": "main",
+  "tool": "remove_document",
+  "args": {
+   "doc_names": [
+    "x",
+    123
+   ]
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"doc_names must be an array of non-empty document name strings\", \"errorCode\": \"INVALID_INPUT\", \"next_steps\": {\"summary\": \"Invalid document names\", \"options\": [\"Copy each name verbatim from a browse_documents() response\"]}}",
+  "remaining": [
+   "AMCOR_2022_8K.pdf",
+   "annual-report.pdf",
+   "3M_2018_10K.pdf",
+   "same.pdf",
+   "same.pdf",
+   "JPMORGAN_2022_10K.pdf",
+   "nested-big.pdf",
+   "big.pdf",
+   "huge.pdf",
+   "blanks.pdf",
+   "bools.pdf",
+   "weird.pdf",
+   "nopages.pdf",
+   "notree.pdf",
+   "processing.pdf",
+   "failed.pdf"
+  ]
+ },
+ {
+  "store": "main",
+  "tool": "remove_document",
+  "args": {
+   "doc_names": [
+    "  "
+   ]
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"doc_names must be an array of non-empty document name strings\", \"errorCode\": \"INVALID_INPUT\", \"next_steps\": {\"summary\": \"Invalid document names\", \"options\": [\"Copy each name verbatim from a browse_documents() response\"]}}",
+  "remaining": [
+   "AMCOR_2022_8K.pdf",
+   "annual-report.pdf",
+   "3M_2018_10K.pdf",
+   "same.pdf",
+   "same.pdf",
+   "JPMORGAN_2022_10K.pdf",
+   "nested-big.pdf",
+   "big.pdf",
+   "huge.pdf",
+   "blanks.pdf",
+   "bools.pdf",
+   "weird.pdf",
+   "nopages.pdf",
+   "notree.pdf",
+   "processing.pdf",
+   "failed.pdf"
+  ]
+ },
+ {
+  "store": "main",
+  "tool": "remove_document",
+  "args": {
+   "doc_names": [
+    "n0.pdf",
+    "n1.pdf",
+    "n2.pdf",
+    "n3.pdf",
+    "n4.pdf",
+    "n5.pdf",
+    "n6.pdf",
+    "n7.pdf",
+    "n8.pdf",
+    "n9.pdf",
+    "n10.pdf"
+   ]
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Maximum 10 documents can be deleted at once\", \"errorCode\": \"INVALID_INPUT\", \"next_steps\": {\"summary\": \"Too many documents in one call\", \"options\": [\"Delete at most 10 documents per call\"]}}",
+  "remaining": [
+   "AMCOR_2022_8K.pdf",
+   "annual-report.pdf",
+   "3M_2018_10K.pdf",
+   "same.pdf",
+   "same.pdf",
+   "JPMORGAN_2022_10K.pdf",
+   "nested-big.pdf",
+   "big.pdf",
+   "huge.pdf",
+   "blanks.pdf",
+   "bools.pdf",
+   "weird.pdf",
+   "nopages.pdf",
+   "notree.pdf",
+   "processing.pdf",
+   "failed.pdf"
+  ]
+ },
+ {
+  "store": "main",
+  "tool": "remove_document",
+  "args": {
+   "doc_names": [
+    "same.pdf"
+   ]
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"results\": [{\"doc_name\": \"same.pdf\", \"status\": \"deleted\"}], \"next_steps\": {\"summary\": \"Deleted 1 of 1 document(s).\", \"options\": [\"Use browse_documents() to review the remaining library\"]}}",
+  "remaining": [
+   "AMCOR_2022_8K.pdf",
+   "annual-report.pdf",
+   "3M_2018_10K.pdf",
+   "same.pdf",
+   "JPMORGAN_2022_10K.pdf",
+   "nested-big.pdf",
+   "big.pdf",
+   "huge.pdf",
+   "blanks.pdf",
+   "bools.pdf",
+   "weird.pdf",
+   "nopages.pdf",
+   "notree.pdf",
+   "processing.pdf",
+   "failed.pdf"
+  ]
+ },
+ {
+  "store": "main",
+  "tool": "remove_document",
+  "args": {
+   "doc_names": [
+    "same.pdf",
+    "same.pdf",
+    "big.pdf"
+   ]
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"results\": [{\"doc_name\": \"same.pdf\", \"status\": \"deleted\"}, {\"doc_name\": \"big.pdf\", \"status\": \"deleted\"}], \"next_steps\": {\"summary\": \"Deleted 2 of 2 document(s).\", \"options\": [\"Use browse_documents() to review the remaining library\"]}}",
+  "remaining": [
+   "AMCOR_2022_8K.pdf",
+   "annual-report.pdf",
+   "3M_2018_10K.pdf",
+   "same.pdf",
+   "JPMORGAN_2022_10K.pdf",
+   "nested-big.pdf",
+   "huge.pdf",
+   "blanks.pdf",
+   "bools.pdf",
+   "weird.pdf",
+   "nopages.pdf",
+   "notree.pdf",
+   "processing.pdf",
+   "failed.pdf"
+  ]
+ },
+ {
+  "store": "main",
+  "tool": "remove_document",
+  "args": {
+   "doc_names": "notalist"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"At least one document name is required\", \"errorCode\": \"INVALID_INPUT\", \"next_steps\": {\"summary\": \"No document names provided\", \"options\": [\"Pass doc_names as a non-empty array\"]}}",
+  "remaining": [
+   "AMCOR_2022_8K.pdf",
+   "annual-report.pdf",
+   "3M_2018_10K.pdf",
+   "same.pdf",
+   "same.pdf",
+   "JPMORGAN_2022_10K.pdf",
+   "nested-big.pdf",
+   "big.pdf",
+   "huge.pdf",
+   "blanks.pdf",
+   "bools.pdf",
+   "weird.pdf",
+   "nopages.pdf",
+   "notree.pdf",
+   "processing.pdf",
+   "failed.pdf"
+  ]
+ },
+ {
+  "store": "main",
+  "tool": "remove_document",
+  "args": {
+   "doc_names": [
+    "anual-report.pdf"
+   ]
+  },
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"results\": [{\"doc_name\": \"anual-report.pdf\", \"status\": \"not_found\"}], \"next_steps\": {\"summary\": \"Deleted 0 of 1 document(s).\", \"options\": [\"Use browse_documents() to review the remaining library\"]}}",
+  "remaining": [
+   "AMCOR_2022_8K.pdf",
+   "annual-report.pdf",
+   "3M_2018_10K.pdf",
+   "same.pdf",
+   "same.pdf",
+   "JPMORGAN_2022_10K.pdf",
+   "nested-big.pdf",
+   "big.pdf",
+   "huge.pdf",
+   "blanks.pdf",
+   "bools.pdf",
+   "weird.pdf",
+   "nopages.pdf",
+   "notree.pdf",
+   "processing.pdf",
+   "failed.pdf"
+  ]
+ },
+ {
+  "store": "main",
+  "tool": "remove_document",
+  "args": {
+   "doc_names": [
+    "big.pdf",
+    "annual-report.pdf"
+   ]
+  },
+  "doc_ids": [
+   "pi-0011"
+  ],
+  "is_error": false,
+  "text": "{\"success\": true, \"results\": [{\"doc_name\": \"big.pdf\", \"status\": \"deleted\"}, {\"doc_name\": \"annual-report.pdf\", \"status\": \"not_found\"}], \"next_steps\": {\"summary\": \"Deleted 1 of 2 document(s).\", \"options\": [\"Use browse_documents() to review the remaining library\"]}}",
+  "remaining": [
+   "AMCOR_2022_8K.pdf",
+   "annual-report.pdf",
+   "3M_2018_10K.pdf",
+   "same.pdf",
+   "same.pdf",
+   "JPMORGAN_2022_10K.pdf",
+   "nested-big.pdf",
+   "huge.pdf",
+   "blanks.pdf",
+   "bools.pdf",
+   "weird.pdf",
+   "nopages.pdf",
+   "notree.pdf",
+   "processing.pdf",
+   "failed.pdf"
+  ]
+ },
+ {
+  "store": "main",
+  "tool": "remove_document",
+  "args": {
+   "doc_names": [
+    "big.pdf"
+   ],
+   "folder_id": "x"
+  },
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Folders are not supported in local mode yet — omit folder_id.\", \"errorCode\": \"INVALID_INPUT\", \"next_steps\": {\"summary\": \"This local library does not have folders yet\", \"options\": [\"Retry the call without a folder_id\", \"Use browse_documents() to list the library root\", \"Folders are available on PageIndex cloud (PageIndexCloudClient with an API key)\"]}}",
+  "remaining": [
+   "AMCOR_2022_8K.pdf",
+   "annual-report.pdf",
+   "3M_2018_10K.pdf",
+   "same.pdf",
+   "same.pdf",
+   "JPMORGAN_2022_10K.pdf",
+   "nested-big.pdf",
+   "big.pdf",
+   "huge.pdf",
+   "blanks.pdf",
+   "bools.pdf",
+   "weird.pdf",
+   "nopages.pdf",
+   "notree.pdf",
+   "processing.pdf",
+   "failed.pdf"
+  ]
+ },
+ {
+  "store": "main",
+  "tool": "nope",
+  "args": {},
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Unknown tool: nope\", \"errorCode\": \"INVALID_INPUT\", \"tool_name\": \"nope\", \"available_tools\": [\"browse_documents\", \"get_document\", \"get_document_structure\", \"get_page_content\", \"remove_document\"], \"next_steps\": {\"summary\": \"Tool not found\", \"options\": [\"Available tools: browse_documents, get_document, get_document_structure, get_page_content, remove_document\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": [
+   1
+  ],
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Invalid arguments for get_document: expected a JSON object, got list\", \"errorCode\": \"INVALID_INPUT\", \"next_steps\": {\"summary\": \"Invalid tool arguments\", \"options\": [\"Pass get_document() arguments as a JSON object of its parameters\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "get_document",
+  "args": "str",
+  "doc_ids": null,
+  "is_error": true,
+  "text": "{\"error\": \"Invalid arguments for get_document: expected a JSON object, got str\", \"errorCode\": \"INVALID_INPUT\", \"next_steps\": {\"summary\": \"Invalid tool arguments\", \"options\": [\"Pass get_document() arguments as a JSON object of its parameters\"]}}"
+ },
+ {
+  "store": "main",
+  "tool": "browse_documents",
+  "args": null,
+  "doc_ids": null,
+  "is_error": false,
+  "text": "{\"success\": true, \"documents\": [{\"name\": \"AMCOR_2022_8K.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-08-02T09:30:00.000Z\"}, {\"name\": \"annual-report.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\"}, {\"name\": \"3M_2018_10K.pdf\", \"description\": \"3M 2018 annual report (Form 10-K)\", \"status\": \"completed\", \"created_at\": \"2026-08-01T10:00:00.123Z\", \"metadata\": {\"ticker\": \"MMM\", \"year\": 2018, \"ratio\": 0.5, \"audited\": true}}, {\"name\": \"same.pdf\", \"description\": \"new copy\", \"status\": \"completed\", \"created_at\": \"2026-07-02T10:00:00.000Z\"}, {\"name\": \"same.pdf\", \"description\": \"old copy\", \"status\": \"completed\", \"created_at\": \"2026-07-01T10:00:00.000Z\"}, {\"name\": \"JPMORGAN_2022_10K.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-05T00:00:00.000Z\"}, {\"name\": \"nested-big.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-04T00:00:00.000Z\"}, {\"name\": \"big.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-03T00:00:00.000Z\"}, {\"name\": \"huge.pdf\", \"description\": \"A test document\", \"status\": \"completed\", \"created_at\": \"2026-06-02T00:00:00.000Z\"}, {\"name\": \"blanks.pdf\", \"description\": \"No description provided\", \"status\": \"completed\", \"created_at\": \"2026-06-01T00:00:00.000Z\"}], \"sort\": \"time\", \"next_offset\": 10, \"has_more\": true, \"folders\": [], \"next_steps\": {\"summary\": \"Showing 10 document(s) (more available)\", \"options\": [\"Use get_document() with a document name to view details\", \"Results returned ≠ correct results. Verify these documents match the user's actual intent (topic, time period, document type) before proceeding. If they do not match, page through the rest of the library. Do NOT use general knowledge as a substitute.\", \"Use browse_documents() with `offset: next_offset` to load more documents\"]}}"
+ }
+]

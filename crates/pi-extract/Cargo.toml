@@ -21,5 +21,6 @@ anyhow.workspace = true
 thiserror.workspace = true
 regex = "1"
 rayon = "1"
+parking_lot = "0.12"
 
 [dev-dependencies]

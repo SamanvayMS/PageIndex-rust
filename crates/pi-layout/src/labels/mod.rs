@@ -2,4 +2,5 @@
 //!
 //! ref: pageindex/flash/labels/
 
+pub mod caption_regions;
 pub mod caption_text;
