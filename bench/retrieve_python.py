@@ -103,6 +103,9 @@ def main() -> int:
     ap.add_argument("--limit", type=int, help="first N questions")
     ap.add_argument("--ids", nargs="*", help="financebench_id subset")
     ap.add_argument("--max-turns", type=int, default=None)
+    ap.add_argument("--index-dir", type=Path,
+                    help="answer over an existing .pageindex/ (e.g. one built by pageindex-rs) instead of "
+                         "indexing with the Python reference; docs are matched by name (<doc>.pdf)")
     args = ap.parse_args()
 
     base, model, key = env("PI_LLM_BASE_URL"), env("PI_LLM_MODEL"), env("PI_LLM_KEY")
@@ -125,7 +128,7 @@ def main() -> int:
 
     client = PageIndexClient(
         index_model=litellm_name(model), chat_model=chat_model,
-        storage_path=str(out / ".pageindex"),
+        storage_path=str(args.index_dir or (out / ".pageindex")),
         index_backend={"api_key": key, "api_base": base},
         chat_backend={"api_key": key, "base_url": base},
     )
@@ -133,9 +136,20 @@ def main() -> int:
     # Index (resumable: doc ids cached per run).
     ids_path = out / "doc_ids.json"
     doc_ids = json.loads(ids_path.read_text()) if ids_path.exists() else {}
+    if args.index_dir:
+        # Reuse a pre-built index: map "<doc>.pdf" names to their ids; nothing is re-indexed.
+        listing = client.list_documents(limit=10_000) if hasattr(client, "list_documents") else {}
+        docs = listing.get("documents", listing) if isinstance(listing, dict) else listing
+        for d in docs or []:
+            name = (d.get("name") or "").removesuffix(".pdf")
+            if name:
+                doc_ids.setdefault(name, d.get("id") or d.get("doc_id"))
+        missing = sorted({q["doc_name"] for q in questions} - set(doc_ids))
+        if missing:
+            print(f"warning: {len(missing)} docs not in {args.index_dir}: {missing[:5]}...", flush=True)
     index_rows = []
     for doc in sorted({q["doc_name"] for q in questions}):
-        if doc in doc_ids:
+        if doc in doc_ids or args.index_dir:
             continue
         t0 = time.perf_counter()
         try:
