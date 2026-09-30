@@ -1633,6 +1633,7 @@ version = "0.0.1"
 dependencies = [
  "anyhow",
  "lopdf",
+ "parking_lot",
  "pdfium-render",
  "pi-core",
  "pi-data",

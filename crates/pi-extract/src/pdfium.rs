@@ -13,6 +13,16 @@ use pdfium_render::prelude::*;
 
 static BINDINGS: OnceLock<Box<dyn PdfiumLibraryBindings>> = OnceLock::new();
 
+/// PDFium is not thread-safe, not even across separate documents (shared font caches and
+/// globals). Every [`Document`] holds this lock for its lifetime; it is reentrant so one thread
+/// may open nested documents. Raw-binding users outside `Document` must hold [`lock`] too.
+static PDFIUM_LOCK: parking_lot::ReentrantMutex<()> = parking_lot::ReentrantMutex::new(());
+
+/// Hold the process-wide PDFium lock (reentrant on the same thread).
+pub fn lock() -> parking_lot::ReentrantMutexGuard<'static, ()> {
+    PDFIUM_LOCK.lock()
+}
+
 /// Candidate library locations: `$PDFIUM_LIB` (file or directory), next to the executable,
 /// `./pdfium/lib`, then the system search path.
 fn candidates() -> Vec<PathBuf> {
@@ -34,6 +44,7 @@ fn candidates() -> Vec<PathBuf> {
 
 /// The process-wide PDFium bindings (loaded and initialised once).
 pub fn bindings() -> Result<&'static dyn PdfiumLibraryBindings> {
+    let _guard = lock();
     if let Some(b) = BINDINGS.get() {
         return Ok(b.as_ref());
     }
@@ -70,10 +81,13 @@ pub struct Document {
     pub doc: FPDF_DOCUMENT,
     pub pages: Vec<FPDF_PAGE>,
     _bytes: Vec<u8>,
+    // Declared last: released only after the handles above are closed in `drop`.
+    _lock: parking_lot::ReentrantMutexGuard<'static, ()>,
 }
 
 impl Document {
     pub fn open(bytes: Vec<u8>) -> Result<Self> {
+        let lock = lock();
         let b = bindings()?;
         // SAFETY: `bytes` is owned by the Document and outlives the FPDF_DOCUMENT.
         let doc = unsafe { b.FPDF_LoadMemDocument64(&bytes, None) };
@@ -87,6 +101,7 @@ impl Document {
             doc,
             pages: Vec::new(),
             _bytes: bytes,
+            _lock: lock,
         })
     }
 

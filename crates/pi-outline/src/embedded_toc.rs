@@ -345,10 +345,7 @@ pub fn read_bookmarks(pdf: PdfSource<'_>) -> Vec<Entry> {
         },
         PdfSource::Bytes(b) => b,
     };
-    // PDFium is not thread-safe (docs/spikes/A-pdfium.md): one document operation at a time.
-    // This only serializes callers of this function; pi-extract takes no lock of its own.
-    static PDFIUM_LOCK: std::sync::Mutex<()> = std::sync::Mutex::new(());
-    let _guard = PDFIUM_LOCK.lock().unwrap_or_else(|e| e.into_inner());
+    // PDFium is not thread-safe: `Document` holds pi_extract's process-wide PDFium lock.
     match pi_extract::pdfium::Document::open(bytes) {
         Ok(doc) => raw::read(&doc).unwrap_or_default(),
         Err(_) => Vec::new(),
