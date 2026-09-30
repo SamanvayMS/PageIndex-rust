@@ -10,3 +10,13 @@ rust-version.workspace = true
 workspace = true
 
 [dependencies]
+pi-core.workspace = true
+pi-pycompat.workspace = true
+pi-data.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+indexmap.workspace = true
+regex.workspace = true
+
+[dev-dependencies]
+anyhow.workspace = true
