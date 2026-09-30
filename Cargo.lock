@@ -812,6 +812,14 @@ version = "0.0.1"
 [[package]]
 name = "pi-triage"
 version = "0.0.1"
+dependencies = [
+ "anyhow",
+ "lopdf",
+ "pdfium-render",
+ "pi-extract",
+ "serde",
+ "serde_json",
+]
 
 [[package]]
 name = "pin-project-lite"

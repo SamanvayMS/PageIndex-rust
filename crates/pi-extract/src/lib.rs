@@ -16,7 +16,7 @@ mod font_unicode;
 mod geometry;
 mod merge;
 mod model;
-mod pdfium;
+pub mod pdfium;
 mod pdfobj;
 mod pipeline;
 mod pyuni;

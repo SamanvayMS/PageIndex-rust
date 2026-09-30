@@ -10,3 +10,9 @@ rust-version.workspace = true
 workspace = true
 
 [dependencies]
+pi-extract = { path = "../pi-extract" }
+pdfium-render = { version = "0.9", default-features = false, features = ["pdfium_latest", "thread_safe"] }
+lopdf = "0.45"
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
