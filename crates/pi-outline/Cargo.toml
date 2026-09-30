@@ -10,3 +10,10 @@ rust-version.workspace = true
 workspace = true
 
 [dependencies]
+pi-extract.workspace = true
+pi-pycompat.workspace = true
+regex.workspace = true
+serde_json.workspace = true
+
+[dev-dependencies]
+sha2.workspace = true

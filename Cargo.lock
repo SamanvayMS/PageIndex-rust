@@ -1338,6 +1338,13 @@ dependencies = [
 [[package]]
 name = "pi-outline"
 version = "0.0.1"
+dependencies = [
+ "pi-extract",
+ "pi-pycompat",
+ "regex",
+ "serde_json",
+ "sha2 0.10.9",
+]
 
 [[package]]
 name = "pi-pycompat"

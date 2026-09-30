@@ -1,0 +1,1962 @@
+{
+"titles": [
+{
+"title": "II. The General Assembly",
+"norm": "2thegeneralassembly",
+"template": "#thegeneralassembly",
+"generic": false
+},
+{
+"title": "2. The General Assembly",
+"norm": "2thegeneralassembly",
+"template": "#thegeneralassembly",
+"generic": false
+},
+{
+"title": "Chapter XIV",
+"norm": "chapter14",
+"template": "chapter#",
+"generic": false
+},
+{
+"title": "Mix of $x^2$ di",
+"norm": "mixofdi",
+"template": "mixofdi",
+"generic": false
+},
+{
+"title": "a $b\n c$ d $e$ f",
+"norm": "abcef",
+"template": "abcef",
+"generic": false
+},
+{
+"title": "snake_case x_1",
+"norm": "snakecase101",
+"template": "snakecase##",
+"generic": false
+},
+{
+"title": "İstanbul Iİı",
+"norm": "1stanbul2ı",
+"template": "#stanbul#ı",
+"generic": false
+},
+{
+"title": "ſlide 4",
+"norm": "ſlide4",
+"template": "ſlide#",
+"generic": true
+},
+{
+"title": "Folİe 2",
+"norm": "folie2",
+"template": "folie#",
+"generic": true
+},
+{
+"title": "PAGE 12",
+"norm": "page12",
+"template": "page#",
+"generic": true
+},
+{
+"title": "document \t page 7",
+"norm": "documentpage7",
+"template": "documentpage#",
+"generic": true
+},
+{
+"title": "5\n",
+"norm": "5",
+"template": "#",
+"generic": true
+},
+{
+"title": "5\n\n",
+"norm": "5",
+"template": "#",
+"generic": false
+},
+{
+"title": "page 3 ",
+"norm": "page3",
+"template": "page#",
+"generic": false
+},
+{
+"title": "٣٤",
+"norm": "٣٤",
+"template": "٣٤",
+"generic": true
+},
+{
+"title": "x² ½",
+"norm": "x²½",
+"template": "x²½",
+"generic": false
+},
+{
+"title": "第三章 概述",
+"norm": "第三章概述",
+"template": "第三章概述",
+"generic": false
+},
+{
+"title": "ΣΊΣΥΦΟΣ Σ",
+"norm": "σίσυφοςσ",
+"template": "σίσυφοςσ",
+"generic": false
+},
+{
+"title": "Part IV-3a",
+"norm": "part43a",
+"template": "part##a",
+"generic": false
+},
+{
+"title": "A1B22",
+"norm": "a1b22",
+"template": "a#b#",
+"generic": false
+},
+{
+"title": "civil liv mix",
+"norm": "civillivmix",
+"template": "civillivmix",
+"generic": false
+},
+{
+"title": "Ⅻ roman numeral",
+"norm": "ⅻromannumeral",
+"template": "ⅻromannumeral",
+"generic": false
+},
+{
+"title": "café",
+"norm": "cafe",
+"template": "cafe",
+"generic": false
+},
+{
+"title": "Page",
+"norm": "page",
+"template": "page",
+"generic": false
+},
+{
+"title": "Slide",
+"norm": "slide",
+"template": "slide",
+"generic": false
+},
+{
+"title": "",
+"norm": "",
+"template": "",
+"generic": false
+},
+{
+"title": "Document Page",
+"norm": "documentpage",
+"template": "documentpage",
+"generic": false
+},
+{
+"title": "document page12",
+"norm": "documentpage12",
+"template": "documentpage#",
+"generic": true
+},
+{
+"title": "M",
+"norm": "1000",
+"template": "#",
+"generic": false
+},
+{
+"title": "mmmcmxcix",
+"norm": "3999",
+"template": "#",
+"generic": false
+},
+{
+"title": "iiii",
+"norm": "iiii",
+"template": "iiii",
+"generic": false
+},
+{
+"title": "vx",
+"norm": "vx",
+"template": "vx",
+"generic": false
+}
+],
+"bookmarks": [
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/3M_2018_10K.pdf",
+"n_pages": 160,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/3M_2022_10K.pdf",
+"n_pages": 252,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/3M_2023Q2_10Q.pdf",
+"n_pages": 92,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/ACTIVISIONBLIZZARD_2019_10K.pdf",
+"n_pages": 198,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/ADOBE_2015_10K.pdf",
+"n_pages": 116,
+"count": 76,
+"sha": "c3f726dcab591051f29635dc01f83007caa2ed78b9eadb90cc4872a1ac2ef431",
+"validated": 76,
+"validated_sha": "c3f726dcab591051f29635dc01f83007caa2ed78b9eadb90cc4872a1ac2ef431",
+"tier": 3
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/ADOBE_2016_10K.pdf",
+"n_pages": 112,
+"count": 74,
+"sha": "e2832299b0b2f3fc696f2d907875bfac685832a221c9da1ed2b6fade7832ca11",
+"validated": 74,
+"validated_sha": "e2832299b0b2f3fc696f2d907875bfac685832a221c9da1ed2b6fade7832ca11",
+"tier": 3
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/ADOBE_2017_10K.pdf",
+"n_pages": 107,
+"count": 76,
+"sha": "795173878236f6bf0abb96c80da8b809a6d71149cb26351527baa0e0781d00ba",
+"validated": 76,
+"validated_sha": "795173878236f6bf0abb96c80da8b809a6d71149cb26351527baa0e0781d00ba",
+"tier": 3
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/ADOBE_2022_10K.pdf",
+"n_pages": 99,
+"count": 78,
+"sha": "b00a769d55c3db4a5517d5bc67f01dbedd85fbfec3c908c2f90664eb662e4f6c",
+"validated": 78,
+"validated_sha": "b00a769d55c3db4a5517d5bc67f01dbedd85fbfec3c908c2f90664eb662e4f6c",
+"tier": 3
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/AES_2022_10K.pdf",
+"n_pages": 257,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/AMAZON_2017_10K.pdf",
+"n_pages": 85,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/AMAZON_2019_10K.pdf",
+"n_pages": 83,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/AMCOR_2020_10K.pdf",
+"n_pages": 195,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/AMCOR_2022_8K_dated-2022-07-01.pdf",
+"n_pages": 9,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/AMCOR_2023Q2_10Q.pdf",
+"n_pages": 57,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/AMCOR_2023Q4_EARNINGS.pdf",
+"n_pages": 14,
+"count": 11,
+"sha": "6be37e4954a279ba57de9bdb576397f219bcf75c79d5c5078a24b91d4a582ff5",
+"validated": 11,
+"validated_sha": "6be37e4954a279ba57de9bdb576397f219bcf75c79d5c5078a24b91d4a582ff5",
+"tier": 2
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/AMCOR_2023_10K.pdf",
+"n_pages": 156,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/AMD_2015_10K.pdf",
+"n_pages": 215,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/AMD_2022_10K.pdf",
+"n_pages": 121,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/AMERICANEXPRESS_2022_10K.pdf",
+"n_pages": 260,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/AMERICANWATERWORKS_2020_10K.pdf",
+"n_pages": 152,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/AMERICANWATERWORKS_2021_10K.pdf",
+"n_pages": 181,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/AMERICANWATERWORKS_2022_10K.pdf",
+"n_pages": 306,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/BESTBUY_2017_10K.pdf",
+"n_pages": 109,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/BESTBUY_2019_10K.pdf",
+"n_pages": 107,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/BESTBUY_2023_10K.pdf",
+"n_pages": 75,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/BESTBUY_2024Q2_10Q.pdf",
+"n_pages": 30,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/BLOCK_2016_10K.pdf",
+"n_pages": 121,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/BLOCK_2020_10K.pdf",
+"n_pages": 158,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/BOEING_2018_10K.pdf",
+"n_pages": 136,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/BOEING_2022_10K.pdf",
+"n_pages": 190,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/COCACOLA_2017_10K.pdf",
+"n_pages": 197,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/COCACOLA_2021_10K.pdf",
+"n_pages": 183,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/COCACOLA_2022_10K.pdf",
+"n_pages": 183,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/CORNING_2020_10K.pdf",
+"n_pages": 138,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/CORNING_2021_10K.pdf",
+"n_pages": 125,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/CORNING_2022_10K.pdf",
+"n_pages": 159,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/COSTCO_2021_10K.pdf",
+"n_pages": 76,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/CVSHEALTH_2018_10K.pdf",
+"n_pages": 392,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/CVSHEALTH_2022_10K.pdf",
+"n_pages": 213,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/FOOTLOCKER_2022_8K_dated-2022-05-20.pdf",
+"n_pages": 4,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/FOOTLOCKER_2022_8K_dated_2022-08-19.pdf",
+"n_pages": 31,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/GENERALMILLS_2019_10K.pdf",
+"n_pages": 140,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/GENERALMILLS_2020_10K.pdf",
+"n_pages": 127,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/GENERALMILLS_2022_10K.pdf",
+"n_pages": 127,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/JOHNSON_JOHNSON_2022Q4_EARNINGS.pdf",
+"n_pages": 24,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/JOHNSON_JOHNSON_2022_10K.pdf",
+"n_pages": 151,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/JOHNSON_JOHNSON_2023Q2_EARNINGS.pdf",
+"n_pages": 24,
+"count": 2,
+"sha": "a364b539af121579366b764c9a91ed94c9888fca3bfdabfcb6c8b0e5db1c10f6",
+"validated": 2,
+"validated_sha": "a364b539af121579366b764c9a91ed94c9888fca3bfdabfcb6c8b0e5db1c10f6",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf",
+"n_pages": 27,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/JPMORGAN_2021Q1_10Q.pdf",
+"n_pages": 179,
+"count": 119,
+"sha": "e3da522210c07bbf8dca813e6ba5d49bb8eac8d54edb35327a30e90852a54d4e",
+"validated": 119,
+"validated_sha": "e3da522210c07bbf8dca813e6ba5d49bb8eac8d54edb35327a30e90852a54d4e",
+"tier": 3
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/JPMORGAN_2022Q2_10Q.pdf",
+"n_pages": 197,
+"count": 118,
+"sha": "ae55a9eb514fec4a8f1012d7f2f39d53d2ec96a2696f528fe8f4ece573ed5d09",
+"validated": 118,
+"validated_sha": "ae55a9eb514fec4a8f1012d7f2f39d53d2ec96a2696f528fe8f4ece573ed5d09",
+"tier": 3
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/JPMORGAN_2022_10K.pdf",
+"n_pages": 382,
+"count": 183,
+"sha": "8d06bcdc53d743b1112a653783ba91788ba349c5327e443c66112a48cf645f04",
+"validated": 183,
+"validated_sha": "8d06bcdc53d743b1112a653783ba91788ba349c5327e443c66112a48cf645f04",
+"tier": 3
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/JPMORGAN_2023Q2_10Q.pdf",
+"n_pages": 217,
+"count": 123,
+"sha": "0dc5ba7ef59cabcec2c954f335e3791ebe1cd23f4a51347833c73cfc94ff144c",
+"validated": 123,
+"validated_sha": "0dc5ba7ef59cabcec2c954f335e3791ebe1cd23f4a51347833c73cfc94ff144c",
+"tier": 3
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/KRAFTHEINZ_2019_10K.pdf",
+"n_pages": 152,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/LOCKHEEDMARTIN_2020_10K.pdf",
+"n_pages": 132,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/LOCKHEEDMARTIN_2021_10K.pdf",
+"n_pages": 136,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/LOCKHEEDMARTIN_2022_10K.pdf",
+"n_pages": 130,
+"count": 68,
+"sha": "9c9fac766bc4c579e59663e3c4121913c205012c042eb79a80294fec18eede13",
+"validated": 68,
+"validated_sha": "9c9fac766bc4c579e59663e3c4121913c205012c042eb79a80294fec18eede13",
+"tier": 3
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/MGMRESORTS_2018_10K.pdf",
+"n_pages": 188,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/MGMRESORTS_2020_10K.pdf",
+"n_pages": 150,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/MGMRESORTS_2022Q4_EARNINGS.pdf",
+"n_pages": 15,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/MGMRESORTS_2022_10K.pdf",
+"n_pages": 220,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/MGMRESORTS_2023Q2_10Q.pdf",
+"n_pages": 62,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/MICROSOFT_2016_10K.pdf",
+"n_pages": 121,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/MICROSOFT_2023_10K.pdf",
+"n_pages": 116,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/NETFLIX_2015_10K.pdf",
+"n_pages": 72,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/NETFLIX_2017_10K.pdf",
+"n_pages": 73,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/NIKE_2018_10K.pdf",
+"n_pages": 97,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/NIKE_2019_10K.pdf",
+"n_pages": 104,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/NIKE_2021_10K.pdf",
+"n_pages": 109,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/NIKE_2023_10K.pdf",
+"n_pages": 106,
+"count": 43,
+"sha": "74565cf41061ead042d3bc90b7859a83c9d974606bf06bcd6b4b7b5fc3347250",
+"validated": 43,
+"validated_sha": "74565cf41061ead042d3bc90b7859a83c9d974606bf06bcd6b4b7b5fc3347250",
+"tier": 2
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/PAYPAL_2022_10K.pdf",
+"n_pages": 134,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/PEPSICO_2021_10K.pdf",
+"n_pages": 549,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/PEPSICO_2022_10K.pdf",
+"n_pages": 503,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/PEPSICO_2023Q1_EARNINGS.pdf",
+"n_pages": 16,
+"count": 14,
+"sha": "48cd2820e144777cd65e2a07a186b921c1d832d0a0297bb9da599290b21d791c",
+"validated": 14,
+"validated_sha": "48cd2820e144777cd65e2a07a186b921c1d832d0a0297bb9da599290b21d791c",
+"tier": 2
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/PEPSICO_2023_8K_dated-2023-05-05.pdf",
+"n_pages": 5,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/PEPSICO_2023_8K_dated-2023-05-30.pdf",
+"n_pages": 172,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/PFIZER_2021_10K.pdf",
+"n_pages": 143,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/Pfizer_2023Q2_10Q.pdf",
+"n_pages": 72,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/ULTABEAUTY_2023Q4_EARNINGS.pdf",
+"n_pages": 9,
+"count": 1,
+"sha": "9c722b65423c30e94692210dff6ef1f7e4b72e7976449a88cd957ed0756d6ad0",
+"validated": 1,
+"validated_sha": "9c722b65423c30e94692210dff6ef1f7e4b72e7976449a88cd957ed0756d6ad0",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/ULTABEAUTY_2023_10K.pdf",
+"n_pages": 105,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/VERIZON_2021_10K.pdf",
+"n_pages": 120,
+"count": 338,
+"sha": "e58585f5a1806a64e4a0b54af6183d27a467be6d8ada2a5c8e76153034649d1b",
+"validated": 338,
+"validated_sha": "e58585f5a1806a64e4a0b54af6183d27a467be6d8ada2a5c8e76153034649d1b",
+"tier": 3
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/VERIZON_2022_10K.pdf",
+"n_pages": 124,
+"count": 344,
+"sha": "1bcdccf1b23a8c3d732ad7e863798a29b3e3f2267e974bb71eb0c97844f88e06",
+"validated": 344,
+"validated_sha": "1bcdccf1b23a8c3d732ad7e863798a29b3e3f2267e974bb71eb0c97844f88e06",
+"tier": 3
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/WALMART_2018_10K.pdf",
+"n_pages": 304,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/WALMART_2019_10K.pdf",
+"n_pages": 155,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/bench/data/pdfs/WALMART_2020_10K.pdf",
+"n_pages": 170,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/parity/.ref/examples/documents/2023-annual-report-truncated.pdf",
+"n_pages": 50,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/parity/.ref/examples/documents/2023-annual-report.pdf",
+"n_pages": 222,
+"count": 50,
+"sha": "2b3cf5239f7396143a34a4f5f8d95a0955d5ad9cb31fc107459124525f4fba37",
+"validated": 50,
+"validated_sha": "2b3cf5239f7396143a34a4f5f8d95a0955d5ad9cb31fc107459124525f4fba37",
+"tier": 3
+},
+{
+"file": "/home/user/PageIndex-rust/parity/.ref/examples/documents/PRML.pdf",
+"n_pages": 758,
+"count": 285,
+"sha": "1589493c61e7dccfede57224af406179c6ae62a481caeec98d6672341fcefab4",
+"validated": 285,
+"validated_sha": "1589493c61e7dccfede57224af406179c6ae62a481caeec98d6672341fcefab4",
+"tier": 3
+},
+{
+"file": "/home/user/PageIndex-rust/parity/.ref/examples/documents/Regulation Best Interest_Interpretive release.pdf",
+"n_pages": 28,
+"count": 10,
+"sha": "91c7fa412dacb2e08f9f7ea1ff46430b2ef27b05a0d2895e54458a905f473ed7",
+"validated": 10,
+"validated_sha": "91c7fa412dacb2e08f9f7ea1ff46430b2ef27b05a0d2895e54458a905f473ed7",
+"tier": 3
+},
+{
+"file": "/home/user/PageIndex-rust/parity/.ref/examples/documents/Regulation Best Interest_proposed rule.pdf",
+"n_pages": 408,
+"count": 162,
+"sha": "6a83549b9edc2944750d01174d6564c7a4829685d823ad51bc3a7e6e0ca3a6e4",
+"validated": 162,
+"validated_sha": "6a83549b9edc2944750d01174d6564c7a4829685d823ad51bc3a7e6e0ca3a6e4",
+"tier": 3
+},
+{
+"file": "/home/user/PageIndex-rust/parity/.ref/examples/documents/attention-residuals.pdf",
+"n_pages": 21,
+"count": 22,
+"sha": "c7011a310c1fba7fba3fbfad0b730ce121afce71c313adf70434db7ac10e5b76",
+"validated": 22,
+"validated_sha": "c7011a310c1fba7fba3fbfad0b730ce121afce71c313adf70434db7ac10e5b76",
+"tier": 3
+},
+{
+"file": "/home/user/PageIndex-rust/parity/.ref/examples/documents/earthmover.pdf",
+"n_pages": 12,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/parity/.ref/examples/documents/four-lectures.pdf",
+"n_pages": 53,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/parity/.ref/examples/documents/q1-fy25-earnings.pdf",
+"n_pages": 22,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/parity/.ref/tests/data/flash/ar_report.pdf",
+"n_pages": 4,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/parity/.ref/tests/data/flash/hi_report.pdf",
+"n_pages": 4,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/parity/.ref/tests/data/flash/ja_report.pdf",
+"n_pages": 4,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+},
+{
+"file": "/home/user/PageIndex-rust/parity/.ref/tests/data/flash/zh_body_en_headings.pdf",
+"n_pages": 4,
+"count": 0,
+"sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"validated": 0,
+"validated_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"tier": 1
+}
+],
+"hybrid": [
+{
+"doc": "AMCOR_2023Q4_EARNINGS.pdf",
+"n_pages": 14,
+"entries": [
+{
+"title": "Highlights",
+"level": 1,
+"page": 1
+},
+{
+"title": "Key Financials",
+"level": 1,
+"page": 2
+},
+{
+"title": "Narrative",
+"level": 1,
+"page": 2
+},
+{
+"title": "Financial Results",
+"level": 1,
+"page": 2
+},
+{
+"title": "Outlook and Other",
+"level": 1,
+"page": 5
+},
+{
+"title": "Cautionary Statements",
+"level": 1,
+"page": 6
+},
+{
+"title": "GAAP Statement of Income",
+"level": 1,
+"page": 8
+},
+{
+"title": "GAAP Statement of Cash Flows",
+"level": 1,
+"page": 9
+},
+{
+"title": "GAAP Balance Sheet",
+"level": 1,
+"page": 9
+},
+{
+"title": "Pro Forma Statement of Income",
+"level": 1,
+"page": 9
+},
+{
+"title": "Recon of Non-GAAP Measures",
+"level": 1,
+"page": 10
+}
+],
+"structure": [
+{
+"title": "Fiscal 2023 Full Year Highlights",
+"node_id": "0000",
+"start_index": 1,
+"end_index": 1
+},
+{
+"title": "Key Financials (1)",
+"node_id": "0001",
+"start_index": 1,
+"end_index": 1
+},
+{
+"title": "Cash Returns to Shareholders",
+"node_id": "0002",
+"start_index": 2,
+"end_index": 2,
+"nodes": [
+{
+"title": "Dividend",
+"node_id": "0003",
+"start_index": 2,
+"end_index": 2
+},
+{
+"title": "Share repurchases",
+"node_id": "0004",
+"start_index": 2,
+"end_index": 2
+}
+]
+},
+{
+"title": "2023 financial results",
+"node_id": "0005",
+"start_index": 2,
+"end_index": 5,
+"nodes": [
+{
+"title": "Segment Information",
+"node_id": "0006",
+"start_index": 2,
+"end_index": 4
+},
+{
+"title": "Net interest and income tax expense",
+"node_id": "0007",
+"start_index": 4,
+"end_index": 4
+},
+{
+"title": "Adjusted Free Cash Flow",
+"node_id": "0008",
+"start_index": 5,
+"end_index": 5
+}
+]
+},
+{
+"title": "Fiscal 2024 Guidance",
+"node_id": "0009",
+"start_index": 5,
+"end_index": 10,
+"nodes": [
+{
+"title": "Conference Call",
+"node_id": "0010",
+"start_index": 5,
+"end_index": 5
+},
+{
+"title": "About Amcor",
+"node_id": "0011",
+"start_index": 6,
+"end_index": 6
+},
+{
+"title": "Contact Information",
+"node_id": "0012",
+"start_index": 6,
+"end_index": 7,
+"nodes": [
+{
+"title": "Cautionary Statement Regarding Forward-Looking Statements",
+"node_id": "0013",
+"start_index": 7,
+"end_index": 7
+},
+{
+"title": "Dividends",
+"node_id": "0014",
+"start_index": 7,
+"end_index": 7
+}
+]
+},
+{
+"title": "U.S. GAAP Condensed Consolidated Statements of Income (Unaudited)",
+"node_id": "0015",
+"start_index": 8,
+"end_index": 8
+},
+{
+"title": "U.S. GAAP Condensed Consolidated Statements of Cash Flows (Unaudited)",
+"node_id": "0016",
+"start_index": 9,
+"end_index": 9
+},
+{
+"title": "U.S. GAAP Condensed Consolidated Balance Sheets (Unaudited)",
+"node_id": "0017",
+"start_index": 9,
+"end_index": 9
+},
+{
+"title": "Components of Fiscal 2023 Net Sales growth",
+"node_id": "0018",
+"start_index": 10,
+"end_index": 10
+}
+]
+},
+{
+"title": "Reconciliation of Non-GAAP Measures",
+"node_id": "0019",
+"start_index": 11,
+"end_index": 14
+}
+],
+"page_texts": [
+"Amcor reports fiscal 2023 results and provides outlook for fiscal 2024\nJune 2023 quarter: GAAP diluted EPS of 12.3 cps; Adjusted EPS of 19.3 cps\nFiscal 2023 Full Year Highlights\n• Net sales of $14,694 million, in line with the prior year on a comparable constant currency basis; • GAAP Net Income of $1,048 million; GAAP diluted earnings per share (EPS) of 70.5 cps; • Adjusted EPS of 73.3 cps and Adjusted Free Cash Flow of $848 million, in line with guidance provided in May. Adjusted EBIT of $1,608 million; • Strong total cash returns to shareholders of $1.2 billion: annual dividend increased to 49.0 cents per share; $431 million of shares repurchased (approximately 3% of outstanding shares); and • Fiscal 2024 outlook: Adjusted EPS of 67-71 cents per share. Adjusted Free Cash Flow of $850-950 million.\nAmcor CEO Ron Delia said: “Throughout fiscal 2023, our teams did an excellent job proactively recovering inflation and reducing costs in a highly challenging environment. Adjusted EBIT grew modestly in comparable constant currency terms and we returned $1.2 billion of cash to shareholders. After delivering earnings growth of 8% in the first half, demand softened considerably and customer destocking persisted through the last two quarters of the year.\nWhile we expect current market conditions to continue in the near-term, we have visibility to a number of controllable factors we believe will support a return to solid earnings growth in the second half of fiscal 2024 and leave us well placed to grow at our long term trend of high-single digit rates thereafter. We are pricing to compensate for inflation and we expect benefits from our cost reduction and productivity initiatives will have a favorable and sustainable impact on operating leverage. In addition, we expect the headwinds from the sale of our Russian plants and higher interest expense will be largely limited to the first half.\nWe remain focused on our long-term growth strategy and will continue to pursue opportunities to invest in the business, particularly through innovation and sustainability initiatives in faster growing, higher value markets. We will also continue pursuing value-creating M&A and returning cash to shareholders through share repurchases and a compelling and growing dividend.”\nKey Financials(1)\nGAAP results\nNet sales Net income EPS (diluted US cents)\nTwelve Months Ended June 30,\nAdjusted non-GAAP results\n2022 $ million\nNet sales\n14,544\nEBITDA EBIT\n2,117 1,701 1,224\nNet income EPS (diluted US cents) Free Cash Flow (1) Adjusted non-GAAP results exclude items which are not considered representative of ongoing operations. Comparable constant currency ∆% excludes the impact of movements in foreign exchange rates and items affecting comparability. Further details related to non-GAAP measures and reconciliations to GAAP measures can be found under \"Presentation of non-GAAP information” in this release.\n2023 $ million\n14,694\n2,018 1,608 1,089\nTwelve Months Ended June 30,\n2022 $ million\n2023 $ million\n14,544\n14,694 1,048\n805 52.9\n70.5\nComparable constant currency ∆%\nReported ∆%\n1\n—\n(5)\n1\n(5)\n1\n(11)\n(4)\n80.5\n(9)\n(2)\n73.3 848\n1,066\nNote: All amounts referenced throughout this document are in US dollars unless otherwise indicated and numbers may not add up precisely to the totals provided due to rounding.\n1",
+"Cash Returns to Shareholders\nAmcor generates significant annual cash flow, maintains strong credit metrics, and is committed to an investment grade credit rating. The Company's strong annual cash flow and balance sheet provide substantial capacity to reinvest in the business for organic growth, pursue acquisitions, and return cash to shareholders through a compelling and growing dividend as well as regular share repurchases.\nDuring fiscal 2023, the Company returned approximately $1.2 billion to shareholders through cash dividends and share repurchases in addition to completing three bolt-on acquisitions.\nDividend\nThe Amcor Board of Directors today declared a quarterly cash dividend of 12.25 cents per share (compared with 12.0 cents per share in the same quarter last year). Combined with the last three quarterly dividends, this increases the annual dividend for fiscal 2023 to 49.0 cents per share. The quarterly dividend declared today will be paid in US dollars to holders of Amcor’s ordinary shares trading on the NYSE. Holders of CDIs trading on the ASX will receive an unfranked dividend of 18.77 Australian cents per share, which reflects the quarterly dividend of 12.25 cents per share converted at an average AUD:USD exchange rate of 0.6526 over the five trading days ended August 14, 2023. The ex-dividend date will be September 6, 2023, the record date will be September 7, 2023, and the payment date will be September 27, 2023.\nShare repurchases\nAmcor repurchased approximately 41 million shares (approximately 3% of total shares issued and outstanding) during fiscal 2023 for a total cost of $431 million.\nAmcor expects to allocate approximately $70 million of cash towards share repurchases in fiscal 2024, as part of the program previously announced in fiscal 2023.\n2023 financial results\nSegment Information\nTwelve Months Ended June 30, 2022\nTwelve Months Ended June 30, 2023\nAdjusted non-GAAP results\nNet sales $ million\n11,151\nFlexibles Rigid Packaging Other(2)\n3,393\n—\nTotal Amcor\n14,544\nEBIT / Average\nEBITEBIT /funds employed\n%(1)\n$ million Sales %\n1,517\n13.6\n289\n8.5\n(105) 1,701\n11.7\n16.3\nNet sales $ million\n11,154\n3,540\n—\n14,694\nEBIT / Average\nEBITEBIT /funds employed\n%(1)\n$ million Sales %\n1,429\n12.8\n7.5\n265 (86)\n1,608\n10.9\n15.4\n(1) Return on average funds employed includes shareholders' equity and net debt, calculated using a four quarter average and Last Twelve Months adjusted EBIT. (2) Represents corporate expenses.\nTwelve months ended June 30, 2023\nNet sales for the Amcor Group increased by 1% on a reported basis, which includes an unfavorable impact of approximately 3% related to movements in foreign exchange rates, an unfavorable impact of approximately 1% related to items affecting comparability, and price increases of approximately $775 million (representing 5% growth) related to the pass through of higher raw material costs.\nNet sales on a comparable constant currency basis were in line with the prior year, largely reflecting price/mix benefits of approximately 3%. Full year volumes were approximately 3% lower than last year.\nGAAP Net Income was $1,048 million and includes a $215 million gain on the sale of Amcor's business in Russia on December 23, 2022. Adjusted EBIT of $1,608 million was 1% higher than last year on a comparable constant currency basis. Adjusted EBIT margin of 10.9% includes an adverse impact of approximately 90 basis points related to increased sales dollars associated with passing through higher raw material costs and general inflation.\n2",
+"June 2023 quarter\nNet sales for the Amcor Group of $3,673 million were 6% lower than last year on a reported basis. This includes an unfavorable impact of approximately 2% related to items affecting comparability and price increases of approximately $25 million (representing 1% growth) related to the pass through of higher raw material costs. Movements in foreign exchange rates had no material impact on net sales for the quarter.\nNet sales on a comparable constant currency basis were approximately 5% lower than the same period last year. Volumes were approximately 7% lower than last year. This was partly offset by price/mix benefits of approximately 2%.\nGAAP Net Income was $181 million. Adjusted EBIT of $436 million was approximately 7% lower than last year on a comparable constant currency basis.\nFlexibles\nTwelve Months Ended June 30,\n2022 $ million\nNet sales Adjusted EBIT Adjusted EBIT / Sales %\n11,151\n1,517\n13.6\n2023 $ million\n11,154\n1,429\n12.8\nComparable\nReportedconstant ∆%currency ∆%\n—\n1\n(6)\n1\nTwelve months ended June 30, 2023 Net sales of $11,154 million were in line with last year on a reported basis, including an unfavorable impact of approximately 4% related to movements in foreign exchange rates, an unfavorable impact of approximately 2% related to items affecting comparability, and price increases of approximately $515 million (representing 5% growth) related to the pass through of higher raw material costs. On a comparable constant currency basis, net sales were approximately 1% higher than last year reflecting price/mix benefits of 4%, partly offset by approximately 3% lower volumes.\nIn North America, net sales were marginally lower than the prior year driven by lower volumes, partly offset by price/ mix benefits. Volumes were higher in the healthcare, pet care, cheese, and home and personal care categories, and this was more than offset by lower volumes in categories including condiments, meat, and ready meals.\nIn Europe, net sales grew in the low single digit range driven by price/mix benefits, partly offset by lower volumes. Volumes were lower in the coffee, home and personal care, yogurt and confectionary categories. This was partly offset by higher volumes in the pet care and pharmaceutical categories.\nNet sales were in line with the prior year across the Asia Pacific region, with price/mix benefits offset by lower volumes. Volumes were lower in China where demand was unfavorably impacted by COVID-19 related lockdowns. Sales growth remained strong in India, Australia, and the pan-Asian healthcare and meat end markets. In Latin America, net sales declined in the low single digit range driven by lower volumes, partly offset by price/mix benefits.\nAdjusted EBIT of $1,429 million was 1% higher than in the prior period on a comparable constant currency basis, reflecting favorable operating cost performance, partly offset by the impact of lower volumes and unfavorable mix trends.\nAdjusted EBIT margin of 12.8% includes an adverse impact of approximately 100 basis points related to the increased sales dollars associated with passing through higher raw material costs and general inflation.\nJune 2023 quarter\nNet sales of $2,777 million were 6% lower than last year on a reported basis, including a favorable impact of approximately 1% related to movements in foreign exchange rates, an unfavorable impact of approximately 3% related to items affecting comparability, and price increases of approximately $25 million (representing 1% growth) related to the pass through of higher raw material costs. On a comparable constant currency basis, net sales were approximately 5% lower than last year reflecting approximately 7% lower volumes, partly offset by price/mix benefits of 2%.\n3",
+"Volume weakness was broad based with high single digit declines across the European and North American markets, and a mid single digit decline in Latin America. The volume decline in these regions reflects soft consumer demand as well as customer destocking. In Asia, overall volumes were in line with the same quarter last year.\nAdjusted EBIT of $387 million was lower than the same quarter last year on a comparable constant currency basis, reflecting lower volumes and heightened volatility in customer order patterns, unfavorable mix trends, and ongoing cost inflation. These unfavorable impacts were partly offset by benefits from price and cost reduction initiatives.\nRigid Packaging\nTwelve Months Ended June 30,\n2022 $ million\nNet sales Adjusted EBIT Adjusted EBIT / Sales %\n3,393\n289 8.5\n2023 $ million\n3,540\n265 7.5\nComparable\nReportedconstant ∆%currency ∆%\n4\n(3)\n(8)\n(7)\nTwelve months ended June 30, 2023 Net sales of $3,540 million were 4% higher than last year on a reported basis, including an unfavorable impact of approximately 1% related to movements in foreign exchange rates and price increases of approximately $260 million (representing 8% growth) related to the pass through of higher raw material costs. On a comparable constant currency basis, net sales were approximately 3% lower than last year, reflecting price/mix benefits of approximately 1% offset by approximately 4% lower volumes.\nIn North America, overall beverage volumes were 6% lower than last year. Hot fill beverage container volumes were in line with the prior year as new business wins in key categories offset unfavorable consumer demand and customer destocking. Combined preform and cold fill container volumes were lower than the prior year. Overall specialty container volumes were lower than the prior year with growth in the healthcare, dairy and nutrition categories offset by weaker volumes in the food and home and personal care categories.\nIn Latin America, volumes declined at low single digit rates which reflects challenging economic conditions across the region.\nAdjusted EBIT of $265 million was lower than the prior year on a comparable constant currency basis, reflecting lower volumes and unfavorable mix trends, partly offset by favorable operating cost performance.\nAdjusted EBIT margin of 7.5% includes an adverse impact of approximately 80 basis points related to the increased sales dollars associated with passing through higher raw material costs and general inflation.\nJune 2023 quarter\nNet sales of $897 million were 5% lower than the same quarter last year on a reported basis including an unfavorable impact of 1% related to movements in foreign exchange rates. On a comparable constant currency basis, net sales were 4% lower than last year reflecting approximately 6% lower volumes, partly offset by price/mix benefits of approximately 2%.\nIn North America, overall beverage volumes were 8% lower than the same quarter last year as a result of lower consumer demand and customer destocking more than offsetting new business wins. June 2023 quarter hot fill beverage container volumes were 6% lower than last year, broadly in line with the market.\nAdjusted EBIT of $73 million was lower than the same quarter last year on a comparable constant currency basis, reflecting lower volumes and heightened volatility in customer order patterns, unfavorable mix trends, and ongoing cost inflation. These unfavorable impacts were partly offset by benefits from price and cost reduction initiatives.\nNet interest and income tax expense\nFor the year ended June 30, 2023, net interest expense of $259 million was $124 million higher than the same period last year, reflecting higher interest rates. GAAP income tax expense was $193 million compared with $300 million last year. Excluding amounts related to non-GAAP adjustments, adjusted tax expense for the year ended June 30, 2023 was $250 million compared with $332 million in the prior year. Adjusted tax expense represents an effective tax rate of 18.5% which is lower than 21.2% last year, primarily due to differences in the mix of taxable income and discrete items in both periods.\n4",
+"Adjusted Free Cash Flow\nAdjusted Free Cash Flow for fiscal 2023 was $848 million and compares with $1,066 million last year. The year over year variance largely reflects higher interest payments and lower accounts payable balances resulting from moderated purchasing activities due to lower demand and inventory reduction initiatives. June 2023 quarter Adjusted Free Cash Flow of $834 million compares with $803 million in the same quarter last year.\nNet debt was $6,057 million at June 30, 2023. Leverage, measured as net debt divided by adjusted trailing twelve month EBITDA, was 3.0 times and in line with the Company's expectations.\nFiscal 2024 Guidance\nFor the twelve-month period ending June 30, 2024, the Company expects:\n• Adjusted EPS of 67 to 71 cents per share which includes:\n• Comparable constant currency earnings which includes underlying business performance down low single digit % to up low single digit %, a benefit of approximately 2% from share repurchases, and a negative impact of approximately 6% related to higher estimated net interest and tax expense;\n• A negative impact of approximately 3% related to the sale of the Company's three plants in Russia on December 23, 2022; and\n• A benefit of approximately 2% related to currency translation, assuming current rates prevail through the balance of fiscal 2024.\n• The Company expects adjusted EPS on a reported basis in the first half of fiscal 2024 to be down in the mid-teens % compared with the first half of fiscal 2023, primarily due to lower volumes and the residual headwinds related to the sale of the Russia plants and higher interest expense. In the second half of fiscal 2024, adjusted EPS is expected to be up mid-single digits % compared with the second half of fiscal 2023, benefiting in-part from structural cost saving initiatives and increased earnings leverage resulting from price and cost actions taken in fiscal 2023 and 2024.\n• Adjusted Free Cash Flow of approximately $850 million to $950 million, representing solid growth over fiscal 2023.\n• Approximately $70 million of cash to be allocated towards share repurchases as part of the program previously announced in fiscal 2023.\nAmcor's guidance contemplates a range of factors which create a degree of uncertainty and additional complexity when estimating future financial results. Further information can be found under 'Cautionary Statement Regarding Forward-Looking Statements' in this release.\nConference Call\nAmcor is hosting a conference call with investors and analysts to discuss these results on Wednesday August 16, 2023 at 5:30pm US Eastern Daylight Time / Thursday August 17, 2023 at 7:30am Australian Eastern Standard Time. Investors are invited to listen to a live webcast of the conference call at our website, www.amcor.com, in the “Investors” section.\nThose wishing to access the call should use the following toll-free numbers, with the Conference ID : 8080870\n• US & Canada – 888 440 4149 (toll free), 646 960 0661 (local) • Australia – 1800 519 630 (toll free), 02 9133 7103 (local) • United Kingdom – 0800 358 0970 (toll free), 020 3433 3846 (local) • Singapore – +65 3159 5133 (local number) • Hong Kong – +852 3002 3410 (local number) From all other countries, the call can be accessed by dialing +1 646 960 0661 (toll). A replay of the webcast will also be available on www.amcor.com following the call.\n5",
+"About Amcor\nAmcor is a global leader in developing and producing responsible packaging solutions for food, beverage, pharmaceutical, medical, home and personal-care, and other products. Amcor works with leading companies around the world to protect their products, differentiate brands, and improve supply chains through a range of flexible and rigid packaging, specialty cartons, closures and services. The company is focused on making packaging that is increasingly light-weighted, recyclable and reusable, and made using an increasing amount of recycled content. In fiscal year 2023, 41,000 Amcor people generated $14.7 billion in annual sales from operations that span 218 locations in 41 countries. NYSE: AMCR; ASX: AMC\nwww.amcor.com I LinkedIn I Facebook I Twitter I YouTube\nContact Information\nInvestors\nTracey Whitehead\nHead of Investor Relations Amcor +61 3 9226 9028 tracey.whitehead@amcor.com\nMedia - Australia\nJames Strong\nCitadel-MAGNUS +61 448 881 174 jstrong@citadelmagnus.com\nDamien Bird\nVice President Investor Relations Amcor +61 3 9226 9070 damien.bird@amcor.com\nMedia - Europe\nErnesto Duran\nHead of Global Communications Amcor +41 78 698 69 40 ernesto.duran@amcor.com\nDamon Wright\nVice President Investor Relations Amcor +1 224 313 7141 damon.wright@amcor.com\nMedia - North America\nJulie Liedtke\nDirector, Media Relations Amcor +1 847 204 2319 julie.liedtke@amcor.com\nAmcor plc UK Establishment Address: 83 Tower Road North, Warmley, Bristol, England, BS30 8XP, United Kingdom UK Overseas Company Number: BR020803 Registered Office: 3rd Floor, 44 Esplanade, St Helier, JE4 9WG, Jersey Jersey Registered Company Number: 126984, Australian Registered Body Number (ARBN): 630 385 278\n6",
+"Cautionary Statement Regarding Forward-Looking Statements\nThis document contains certain statements that are “forward-looking statements” within the meaning of the safe harbor provisions of the U.S. Private Securities Litigation Reform Act of 1995. Forward-looking statements are generally identified with words like “believe,” “expect,” “target,” “project,” “may,” “could,” “would,” “approximately,” “possible,” “will,” “should,” “intend,” “plan,” “anticipate,” \"commit,\" “estimate,” “potential,” \"ambitions,\" “outlook,” or “continue,” the negative of these words, other terms of similar meaning, or the use of future dates. Such statements are based on the current expectations of the management of Amcor and are qualified by the inherent risks and uncertainties surrounding future expectations generally. Actual results could differ materially from those currently anticipated due to a number of risks and uncertainties. None of Amcor or any of its respective directors, executive officers, or advisors provide any representation, assurance, or guarantee that the occurrence of the events expressed or implied in any forward-looking statements will actually occur. Risks and uncertainties that could cause actual results to differ from expectations include, but are not limited to: changes in consumer demand patterns and customer requirements; the loss of key customers, a reduction in production requirements of key customers; significant competition in the industries and regions in which Amcor operates; failure by Amcor to expand its business; challenging current and future global economic conditions, including the Russia-Ukraine conflict and inflation; impact of operating internationally; price fluctuations or shortages in the availability of raw materials, energy, and other inputs; disruptions to production, supply, and commercial risks, including counterparty credit risks, which may be exacerbated in times of economic volatility; pandemics, epidemics, or other disease outbreaks; an inability to attract and retain our global executive management team and our skilled workforce; costs and liabilities related to environment, health, and safety (\"EHS\") laws and regulations as well as changes in the global climate; labor disputes and an inability to renew collective bargaining agreements at acceptable terms; risks related to climate change; cybersecurity risks; failures or disruptions in information technology systems; rising interest rates; a significant increase in indebtedness or a downgrade in the credit rating; foreign exchange rate risk; a significant write-down of goodwill and/or other intangible assets; failure to maintain an effective system of internal control over financial reporting; inability of Amcor's insurance policies to provide adequate protections; challenges to or the loss of intellectual property rights; litigation, including product liability claims or regulatory developments; increasing scrutiny and changing expectations from investors, customers, and governments with respect to Amcor's Environmental, Social and Governance practices and commitments resulting in increased costs; changing government regulations in environmental, health, and safety matters; changes in tax laws or changes in our geographic mix of earnings; and other risks and uncertainties identified from time to time in Amcor’s filings with the U.S. Securities and Exchange Commission (the “SEC”), including without limitation, those described under Item 1A. “Risk Factors” of Amcor’s annual report on Form 10-K for the fiscal year ended June 30, 2022 and any subsequent quarterly reports on Form 10-Q. You can obtain copies of Amcor’s filings with the SEC for free at the SEC’s website (www.sec.gov). Forward-looking statements included herein are made only as of the date hereof and Amcor does not undertake any obligation to update any forward-looking statements, or any other information in this communication, as a result of new information, future developments or otherwise, or to correct any inaccuracies or omissions in them which become apparent, except as expressly required by law. All forward-looking statements in this communication are qualified in their entirety by this cautionary statement.\nPresentation of non-GAAP information\nIncluded in this release are measures of financial performance that are not calculated in accordance with U.S. GAAP. These measures include adjusted EBITDA and EBITDA (calculated as earnings before interest and tax and depreciation and amortization), adjusted EBIT and EBIT (calculated as earnings before interest and tax), adjusted net income, adjusted earnings per share, adjusted free cash flow and net debt. In arriving at these non- GAAP measures, we exclude items that either have a non-recurring impact on the income statement or which, in the judgment of our management, are items that, either as a result of their nature or size, could, were they not singled out, potentially cause investors to extrapolate future performance from an improper base. Note that while amortization of acquired intangible assets is excluded from non-GAAP adjusted financial measures, the revenue of the acquired entities and all other expenses unless otherwise stated, are reflected in our non-GAAP financial performance earnings measures. While not all inclusive, examples of these items include: • material restructuring programs, including associated costs such as employee severance, pension and related benefits, impairment of property and equipment and other assets, accelerated depreciation, termination payments for contracts and leases, contractual obligations, and any other qualifying costs related to restructuring plans; • material sales and earnings from disposed or ceased operations and any associated profit or loss on sale of businesses or subsidiaries; • changes in the fair value of economic hedging instruments on commercial paper; • significant pension settlements; • impairments in goodwill and equity method investments; • material acquisition compensation and transaction costs such as due diligence expenses, professional and legal fees, and integration costs; • material purchase accounting adjustments for inventory; • amortization of acquired intangible assets from business combination; • gains or losses on significant property and divestitures and significant property and other impairments, net of insurance recovery; • certain regulatory and legal matters; • impacts from hyperinflation accounting; and • impacts related to the Russia-Ukraine conflict.\nAmcor also evaluates performance on a comparable constant currency basis, which measures financial results assuming constant foreign currency exchange rates used for translation based on the average rates in effect for the comparable prior year period. In order to compute comparable constant currency results, we multiply or divide, as appropriate, current-year U.S. dollar results by the current year average foreign exchange rates and then multiply or divide, as appropriate, those amounts by the prior-year average foreign exchange rates. We then adjust for other items affecting comparability. While not all inclusive, examples of items affecting comparability include the difference between sales or earnings in the current period and the prior period related to acquired, disposed, or ceased operations. Comparable constant currency net sales performance also excludes the impact from passing through movements in raw material costs.\nManagement has used and uses these measures internally for planning, forecasting and evaluating the performance of the Company’s reporting segments and certain of the measures are used as a component of Amcor’s Board of Directors’ measurement of Amcor’s performance for incentive compensation purposes. Amcor believes that these non-GAAP measures are useful to enable investors to perform comparisons of current and historical performance of the Company. For each of these non-GAAP financial measures, a reconciliation to the most directly comparable U.S. GAAP financial measure has been provided herein. These non-GAAP financial measures should not be construed as an alternative to results determined in accordance with U.S. GAAP. The Company provides guidance on a non-GAAP basis as we are unable to predict with reasonable certainty the ultimate outcome and timing of certain significant forward-looking items without unreasonable effort. These items include but are not limited to the impact of foreign exchange translation, restructuring program costs, asset impairments, possible gains and losses on the sale of assets, and certain tax related events. These items are uncertain, depend on various factors, and could have a material impact on U.S. GAAP earnings and cash flow measures for the guidance period.\nDividends\nAmcor has received a waiver from the ASX’s settlement operating rules, which will allow the Company to defer processing conversions between its ordinary share and CDI registers from September 6, 2023 to September 7, 2023 inclusive.\n7",
+"U.S. GAAP Condensed Consolidated Statements of Income (Unaudited)\nThree Months Ended June 30,\n($ million, except per share amounts)\n2022\n2023\n3,909\n3,673\nNet sales Cost of sales Gross profit Selling, general, and administrative expenses Research and development expenses Restructuring, impairment and other related activities, net Other income, net Operating income Interest expense, net Other non-operating income/(expense), net\n(3,115)\n(2,951)\n794\n722\n(342)\n(329)\n(24)\n(25)\n(207)\n(59)\n31\n16\n252 (35)\n325 (70)\n(1)\n(3)\n216\nIncome before income taxes Income tax expense\n(104)\n112\nNet income Net income attributable to non-controlling interests Net income attributable to Amcor plc USD:EUR average FX rate\n(3)\n109\n0.9391\n252 (68)\n184\n(4)\n181 0.9185\nBasic earnings per share attributable to Amcor Diluted earnings per share attributable to Amcor Weighted average number of shares outstanding – Basic Weighted average number of shares outstanding – Diluted\n0.074 0.073 1,487 1,499\n0.124 0.123 1,452 1,456\nTwelve Months Ended June 30,\n2022\n2023\n14,544\n14,694\n(11,724)\n(11,969)\n2,820\n2,725\n(1,284)\n(1,246)\n(96)\n(101)\n(234)\n104\n33\n26\n1,239 (135)\n1,508 (259)\n11\n2\n1,115 (300)\n1,251 (193)\n1,058\n815 (10)\n(10)\n805\n1,048\n0.8881\n0.9561\n0.532 0.529 1,509 1,516\n0.709 0.705 1,468 1,476\n8",
+"U.S. GAAP Condensed Consolidated Statements of Cash Flows (Unaudited)\n($ million)\nNet income Depreciation, amortization, and impairment Russia and Ukraine impairment Net gain on disposal of businesses and investments Changes in operating assets and liabilities, excluding effect of acquisitions, divestitures, and currency Other non-cash items Net cash provided by operating activities Purchase of property, plant, and equipment and other intangible assets Proceeds from sales of property, plant, and equipment and other intangible assets Business acquisitions and Investments in affiliated companies, and other Proceeds/(payments) from divestitures Net debt proceeds Dividends paid Share buy-back/cancellations Treasury shares purchases, net Cash and cash equivalents classified as held for sale Other, including effects of exchange rate on cash and cash equivalents Net decrease in cash and cash equivalents Cash and cash equivalents at the beginning of the year(1) Cash and cash equivalents at the end of the period\nTwelve Months Ended June 30,\n2022\n2023\n1,058\n815 625 138\n586\n—\n—\n(220)\n(207)\n(265)\n155\n102\n1,526 (527)\n1,261 (526)\n18\n30\n(12)\n(177)\n(1)\n365 228\n476\n(732) (601)\n(723) (432)\n(29)\n(87)\n(75)\n—\n(118)\n(100) (161)\n(75) 850\n850 689\n775\n(1) Cash and cash equivalents at the beginning of fiscal 2023 includes $75 million of cash and cash equivalents as held for sale.\nU.S. GAAP Condensed Consolidated Balance Sheets (Unaudited)\n($ million)\nJune 30, 2022\nJune 30, 2023\n775\n689\nCash and cash equivalents Trade receivables, net\n1,935 2,439 3,646 6,942 1,689\n1,875 2,213 3,762 6,890 1,574\nInventories, net Property, plant and equipment, net Goodwill and other intangible assets, net Other assets Total assets Trade payables Short-term debt and current portion of long-term debt Long-term debt, less current portion Accruals and other liabilities Shareholders' equity Total liabilities and shareholders' equity\n17,426\n17,003\n3,073\n2,690\n150\n93\n6,340 3,722 4,141\n6,653 3,477 4,090\n17,426\n17,003\n9",
+"Components of Fiscal 2023 Net Sales growth\nThree Months Ended June 30\nTwelve Months Ended June 30\nRigid Packaging\nRigid Packaging\nFlexibles\nTotal\nFlexibles\nTotal\n($ million)\n2,777 2,967\n897 942\n3,673 3,909\n11,154 11,151\n3,540 3,393\n14,694 14,544\nNet sales fiscal year 2023 Net sales fiscal year 2022\n(6)\n(5)\n(6)\n—\n4\n1\nReported Growth %\n1\n(1)\n—\n(4)\n(1)\n(3)\nFX %\n(7)\n(4)\n(6)\n4\n5\n4\nConstant Currency Growth %\n1\n1\n5\n8\n5\n— —\nRaw Material Pass Through % Items affecting comparability %\n(3)\n(2)\n(2)\n—\n(1)\nComparable Constant Currency Growth %\n(5)\n(4)\n(5)\n1\n(3)\n—\n(7)\n(6)\n(7)\n(3)\n(4)\n(3)\nVolume % Price/Mix %\n2\n2\n2\n4\n1\n3\n10",
+"Reconciliation of Non-GAAP Measures\nReconciliation of adjusted Earnings before interest, tax, depreciation and amortization (EBITDA), Earnings before interest and tax (EBIT), Net income, Earnings per share (EPS) and Free Cash Flow\nThree Months Ended June 30, 2022\nThree Months Ended June 30, 2023\nNet\nEBITDA EBIT Income\n($ million) Net income attributable to Amcor\nEPS (Diluted US cents)(1)\nEPS (Diluted US\nNet EBITDA EBIT Incomecents)(1)\n109\n109\n109\n7.3\n181\n181\n181\n12.3\nNet income attributable to non-controlling interests\nTax expense Interest expense, net Depreciation and amortization\nEBITDA, EBIT, Net income and EPS\n2019 Bemis Integration Plan Net loss on disposals\n3\n3\n103\n103\n35\n35\n145\n395\n250\n109\n11\n11\n11\n7.3\n0.7\n4\n4\n68\n68\n70\n70\n144\n467\n323\n181\n12.3\n— — — — — — — — 5 5 5 0.4\n1\n1\n1\n—\n6\n6\n6\n0.4\nImpact of hyperinflation Property and other (gains)/losses,net(2) Russia-Ukraine conflict impacts(3) Pension settlements\n(10)\n(10) 200\n(10) 200\n(0.6) 13.3\n200\n5\n5\n— — —\nOther Amortization of acquired intangibles(4) Tax effect of above items\n42\n5\n0.3\n— —\n42\n2.7 0.3\n4\n2\n2\n2\n0.1 4.5 0.3\n66\n66\n66\n5\n5\n5\n(5)\n(5)\n(5)\n(0.4)\n40\n40\n2.9\n(12)\n(0.8)\nAdjusted EBITDA, EBIT, Net income, and EPS\n609\n505\n368\n24.4\n540\n436\n282\n19.3\nReconciliation of adjusted growth to comparable constant currency growth % growth - Adjusted EBITDA, EBIT, Net income and EPS\n% items affecting comparability(5) % currency impact\n% comparable constant currency growth\nAdjusted EBITDA\n609\nInterest paid, net\n(47)\n(93)\nIncome tax paid Purchase of property, plant and equipment and other intangible assets Proceeds from sales of property, plant and equipment and other intangible assets\n(154)\n11\nMovement in working capital\n493\nOther\n(16)\nAdjusted Free Cash Flow\n803\n(11)\n(14)\n(23)\n(21)\n5\n6\n7\n7\n—\n1\n— —\n(6)\n(7)\n(16)\n(14)\n540\n(79)\n(95)\n(144)\n18\n572\n22\n834\n(1) Calculation of diluted EPS for the three months ended June 30, 2023 excludes net income attributable to shares to be repurchased under forward contracts of $1 million, and $1 million for the three months ended June 30, 2022. (2) Property and other (gains)/losses, net for the three months ended June 30, 2023 includes property claims and losses, net of insurance recovery related to the closure of our business in South Africa. The three months ended June 30, 2022 include insurance recovery primarily associated with the destruction of our Durban, South Africa facility during general civil unrest in July 2021, net of business losses. (3) Includes incremental restructuring and other costs attributable to group wide initiatives to offset divested earnings from the Russian business. The three months ended June 30, 2022 include impairment charges and restructuring and related expenses. (4) Amortization of acquired intangible assets from business combinations. (5) Reflects the impact of acquired, disposed, and ceased operations.\n11",
+"Twelve Months Ended June 30, 2022\nTwelve Months Ended June 30, 2023\nNet\nEBITDA EBIT Income\n($ million) Net income attributable to Amcor\nEPS (Diluted US cents)(1)\nEPS (Diluted US\nNet EBITDA EBIT Incomecents)(1) 52.9 1,048 1,048 1,048 70.5\n805\n805\n805\nNet income attributable to non-controlling interests\n10\nTax expense Interest expense, net Depreciation and amortization\n300 135 579\n10\n300 135\n10\n193 259 569\nEBITDA, EBIT, Net income and EPS\n1,829 1,250 805 52.9 2,080\n37\n37\n37\n2019 Bemis Integration Plan Net loss on disposals(2)\n2.5 0.7\n— — 24\n10\n10\n10\nImpact of hyperinflation Property and other losses, net(3) Russia-Ukraine conflict impacts(4) Pension settlements\n16\n16\n16\n1.0 0.8\n13\n13\n13\n200\n200\n200\n13.2\n8\n8\n8\n0.5\n4\n4\n4\n0.3\nOther Amortization of acquired intangibles (5) Tax effect of above items\n163\n163\n10.7 (2.1)\n2\n(90)\n5\n(3)\n(32)\nAdjusted EBITDA, EBIT, Net income and EPS\n2,117 1,701 1,224 80.5 2,018\nReconciliation of adjusted growth to comparable constant currency growth % growth - Adjusted EBITDA, EBIT, Net income, and EPS\n% items affecting comparability(6) % currency impact\n% comparable constant currency growth\nAdjusted EBITDA\nInterest paid, net\nIncome tax paid Purchase of property, plant and equipment and other intangible assets\nProceeds from sales of property, plant and equipment and other intangible assets\nMovement in working capital\nOther\nAdjusted Free Cash Flow\n2,117\n(119) (256)\n(527)\n18\n(154)\n(13)\n1,066\n(5)\n3\n3\n1\n2,018\n(248) (225)\n(526)\n30\n(229)\n28\n848\n10\n193 259\n1,510 1,048 70.5\n— — — — — — 24 24 1.9\n2\n2\n0.1\n(90)\n(90)\n(6.0)\n5\n5\n0.3\n(3)\n(3)\n(0.3) 10.8\n160\n160 (57)\n(4.0)\n1,608 1,089 73.3\n(5)\n(11)\n(9)\n4\n4\n4\n2\n3\n3\n1\n(4)\n(2)\n(1) Calculation of diluted EPS for the twelve months ended June 30, 2023 excludes net income attributable to shares to be repurchased under forward contracts of $7 million, and $3 million for the twelve months ended June 30, 2022. (2) Includes losses on disposal of non-core businesses in fiscal year 2022. (3) Property and other losses, net for fiscal year 2023 includes property claims and losses, net of insurance recovery related to the closure of our business in South Africa. Fiscal year 2022 includes business losses primarily associated with the destruction of our Durban, South Africa facility during general civil unrest in July 2021, net of insurance recovery. (4) Includes the net gain on disposal of the Russian business in December 2022 and incremental restructuring and other costs attributable to group wide initiatives to offset divested earnings from the Russian business. Fiscal year 2022 includes impairment charges and restructuring and related expenses. (5) Amortization of acquired intangible assets from business combinations. (6) Reflects the impact of acquired, disposed, and ceased operations.\n12",
+"Reconciliation of adjusted EBIT by reporting segment\nThree Months Ended June 30, 2022\nThree Months Ended June 30, 2023\nRigid Flexibles Packaging Other\nRigid Total Flexibles Packaging Other Total\n($ million) Net income attributable to Amcor\n109\n181\nNet income attributable to non- controlling interests\n3\n4\nTax expense Interest expense, net\n103\n68\n35\n70\nEBIT\n210\n87\n(46)\n250\n283\n62\n(22)\n323\n2019 Bemis Integration Plan Net loss on disposals Impact of hyperinflation\n12\n(1)\n11\n— — — —\n— — — 1 —\n1\n—\n6\n—\n6\n—\nProperty and other (gains)/losses, net(1)\n(14) 200\nRussia-Ukraine conflict impacts(2) Pension settlements\n4\n(10)\n— — — 200\n— 62\n— — —\n5\n—\n5\n—\n2\n2\n2\n2\n66\n— — 40\nOther\nAmortization of acquired intangibles(3)\nAdjusted EBIT Adjusted EBIT / sales %\n449\n1\n4\n— — —\n2\n—\n96\n(39)\n15.1 %\n10.1 %\nReconciliation of adjusted growth to comparable constant currency growth % growth - Adjusted EBIT\n% items affecting comparability(4) % currency impact\n% comparable constant currency\n5\n3\n2\n—\n5\n42\n505\n— 39 387\n1\n(6)\n(5)\n1\n— 40\n73\n(24)\n436\n12.9 % 13.9 %\n8.1 %\n11.9 %\n(14)\n(24)\n— (14)\n7\n— — 6\n—\n1\n—\n1\n(7)\n(23)\n—\n(7)\n(1) Property and other (gains)/losses, net for the three months ended June 30, 2023 includes property claims and losses, net of insurance recovery related to the closure of our business in South Africa. The three months ended June 30, 2022 include insurance recovery primarily associated with the destruction of our Durban, South Africa facility during general civil unrest in July 2021, net of business losses. (2) Includes incremental restructuring and other costs attributable to group wide initiatives to offset divested earnings from the Russian business. The three months ended June 30, 2022 include impairment charges and restructuring and related expenses. (3) Amortization of acquired intangible assets from business combinations. (4) Reflects the impact of acquired, disposed, and ceased operations.\n13",
+"Twelve Months Ended June 30, 2022\nTwelve Months Ended June 30, 2023\nRigid Flexibles Packaging Other\nRigid Total Flexibles Packaging Other Total\n($ million) Net income attributable to Amcor\n805\n1,048\nNet income attributable to non- controlling interests\n10\n10\nTax expense Interest expense, net\n300\n193 259\n135\nEBIT\n1,101\n265\n(116) 1,250 1,357\n225\n(72) 1,510\n38\n—\n(1)\n37\n— — — —\n2019 Bemis Integration Plan Net loss on disposals(1)\n10\n— — 10 — — — —\n—\n— 16 — 24 — 24\n16 —\nImpact of hyperinflation Property and other losses, net(2) Russia-Ukraine conflict impacts(3) Pension settlements Other Amortization of acquired intangibles (4)\n9\n200\n—\n2\n158\n4\n— —\n3\n5\n—\n2\n5\n—\nAdjusted EBIT Adjusted EBIT / sales %\n1,517\n289\n(105)\n13.6 %\n8.5 %\nReconciliation of adjusted growth to comparable constant currency growth\n% growth - Adjusted EBIT\n% items affecting comparability(5) % currency impact\n% comparable constant currency growth\n13\n200\n— — 2 2\n(100)\n8\n2\n(90)\n8\n3\n2\n—\n5\n4\n163\n14\n155\n1\n(18)\n(3)\n5\n— 160\n1,701\n1,429\n265\n(86) 1,608\n11.7 % 12.8 %\n7.5 %\n10.9 %\n(6)\n(8)\n(5)\n4\n—\n4\n3\n1\n2\n1\n(7)\n1\n(1) Includes losses on disposal of non-core businesses in fiscal year 2022.\n(2) Property and other (gains)/losses, net for fiscal year 2023 includes property claims and losses, net of insurance recovery related to the closure of our business in South Africa. Fiscal year 2022 includes business losses primarily associated with the destruction of our Durban, South Africa facility during general civil unrest in July 2021, net of insurance recovery. (3) Includes the net gain on the sale of the Russian business and incremental restructuring and other costs attributable to group wide initiatives to offset divested earnings from the Russian business. Fiscal year 2022 includes impairment charges and restructuring and related expenses. (4) Amortization of acquired intangible assets from business combinations. (5) Reflects the impact of acquired, disposed, and ceased operations.\nReconciliation of net debt\n($ million)\nJune 30, 2022\nJune 30, 2023\nCash and cash equivalents\n(775)\n(689)\nShort-term debt\n136\n80\nCurrent portion of long-term debt\n14\n13\nLong-term debt excluding current portion\n6,340\n6,653\nNet debt\n5,715\n6,057\n14"
+],
+"expected": {
+"toc_source": "hybrid",
+"structure": [
+{
+"title": "Highlights",
+"node_id": "0000",
+"start_index": 1,
+"end_index": 2,
+"nodes": [
+{
+"title": "Key Financials (1)",
+"node_id": "0001",
+"start_index": 1,
+"end_index": 2
+}
+]
+},
+{
+"title": "Key Financials",
+"node_id": "0002",
+"start_index": 2,
+"end_index": 2
+},
+{
+"title": "Narrative",
+"node_id": "0003",
+"start_index": 2,
+"end_index": 2
+},
+{
+"title": "Financial Results",
+"node_id": "0004",
+"start_index": 2,
+"end_index": 5,
+"nodes": [
+{
+"title": "Cash Returns to Shareholders",
+"node_id": "0005",
+"start_index": 2,
+"end_index": 2,
+"nodes": [
+{
+"title": "Dividend",
+"node_id": "0006",
+"start_index": 2,
+"end_index": 2
+},
+{
+"title": "Share repurchases",
+"node_id": "0007",
+"start_index": 2,
+"end_index": 2
+}
+]
+},
+{
+"title": "Segment Information",
+"node_id": "0008",
+"start_index": 2,
+"end_index": 4
+},
+{
+"title": "Net interest and income tax expense",
+"node_id": "0009",
+"start_index": 4,
+"end_index": 5
+}
+]
+},
+{
+"title": "Outlook and Other",
+"node_id": "0010",
+"start_index": 5,
+"end_index": 6,
+"nodes": [
+{
+"title": "Adjusted Free Cash Flow",
+"node_id": "0011",
+"start_index": 5,
+"end_index": 5
+},
+{
+"title": "Fiscal 2024 Guidance",
+"node_id": "0012",
+"start_index": 5,
+"end_index": 5
+},
+{
+"title": "Conference Call",
+"node_id": "0013",
+"start_index": 5,
+"end_index": 6
+}
+]
+},
+{
+"title": "Cautionary Statements",
+"node_id": "0014",
+"start_index": 6,
+"end_index": 8,
+"nodes": [
+{
+"title": "About Amcor",
+"node_id": "0015",
+"start_index": 6,
+"end_index": 6
+},
+{
+"title": "Contact Information",
+"node_id": "0016",
+"start_index": 6,
+"end_index": 8,
+"nodes": [
+{
+"title": "Cautionary Statement Regarding Forward-Looking Statements",
+"node_id": "0017",
+"start_index": 7,
+"end_index": 7
+},
+{
+"title": "Dividends",
+"node_id": "0018",
+"start_index": 7,
+"end_index": 8
+}
+]
+}
+]
+},
+{
+"title": "GAAP Statement of Income",
+"node_id": "0019",
+"start_index": 8,
+"end_index": 9,
+"nodes": [
+{
+"title": "U.S. GAAP Condensed Consolidated Statements of Income (Unaudited)",
+"node_id": "0020",
+"start_index": 8,
+"end_index": 9
+}
+]
+},
+{
+"title": "GAAP Statement of Cash Flows",
+"node_id": "0021",
+"start_index": 9,
+"end_index": 9
+},
+{
+"title": "GAAP Balance Sheet",
+"node_id": "0022",
+"start_index": 9,
+"end_index": 9
+},
+{
+"title": "Pro Forma Statement of Income",
+"node_id": "0023",
+"start_index": 9,
+"end_index": 10,
+"nodes": [
+{
+"title": "U.S. GAAP Condensed Consolidated Statements of Cash Flows (Unaudited)",
+"node_id": "0024",
+"start_index": 9,
+"end_index": 9
+},
+{
+"title": "U.S. GAAP Condensed Consolidated Balance Sheets (Unaudited)",
+"node_id": "0025",
+"start_index": 9,
+"end_index": 10
+}
+]
+},
+{
+"title": "Recon of Non-GAAP Measures",
+"node_id": "0026",
+"start_index": 10,
+"end_index": 14,
+"nodes": [
+{
+"title": "Components of Fiscal 2023 Net Sales growth",
+"node_id": "0027",
+"start_index": 10,
+"end_index": 11
+},
+{
+"title": "Reconciliation of Non-GAAP Measures",
+"node_id": "0028",
+"start_index": 11,
+"end_index": 14
+}
+]
+}
+]
+}
+},
+{
+"doc": "PEPSICO_2023Q1_EARNINGS.pdf",
+"n_pages": 16,
+"entries": [
+{
+"title": "Introduction Summary",
+"level": 1,
+"page": 1
+},
+{
+"title": "PepsiCo Results - QTD",
+"level": 1,
+"page": 2
+},
+{
+"title": "Guidance and Outlook",
+"level": 1,
+"page": 3
+},
+{
+"title": "A-1 - Condensed Consolidated Statement of Income",
+"level": 1,
+"page": 4
+},
+{
+"title": "A-2 - Supplemental Financial Information",
+"level": 1,
+"page": 5
+},
+{
+"title": "A-3 - Condensed Consolidated Statement of Cash Flows",
+"level": 1,
+"page": 6
+},
+{
+"title": "A-5 - Condensed Consolidated Balance Sheet",
+"level": 1,
+"page": 8
+},
+{
+"title": "Non-GAAP Measures, Glossary, Commodity Mark to Markets, etc. and Guidance",
+"level": 1,
+"page": 9
+},
+{
+"title": "A-8 - Reconciliation of GAAP and Non-GAAP Info (Quarter and Year Ended, Organic Growth )",
+"level": 1,
+"page": 11
+},
+{
+"title": "A-9 - Reconciliation of GAAP and Non-GAAP Info (Quarter and Year Ended, Year over Year Growth)",
+"level": 1,
+"page": 12
+},
+{
+"title": "A-10 - Reconciliation of GAAP and Non-GAAP Info (Quarters Ended, Line Items)",
+"level": 1,
+"page": 13
+},
+{
+"title": "A-11 - Reconciliation of GAAP and Non-GAAP Info (Quarters Ended, Operating Profit by Division)",
+"level": 1,
+"page": 14
+},
+{
+"title": "A-15 - Reconciliation of GAAP and Non-GAAP Info",
+"level": 1,
+"page": 15
+},
+{
+"title": "Cautionary Statement",
+"level": 1,
+"page": 16
+}
+],
+"structure": [
+{
+"title": "Summary First-Quarter 2023 Performance",
+"node_id": "0000",
+"start_index": 2,
+"end_index": 2
+},
+{
+"title": "Revenue",
+"node_id": "0001",
+"start_index": 2,
+"end_index": 3,
+"nodes": [
+{
+"title": "Operating Profit and EPS",
+"node_id": "0002",
+"start_index": 2,
+"end_index": 2
+},
+{
+"title": "Guidance and Outlook",
+"node_id": "0003",
+"start_index": 3,
+"end_index": 3
+}
+]
+},
+{
+"title": "PepsiCo, Inc. and Subsidiaries Condensed Consolidated Statement of Income (in millions except per share amounts, unaudited)",
+"node_id": "0004",
+"start_index": 4,
+"end_index": 4
+},
+{
+"title": "PepsiCo, Inc. and Subsidiaries Supplemental Financial Information (in millions and unaudited)",
+"node_id": "0005",
+"start_index": 5,
+"end_index": 5
+},
+{
+"title": "PepsiCo, Inc. and Subsidiaries Condensed Consolidated Statement of Cash Flows (in millions, unaudited)",
+"node_id": "0006",
+"start_index": 6,
+"end_index": 6
+},
+{
+"title": "PepsiCo, Inc. and Subsidiaries Condensed Consolidated Statement of Cash Flows (continued) (in millions, unaudited)",
+"node_id": "0007",
+"start_index": 7,
+"end_index": 7
+},
+{
+"title": "PepsiCo, Inc. and Subsidiaries Condensed Consolidated Balance Sheet (in millions except per share amounts)",
+"node_id": "0008",
+"start_index": 8,
+"end_index": 12,
+"nodes": [
+{
+"title": "Non-GAAP Measures",
+"node_id": "0009",
+"start_index": 9,
+"end_index": 9
+},
+{
+"title": "Glossary",
+"node_id": "0010",
+"start_index": 9,
+"end_index": 12,
+"nodes": [
+{
+"title": "Mark-to-market net impact",
+"node_id": "0011",
+"start_index": 9,
+"end_index": 9
+},
+{
+"title": "Restructuring and impairment charges",
+"node_id": "0012",
+"start_index": 9,
+"end_index": 9
+},
+{
+"title": "Acquisition and divestiture-related charges",
+"node_id": "0013",
+"start_index": 9,
+"end_index": 9
+},
+{
+"title": "Gain associated with the Juice Transaction",
+"node_id": "0014",
+"start_index": 10,
+"end_index": 10
+},
+{
+"title": "Impairment and other charges/credits",
+"node_id": "0015",
+"start_index": 10,
+"end_index": 10
+},
+{
+"title": "Russia-Ukraine conflict charges",
+"node_id": "0016",
+"start_index": 10,
+"end_index": 10
+},
+{
+"title": "Brand portfolio impairment charges",
+"node_id": "0017",
+"start_index": 10,
+"end_index": 10
+},
+{
+"title": "Other impairment charges",
+"node_id": "0018",
+"start_index": 10,
+"end_index": 10
+},
+{
+"title": "Pension and retiree medical-related impact",
+"node_id": "0019",
+"start_index": 10,
+"end_index": 10
+},
+{
+"title": "Tax benefit related to the IRS audit",
+"node_id": "0020",
+"start_index": 10,
+"end_index": 10
+},
+{
+"title": "Tax expense related to the TCJ Act",
+"node_id": "0021",
+"start_index": 10,
+"end_index": 12
+}
+]
+}
+]
+},
+{
+"title": "PepsiCo, Inc. and Subsidiaries Reconciliation of GAAP and Non-GAAP Information (continued) Certain Line Items 12 Weeks Ended March 25, 2023 and March 19, 2022 (in millions except per share amounts, unaudited)",
+"node_id": "0022",
+"start_index": 13,
+"end_index": 16,
+"nodes": [
+{
+"title": "Cautionary Statement",
+"node_id": "0023",
+"start_index": 16,
+"end_index": 16
+}
+]
+}
+],
+"page_texts": [
+"PepsiCo Reports First-Quarter 2023 Results; Raises Full-Year Guidance\nReported (GAAP) First-Quarter 2023 Results\nFirst-Quarter\n10.2% (2.5)% $1.40\nNet revenue growth Foreign exchange impact on net revenue Earnings per share (EPS) EPS change Foreign exchange impact on EPS\n(54)%\n(2)%\nOrganic/Core (non-GAAP)1 First-Quarter 2023 Results\nFirst-Quarter\nOrganic revenue growth Core EPS Core constant currency EPS change\n14.3% $1.50 18%\nPURCHASE, N.Y. - April 25, 2023 - PepsiCo, Inc. (NASDAQ: PEP) today reported results for the first quarter 2023.\n“We are very pleased with our performance and business momentum as our categories and geographies remained resilient during the first quarter. Given our strong start to the year, we now expect our full-year 2023 organic revenue to increase 8 percent (previously 6 percent) and core constant currency EPS to increase 9 percent (previously 8 percent),” said Chairman and CEO Ramon Laguarta. Laguarta continued, “Our results demonstrate that the investments we have made to become an even Faster, even Stronger, and even Better organization by Winning with pep+ are laying the foundation for durable and sustainable growth. We remain committed to our strategic agenda and will continue to invest in our people, brands, supply chain, go-to-market systems, and digitization initiatives to build competitive advantages and win in the marketplace.”\n1 Please refer to the Glossary for the definitions of non-GAAP financial measures, including “Organic revenue growth,” “Core” and “Constant currency,” and to “Guidance and Outlook” for additional information regarding PepsiCo’s full-year 2023 financial guidance. PepsiCo provides guidance on a non- GAAP basis as we cannot predict certain elements which are included in reported GAAP results, including the impact of foreign exchange and commodity mark-to-market net impacts. Please refer to PepsiCo’s Quarterly Report on Form 10-Q for the 12 weeks ended March 25, 2023 (Q1 2023 Form 10-Q) filed with the Securities and Exchange Commission (SEC) for additional information regarding PepsiCo’s financial results.\n1",
+"Summary First-Quarter 2023 Performance\nVolume(a) % Change\nRevenue\nPercentage Point Impact\nGAAPForeignAcquisitions ReportedExchangeand % ChangeTranslationDivestitures % ChangeFoods\nOrganicConvenient\nBeverages\n15\n— —\n16\n—\nFrito-Lay North America Quaker Foods North America PepsiCo Beverages North America Latin America Europe Africa, Middle East and South Asia Asia Pacific, Australia and New Zealand and China Region\n9\n1\n—\n10\n(5)\nTotal\nFrito-Lay North America Quaker Foods North America PepsiCo Beverages North America Latin America Europe Africa, Middle East and South Asia Asia Pacific, Australia and New Zealand and China Region Corporate unallocated expenses\n8\n—\n3\n12\n(2)\n21\n(6)\n1\n16\n1\n5\n5\n5\n4\n14\n(5)\n(11)\n2\n28\n—\n29\n(8)\n15\n(1)\n6\n—\n4\n4\n2\n10\n2.5\n2\n14\n(3)\n1\nOperating Profit and EPS\nPercentage Point Impact\nForeign\nCore Constant Currency\nGAAP ReportedItems AffectingExchange % ChangeComparabilityTranslation% Change\n23\n— — 95 (1) n/m (6)\n18\n(86)\n24\n— — 1 (6) 11 23\n19\n10\nTotal\nEPS\n13\nn/m\n6\n159\n(6)\n11\n—\n6\n11\n5.5 132\n(102)\n—\n30\n(50)\n67\n2\n19\n(54)\n70\n2\n18\n(a) Excludes the impact of acquisitions and divestitures. In certain instances, the volume change shown here differs from the impact of organic volume on net revenue growth disclosed in the Organic Revenue Growth Rates table on page A-8, due to the impacts of product mix, nonconsolidated joint venture volume, and, for our franchise-owned beverage businesses, temporary timing differences between bottler case sales (BCS) and concentrate shipments and equivalents (CSE). We report net revenue from our franchise-owned beverage businesses based on CSE. The volume sold by our nonconsolidated joint ventures has no direct impact on our net revenue.\nn/m - Not meaningful due to the impact of impairment and other charges in 2022.\nNote: Amounts may not sum due to rounding.\nOrganic revenue and core constant currency results are non-GAAP financial measures. Please refer to the reconciliation of GAAP and non-GAAP information in the attached exhibits and to the Glossary for definitions of “Organic revenue growth,” “Core” and “Constant currency.”\n2",
+"Guidance and Outlook\nThe Company provides guidance on a non-GAAP basis as we cannot predict certain elements which are included in reported GAAP results, including the impact of foreign exchange translation and commodity mark-to-market net impacts.\nFor fiscal year 2023, the Company now expects to deliver 8 percent organic revenue growth (previously 6 percent), and 9 percent core constant currency EPS growth (previously 8 percent).\nConsistent with its previous guidance for 2023, the Company continues to expect:\n• A core annual effective tax rate of 20 percent; and\n• Total cash returns to shareholders of approximately $7.7 billion, comprised of dividends of $6.7\nbillion and share repurchases of $1.0 billion.\nIn addition, the Company continues to expect an approximate 2-percentage-point foreign exchange translation headwind to impact reported net revenue and core EPS growth based on current market consensus rates.\nThis assumption and the guidance above imply 2023 core EPS of $7.27 (previously $7.20), a 7 percent increase (previously 6 percent) compared to 2022 core EPS of $6.79.\nPrepared Management Remarks and Live Question and Answer Webcast\nAt approximately 6:30 a.m. (Eastern time) on April 25, 2023, the Company will post prepared management remarks (in pdf format) of its first quarter 2023 results and business update, including its outlook for 2023, at www.pepsico.com/investors. At 8:15 a.m. (Eastern time) on April 25, 2023, the Company will host a live question and answer session with investors and financial analysts. Further details will be accessible on the Company’s website at www.pepsico.com/investors.\nContacts: Investor Relations\ninvestor@pepsico.com\nCommunications pepsicomediarelations@pepsico.com\n3",
+"PepsiCo, Inc. and Subsidiaries Condensed Consolidated Statement of Income (in millions except per share amounts, unaudited)\nNet Revenue\nCost of sales Gross profit Selling, general and administrative expenses (a) Gain associated with the Juice Transaction (b) Impairment of intangible assets (c)\nOperating Profit\nOther pension and retiree medical benefits income Net interest expense and other Income before income taxes Provision for income taxes Net income Less: Net income attributable to noncontrolling interests\nNet Income Attributable to PepsiCo\nDiluted\nNet income attributable to PepsiCo per common share Weighted-average common shares outstanding\n12 Weeks Ended\n3/25/2023\n3/19/2022\n$ 17,846 $ 16,200 7,988 7,433 9,858 8,767 7,229 6,580 — (3,322)\n—\n242\n2,629\n5,267\n61\n134\n(200) 2,490\n(240) 5,161\n546\n888\n1,944\n4,273\n12\n12\n$\n1,932 $ 4,261\n$\n1.40 $\n3.06\n1,384\n1,391\n(a) The increase in selling, general and administrative expenses for the 12 weeks ended March 25, 2023, as compared to the 12 weeks ended March 19, 2022, primarily reflects higher selling and distribution costs. (b) In the 12 weeks ended March 19, 2022, we sold our Tropicana, Naked and other select juice brands to PAI Partners for $3.5 billion in cash and a 39% noncontrolling interest in a joint venture operating across North America and Europe (Juice Transaction). (c) In the 12 weeks ended March 19, 2022, we recorded pre-tax impairment charges of $242 million, primarily related to the repositioning or discontinuation of certain juice and dairy brands in Russia.\nA - 1",
+"PepsiCo, Inc. and Subsidiaries Supplemental Financial Information (in millions and unaudited)\nNet Revenue Frito-Lay North America Quaker Foods North America PepsiCo Beverages North America Latin America Europe Africa, Middle East and South Asia Asia Pacific, Australia and New Zealand and China Region Total\nOperating Profit/(Loss) Frito-Lay North America Quaker Foods North America PepsiCo Beverages North America Latin America Europe Africa, Middle East and South Asia Asia Pacific, Australia and New Zealand and China Region Corporate unallocated expenses Total\nA - 2\n12 Weeks Ended\n3/25/2023\n3/19/2022\n$\n5,583 $\n4,839\n777\n713 5,353 1,474 1,797 1,004 1,020 16,200\n5,798 1,777 1,886 1,019 1,006 17,846 $\n$\n$\n1,599 $\n1,296\n159 3,434\n188 483 364\n323 (136) 180 215 (204) 5,267\n71\n168 227 (471) 2,629 $\n$",
+"PepsiCo, Inc. and Subsidiaries Condensed Consolidated Statement of Cash Flows (in millions, unaudited)\nOperating Activities\nNet income Depreciation and amortization Gain associated with the Juice Transaction Impairment and other (credits)/charges Operating lease right-of-use asset amortization Share-based compensation expense Restructuring and impairment charges Cash payments for restructuring charges Acquisition and divestiture-related charges Cash payments for acquisition and divestiture-related charges Pension and retiree medical plan expense/(income) Pension and retiree medical plan contributions Deferred income taxes and other tax charges and credits Change in assets and liabilities: Accounts and notes receivable Inventories Prepaid expenses and other current assets Accounts payable and other current liabilities Income taxes payable Other, net\nNet Cash Used for Operating Activities\nInvesting Activities\nCapital spending Sales of property, plant and equipment Acquisitions, net of cash acquired, investments in noncontrolled affiliates and purchases of intangible and other assets Proceeds associated with the Juice Transaction Other divestitures, sales of investments in noncontrolled affiliates and other assets Short-term investments, by original maturity: More than three months - purchases More than three months - maturities Three months or less, net Other investing, net\nNet Cash (Used for)/Provided by Investing Activities\n(Continued on following page)\nA - 3\n12 Weeks Ended 3/25/2023 3/19/2022\n$ 1,944 $ 4,273 590 555\n— (3,322) (13) 482 116 103 93 81 112 27 (64) (32) 2 56 (4) (17) 30 (1) (175) (178) 78 257\n(348) (542) (288) (2,259)\n(837) (549) (190) (1,238)\n290\n489 (133) (174)\n46 (392)\n(581)\n(522)\n19\n3\n(16)\n(13)\n— 3,456 85 5\n(158) 100\n— — 22\n19 — (532)\n4\n2,955",
+"PepsiCo, Inc. and Subsidiaries Condensed Consolidated Statement of Cash Flows (continued) (in millions, unaudited)\n12 Weeks Ended 3/25/2023 3/19/2022\nFinancing Activities\nProceeds from issuances of long-term debt Payments of long-term debt Short-term borrowings, by original maturity: More than three months - proceeds More than three months - payments Three months or less, net Cash dividends paid Share repurchases - common Proceeds from exercises of stock options Withholding tax payments on restricted stock units and performance stock units converted Other financing\n—\n2,986 (1,251)\n(1,251)\n393\n559\n(1) 491 (1,608) (160)\n— 647 (1,505) (193)\n46\n49\n(116)\n(85)\n(1)\n(3) 777 (116) (263) 5,100 $ 4,837 $ 6,691\nNet Cash Provided by/(Used for) Financing Activities\n(1,780)\nEffect of exchange rate changes on cash and cash equivalents and restricted cash\n(17) 984 5,707\nNet (Decrease)/Increase in Cash and Cash Equivalents and Restricted Cash Cash and Cash Equivalents and Restricted Cash, Beginning of Year Cash and Cash Equivalents and Restricted Cash, End of Period\nSupplemental Non-Cash Activity\nRight-of-use assets obtained in exchange for lease obligations\n$ 213 $ 100\nA - 4",
+"PepsiCo, Inc. and Subsidiaries Condensed Consolidated Balance Sheet (in millions except per share amounts)\nASSETS\nCurrent Assets\nCash and cash equivalents Short-term investments Accounts and notes receivable, net Inventories: Raw materials and packaging Work-in-process Finished goods\nPrepaid expenses and other current assets\nTotal Current Assets\nProperty, Plant and Equipment, net Amortizable Intangible Assets, net Goodwill Other Indefinite-Lived Intangible Assets Investments in Noncontrolled Affiliates Deferred Income Taxes Other Assets Total Assets\nLIABILITIES AND EQUITY\nCurrent Liabilities\nShort-term debt obligations Accounts payable and other current liabilities\nTotal Current Liabilities Long-Term Debt Obligations Deferred Income Taxes Other Liabilities Total Liabilities\nCommitments and contingencies\nPepsiCo Common Shareholders’ Equity\nCommon stock, par value 12/3¢ per share (authorized 3,600 shares; issued, net of repurchased common stock at par value: 1,378 and 1,377 shares, respectively)\nCapital in excess of par value Retained earnings Accumulated other comprehensive loss Repurchased common stock, in excess of par value (489 and 490 shares, respectively)\nTotal PepsiCo Common Shareholders’ Equity\nNoncontrolling interests\nTotal Equity\nTotal Liabilities and Equity\n(unaudited)\n3/25/2023 12/31/2022\n$\n4,770 $\n4,954\n434\n394 10,163\n10,469\n2,435\n2,366\n115\n114 2,742 5,222\n3,147 5,697 1,057 22,427 24,228 1,250 18,089 14,273 3,123 4,211 5,441 $ 93,042 $ 92,187\n806 21,539 24,291 1,277 18,202 14,309 3,073 4,204 5,292\n$\n4,281 $\n3,414 23,371 26,785 35,657 4,133 8,339 74,914\n21,556 25,837 37,486 4,039 8,505 75,867\n23\n23\n3,996\n4,134 67,800 (15,302) (39,506) 17,149\n68,142\n(15,601) (39,518) 17,042\n133\n124 17,273\n17,175\n$ 93,042 $ 92,187\nA - 5",
+"Non-GAAP Measures\nIn discussing financial results and guidance, the Company refers to the following measures which are not in accordance with U.S. Generally Accepted Accounting Principles (GAAP): organic revenue growth, core results and core constant currency results. We use non-GAAP financial measures internally to make operating and strategic decisions, including the preparation of our annual operating plan, evaluation of our overall business performance and as a factor in determining compensation for certain employees. We believe presenting non-GAAP financial measures provides additional information to facilitate comparison of our historical operating results and trends in our underlying operating results and provides additional transparency on how we evaluate our business. We also believe presenting these measures allows investors to view our performance using the same measures that we use in evaluating our financial and business performance and trends.\nWe consider quantitative and qualitative factors in assessing whether to adjust for the impact of items that may be significant or that could affect an understanding of our ongoing financial and business performance or trends. Examples of items for which we may make adjustments include: amounts related to mark-to-market gains or losses (non-cash); charges related to restructuring plans; charges associated with acquisitions and divestitures; gains associated with divestitures; asset impairment charges (non-cash); pension and retiree medical-related amounts, including all settlement and curtailment gains and losses; charges or adjustments related to the enactment of new laws, rules or regulations, such as tax law changes; amounts related to the resolution of tax positions; tax benefits related to reorganizations of our operations; debt redemptions, cash tender or exchange offers; and remeasurements of net monetary assets. See below for a description of adjustments to our GAAP financial measures included herein.\nNon-GAAP information should be considered as supplemental in nature and is not meant to be considered in isolation or as a substitute for the related financial information prepared in accordance with GAAP. In addition, our non-GAAP financial measures may not be the same as or comparable to similar non-GAAP measures presented by other companies.\nGlossary\nWe use the following definitions when referring to our non-GAAP financial measures, which may not be the same as or comparable to similar measures presented by other companies:\nAcquisitions and divestitures: mergers and acquisition activity, as well as divestitures and other structural changes, including changes in ownership or control in consolidated subsidiaries and nonconsolidated equity investees.\nBottler case sales (BCS): Measure of physical beverage volume shipped to retailers and independent distributors from both PepsiCo and our independent bottlers.\nConcentrate shipments and equivalents (CSE): Measure of our physical beverage volume shipments to independent bottlers.\nConstant currency: Financial results assuming constant foreign currency exchange rates used for translation based on the rates in effect for the comparable prior-year period. In order to compute our constant currency results, we multiply or divide, as appropriate, our current-year U.S. dollar results by the current-year average foreign exchange rates and then multiply or divide, as appropriate, those amounts by the prior-year average foreign exchange rates.\nCore: Core results are non-GAAP financial measures which exclude certain items from our financial results. For further information regarding these excluded items, refer to “Items Affecting Comparability” in “Item 2 – Management’s Discussion and Analysis of Financial Condition and Results of Operations” in our Q1 2023 Form 10-Q and in “Item 7 – Management’s Discussion and Analysis of Financial Condition and Results of Operations” in our annual report on Form 10-K for the fiscal year ended December 31, 2022. For the periods presented, core results exclude the following items:\nMark-to-market net impact\nMark-to-market net gains and losses on commodity derivatives in corporate unallocated expenses. These gains and losses are subsequently reflected in division results when the divisions recognize the cost of the underlying commodity in operating profit.\nRestructuring and impairment charges\nExpenses related to the multi-year productivity plan publicly announced in 2019, which was expanded and extended through the end of 2028 to take advantage of additional opportunities within the initiatives of the plan.\nAcquisition and divestiture-related charges\nAcquisition and divestiture-related charges include merger and integration charges and costs associated with divestitures. Divestiture-related charges reflect transaction expenses, including consulting, advisory and other professional fees.\nA - 6",
+"Gain associated with the Juice Transaction\nWe recognized a gain associated with the Juice Transaction in our PepsiCo Beverages North America and Europe divisions.\nImpairment and other charges/credits\nWe recognized Russia-Ukraine conflict charges, brand portfolio impairment charges and other impairment charges as described below.\nRussia-Ukraine conflict charges\nIn connection with the deadly conflict in Ukraine, we recognized charges related to indefinite-lived intangible assets and property, plant and equipment impairment, allowance for expected credit losses, inventory write-downs and other costs.\nBrand portfolio impairment charges\nWe recognized intangible asset, investment and property, plant and equipment impairments and other charges as a result of management’s decision to reposition or discontinue the sale/distribution of certain brands and to sell an investment. We also recognized adjustments to the charges recorded in the prior year related to the sale of a non-strategic brand.\nOther impairment charges\nWe recognized impairment charges related to certain of our indefinite-lived intangible assets which reflected an increase in the weighted-average cost of capital as well as our estimates of future financial performance as of the fourth quarter of 2022.\nPension and retiree medical-related impact\nPension and retiree medical-related impact primarily includes settlement charges related to lump sum distributions exceeding the total of annual service and interest costs, as well as curtailment gains.\nTax benefit related to the IRS audit\nWe recognized a non-cash tax benefit resulting from our agreement with the Internal Revenue Service (IRS) to settle one of the issues assessed in the 2014 through 2016 tax audit. The agreement covers tax years 2014 through 2019.\nTax expense related to the TCJ Act\nTax expense related to the Tax Cuts and Jobs Act (TCJ Act) reflects adjustments to the mandatory transition tax liability under the TCJ Act.\nEffective net pricing: Reflects the year-over-year impact of discrete pricing actions, sales incentive activities and mix resulting from selling varying products in different package sizes and in different countries.\nOrganic revenue growth: A measure that adjusts for the impacts of foreign exchange translation, acquisitions and divestitures and every five or six years, the impact of an additional week of results (53rd reporting week), including in our fourth quarter 2022 financial results. We believe organic revenue growth provides useful information in evaluating the results of our business because it excludes items that we believe are not indicative of ongoing performance or that we believe impact comparability with the prior year.\n2023 guidance\nOur 2023 organic revenue growth guidance excludes the impact of acquisitions and divestitures, foreign exchange translation and the impact of a 53rd reporting week in 2022. Our 2023 core effective tax rate guidance and 2023 core constant currency EPS growth guidance exclude the mark-to-market net impact included in corporate unallocated expenses, restructuring and impairment charges, and other items noted above. Our 2023 core constant currency EPS growth guidance also excludes the impact of foreign exchange translation. We are unable to reconcile our full year projected 2023 organic revenue growth to our full year projected 2023 reported net revenue growth because we are unable to predict the 2023 impact of foreign exchange due to the unpredictability of future changes in foreign exchange rates and because we are unable to predict the occurrence or impact of any acquisitions and divestitures. We are also not able to reconcile our full year projected 2023 core effective tax rate to our full year projected 2023 reported effective tax rate and our full year projected 2023 core constant currency EPS growth to our full year projected 2023 reported EPS growth because we are unable to predict the 2023 impact of foreign exchange or the mark-to-market net impact on commodity derivatives due to the unpredictability of future changes in foreign exchange rates and commodity prices. Therefore, we are unable to provide a reconciliation of these measures.\nA - 7",
+"PepsiCo, Inc. and Subsidiaries Reconciliation of GAAP and Non-GAAP Information Organic Revenue Growth Rates 12 Weeks Ended March 25, 2023 (unaudited)\nNet Revenue Year over Year % Change\nFrito-Lay North America Quaker Foods North America PepsiCo Beverages North America Latin America Europe Africa, Middle East and South Asia Asia Pacific, Australia and New Zealand and China Region Total (a)\n12 Weeks Ended 3/25/2023\nImpact of\nImpact of\nOrganic\nReported % Change,ForeignAcquisitions% Change, GAAPexchange and Non-GAAPOrganicEffective\nMeasure(b) volume(c) net pricing — — 16 % — 16 1 — 10 % (5) 15\nMeasuretranslationdivestitures\n15 %\n9 %\n8 %\n3\n12 %\n(3)\n15 15 23 31\n— (6) 5 28 6 2.5\n21 %\n1\n16 %\n1\n5 %\n4\n14 %\n(9)\n2 %\n(2)\n— 29 % — 4 %\n(1)%\n2\n2.5\n10 %\n2\n14 %\n(2)\n16\n(a) Acquisitions and divestitures primarily reflect the Juice Transaction in PepsiCo Beverages North America and Europe. (b) A financial measure that is not in accordance with GAAP. See pages A-6 through A-7 for further discussion. (c) Excludes the impact of acquisitions and divestitures. In certain instances, the impact of organic volume on net revenue growth shown here differs from the volume change disclosed in the Summary First-Quarter 2023 Performance table on page 2, due to the impacts of product mix, nonconsolidated joint venture volume, and, for our franchise-owned beverage businesses, temporary timing differences between BCS and CSE. We report net revenue from our franchise-owned beverage businesses based on CSE. The volume sold by our nonconsolidated joint ventures has no direct impact on our net revenue.\nNote – Amounts may not sum due to rounding.\nA - 8",
+"PepsiCo, Inc. and Subsidiaries Reconciliation of GAAP and Non-GAAP Information (continued) Year over Year Growth Rates 12 Weeks Ended March 25, 2023 (unaudited)\n12 Weeks Ended 3/25/2023\nImpact of Items Affecting Comparability Acquisition Gain Restructuring and associated and divestiture-with theImpairment\nReported % Change,Mark-to- GAAPmarket netimpairment Measureimpactcharges\nJuice\nand other\nrelated chargesTransactioncharges/credits\nYear over Year % Change\nFrito-Lay North America Quaker Foods North America PepsiCo Beverages North America Latin America Europe Africa, Middle East and South Asia Asia Pacific, Australia and New Zealand and China Region Corporate unallocated expenses\n23 % — — — — — 18 % — — — — —\n(86)%\n— —\n(1)\n96\n—\n13 % —\n(1)\n— — — n/m n/m n/m\nn/m\nn/m\n— —\n(6)%\n2\n— —\n(7)\n—\n1\n(1)\n5.5 % 132 % (50)% (55)%\n— — 73 77\n— — (11) (12)\n(105)\n3\n1\n4\n2\n(1)\nTotal Operating Profit Net Income Attributable to PepsiCo Net Income Attributable to PepsiCo per common share – diluted\n4\n2\n(1)\n(54)%\n4\n2\n(1)\n77\n(12)\n(a) A financial measure that is not in accordance with GAAP. See pages A-6 through A-7 for further discussion.\nn/m - Not meaningful due to the impact of impairment and other charges in 2022.\nNote – Amounts may not sum due to rounding.\nImpact of\nCore Constant Currency\nCore % Change,Foreign% Change, Non-GAAPexchangeNon-GAAP Measure(a) Measure(a) translation\n24 %\n— —\n24 % 19 % 10 %\n18 %\n9 %\n1\n12 %\n(6)\n6 % 159 %\n11\n148 % (12)%\n23\n11 %\n6\n5.5 % 30 %\n11 % 30 % 19 % 18 %\n—\n2\n17 % 15 %\n2\n16 %\n2\n18 %\nA - 9",
+"PepsiCo, Inc. and Subsidiaries Reconciliation of GAAP and Non-GAAP Information (continued) Certain Line Items 12 Weeks Ended March 25, 2023 and March 19, 2022 (in millions except per share amounts, unaudited)\nReported, GAAP Measure Items Affecting Comparability Mark-to-market net impact Restructuring and impairment charges Acquisition and divestiture-related charges Impairment and other charges/ credits Core, Non-GAAP Measure (a)\nCost ofGross sales profit\n$ 7,988 $ 9,858\n(14)\n14\n(3)\n3\n— —\n4\n(4)\n$ 7,975 $ 9,871\nReported, GAAP Measure Items Affecting Comparability Mark-to-market net impact\nRestructuring and impairment charges\nAcquisition and divestiture-related charges Gain associated with the Juice Transaction Impairment and other charges/credits Pension and retiree medical-related impact\nCore, Non-GAAP Measure (a)\nCost of sales\n$ 7,433\n33\n(5) —\n—\n(140)\n—\n$ 7,321\nGross profit\n$ 8,767\n(33)\n5\n— — 140\n—\n$ 8,879\nSelling, general and administrative expenses $ 7,229\n(57)\n(110)\n(2)\n9\n$\n7,069\nOperating profit $ 2,629\n71\n113\n2\n(13)\n$ 2,802\n12 Weeks Ended 3/25/2023\nOther pension and retiree medical benefits income\nNet income\nProvisionattributable to for incomenoncontrolling taxes(b) interests\n$\n61 $ 546 $\n12\n—\n(1)\n17\n—\n14\n1\n—\n— 60\n$\n1\n—\n$ 578\n—\n— 13\n$\nNet income attributable to\nNet incomePepsiCo per attributablecommonEffective\ntax rate(c)\nto PepsiCoshare - diluted $ 1,932 $ 1.40 21.9 %\n54\n0.04\n0.1\n97\n0.07\n(0.4)\n1\n— —\n(13)\n(0.01)\n0.1\n$ 2,071 $ 1.50 21.7 %\nSelling, general and administrative expenses\n$\n6,580\n79\n(22)\n(50)\n—\n(100)\n—\n$\n6,487\n12 Weeks Ended 3/19/2022\nGain associated with theImpairment of Juice intangible Transaction assets\n(3,322)\n242\n—\n— — — — (242)\n— —\n3,322\n—\n—\n— $ — $ — $ 2,392 $\nOperating profit\n$ 5,267\n(112)\n27\n50\n(3,322)\n482\n—\nOther pension and retiree medical benefits income\n$\n134\n— —\n6\n— —\n(16) 124\nProvision for income taxes(b)\n$ 888\nNet income attributable to\nNet incomePepsiCo per attributablecommon shareEffective\ntax rate(c)\nto PepsiCo\n- diluted\n$ 4,261 $\n3.06 17.2 %\n(26)\n(86)\n(0.06) (0.1) 0.02 — 0.03 —\n6\n21\n9\n47\n(452)\n(2,870)\n(2.06)\n4.5\n48\n434\n0.31\n(1.0)\n(4)\n(12)\n(0.01) —\n$ 469 $ 1,795 $ 1.29 20.6 %\n(a) A financial measure that is not in accordance with GAAP. See pages A-6 through A-7 for further discussion. (b) Provision for income taxes is the expected tax charge/benefit on the underlying item based on the tax laws and income tax rates applicable to the underlying item in its corresponding tax jurisdiction. (c) The impact of items affecting comparability on our effective tax rate represents the difference in the effective tax rate resulting from a higher or lower tax rate applicable to the items affecting comparability.\nNote – Amounts may not sum due to rounding.\nA - 10",
+"PepsiCo, Inc. and Subsidiaries Reconciliation of GAAP and Non-GAAP Information (continued) Operating Profit by Division 12 Weeks Ended March 25, 2023 and March 19, 2022 (in millions, unaudited)\n12 Weeks Ended 3/25/2023 Items Affecting Comparability Restructuring Acquisition andImpairment and Reported,Mark-to-marketand impairmentdivestiture-related other charges/Non-GAAP\nOperating Profit\nFrito-Lay North America Quaker Foods North America PepsiCo Beverages North America Latin America Europe Africa, Middle East and South Asia Asia Pacific, Australia and New Zealand and China Region Corporate unallocated expenses Total\nOperating Profit\nFrito-Lay North America Quaker Foods North America PepsiCo Beverages North America Latin America Europe Africa, Middle East and South Asia Asia Pacific, Australia and New Zealand and China Region Corporate unallocated expenses Total\nCore,\nMeasure(a)\ncharges\ncharges\ncredits\nGAAP Measure net impact $ 1,599 $ 188\n7 $ — $ — $ 1,606 — — — 188\n— $ — — — — — — 71 71 $\n5\n2\n483 364\n— — — (13) — — (13) $\n490 369 160 160 228 (399) 2,802\n5\n— — — — —\n71\n89\n5\n168 227 (471) 2,629 $\n1\n1\n$\n113 $\n2 $\n12 Weeks Ended 3/19/2022 Items Affecting Comparability\nGain\nRestructuringAcquisition andassociatedImpairment\nCore,\nReported, GAAPMark-to-marketand impairmentdivestiture- Measure net impact charges related chargesTransactioncharges/credits\nwith the Juiceand otherNon-GAAP\nMeasure(a)\n$ 1,296 $ — $\n3 $ — $ — $ — $ 1,299 — — — — 159\n159\n— — — — — — (112) (112) $\n3,434\n3\n37\n(3,024)\n—\n450\n323\n6\n— — — 329 10 (298) 482 65\n7\n(136) 180 215 (204)\n2\n— — — 182 — — — 216 3 — — (308)\n1\n5\n$ 5,267 $\n27 $\n50 $ (3,322) $\n482 $ 2,392\n(a) A financial measure that is not in accordance with GAAP. See pages A-6 through A-7 for further discussion.\nA - 11",
+"PepsiCo, Inc. and Subsidiaries Reconciliation of GAAP and Non-GAAP Information (continued) (unaudited)\nGross Margin Growth Reconciliation\nReported gross margin growth, GAAP measure Impact of: Mark-to-market net impact Restructuring and impairment charges Impairment and other charges/credits Core gross margin growth, non-GAAP measure (a)\nOperating Margin Performance Reconciliation\nReported operating margin performance, GAAP measure Impact of: Mark-to-market net impact Restructuring and impairment charges Acquisition and divestiture-related charges Gain associated with the Juice Transaction Impairment and other charges/credits Core operating margin growth, non-GAAP measure (a)\nFiscal 2022 Diluted EPS Reconciliation\nReported diluted EPS, GAAP measure\nMark-to-market net impact Restructuring and impairment charges Acquisition and divestiture-related charges Gain associated with the Juice Transaction Impairment and other charges/credits Pension and retiree medical-related impact Tax benefit related to the IRS audit Tax expense related to the TCJ Act Core diluted EPS, non-GAAP measure (a)\n(a) A financial measure that is not in accordance with GAAP. See pages A-6 through A-7 for further discussion.\nNote – Amounts may not sum due to rounding.\n12 Weeks Ended 3/25/2023\n112 bps\n28 —\n(89)\n51 bps\n12 Weeks Ended 3/25/2023\n(1,778) bps\n109\n47\n(30) 2,050 (305)\n93 bps\nYear Ended 12/31/2022\n$\n6.42 0.03 0.24 0.05 (2.08)\n2.12 0.17\n(0.23) 0.06\n$\n6.79\nA - 12",
+"Cautionary Statement\nStatements in this communication that are “forward-looking statements,” including our 2023 guidance and outlook, are based on currently available information, operating plans and projections about future events and trends. Terminology such as “aim,” “anticipate,” “believe,” “drive,” “estimate,” “expect,” “expressed confidence,” “forecast,” “future,” “goal,” “guidance,” “intend,” “may,” “objective,” “outlook,” “plan,” “position,” “potential,” “project,” “seek,” “should,” “strategy,” “target,” “will” or similar statements or variations of such words and other similar expressions are intended to identify forward-looking statements, although not all forward-looking statements contain such terms. Forward-looking statements inherently involve risks and uncertainties that could cause actual results to differ materially from those predicted in such forward-looking statements. Such risks and uncertainties include, but are not limited to: the risks associated with the deadly conflict in Ukraine; future demand for PepsiCo’s products; damage to PepsiCo’s reputation or brand image; product recalls or other issues or concerns with respect to product quality and safety; PepsiCo’s ability to compete effectively; PepsiCo’s ability to attract, develop and maintain a highly skilled and diverse workforce or effectively manage changes in our workforce; water scarcity; changes in the retail landscape or in sales to any key customer; disruption of PepsiCo’s manufacturing operations or supply chain, including continued increased commodity, packaging, transportation, labor and other input costs; political or social conditions in the markets where PepsiCo’s products are made, manufactured, distributed or sold; PepsiCo’s ability to grow its business in developing and emerging markets; changes in economic conditions in the countries in which PepsiCo operates; future cyber incidents and other disruptions to our information systems; failure to successfully complete or manage strategic transactions; PepsiCo’s reliance on third-party service providers and enterprise-wide systems; climate change or measures to address climate change; strikes or work stoppages; failure to realize benefits from PepsiCo’s productivity initiatives; deterioration in estimates and underlying assumptions regarding future performance that can result in an impairment charge; fluctuations or other changes in exchange rates; any downgrade or potential downgrade of PepsiCo’s credit ratings; imposition or proposed imposition of new or increased taxes aimed at PepsiCo’s products; imposition of limitations on the marketing or sale of PepsiCo’s products; changes in laws and regulations related to the use or disposal of plastics or other packaging materials; failure to comply with personal data protection and privacy laws; increase in income tax rates, changes in income tax laws or disagreements with tax authorities; failure to adequately protect PepsiCo’s intellectual property rights or infringement on intellectual property rights of others; failure to comply with applicable laws and regulations; and potential liabilities and costs from litigation, claims, legal or regulatory proceedings, inquiries or investigations.\nFor additional information on these and other factors that could cause PepsiCo’s actual results to materially differ from those set forth herein, please see PepsiCo’s filings with the SEC, including its most recent annual report on Form 10-K and subsequent reports on Forms 10-Q and 8-K. Investors are cautioned not to place undue reliance on any such forward-looking statements, which speak only as of the date they are made. We undertake no obligation to update any forward-looking statement, whether as a result of new information, future events or otherwise.\nA - 13"
+],
+"expected": {
+"toc_source": "hybrid",
+"structure": [
+{
+"title": "Introduction Summary",
+"node_id": "0000",
+"start_index": 1,
+"end_index": 2
+},
+{
+"title": "PepsiCo Results - QTD",
+"node_id": "0001",
+"start_index": 2,
+"end_index": 3,
+"nodes": [
+{
+"title": "Summary First-Quarter 2023 Performance",
+"node_id": "0002",
+"start_index": 2,
+"end_index": 2
+},
+{
+"title": "Revenue",
+"node_id": "0003",
+"start_index": 2,
+"end_index": 2
+},
+{
+"title": "Operating Profit and EPS",
+"node_id": "0004",
+"start_index": 2,
+"end_index": 3
+}
+]
+},
+{
+"title": "Guidance and Outlook",
+"node_id": "0005",
+"start_index": 3,
+"end_index": 4
+},
+{
+"title": "A-1 - Condensed Consolidated Statement of Income",
+"node_id": "0006",
+"start_index": 4,
+"end_index": 5,
+"nodes": [
+{
+"title": "PepsiCo, Inc. and Subsidiaries Condensed Consolidated Statement of Income (in millions except per share amounts, unaudited)",
+"node_id": "0007",
+"start_index": 4,
+"end_index": 5
+}
+]
+},
+{
+"title": "A-2 - Supplemental Financial Information",
+"node_id": "0008",
+"start_index": 5,
+"end_index": 6,
+"nodes": [
+{
+"title": "PepsiCo, Inc. and Subsidiaries Supplemental Financial Information (in millions and unaudited)",
+"node_id": "0009",
+"start_index": 5,
+"end_index": 6
+}
+]
+},
+{
+"title": "A-3 - Condensed Consolidated Statement of Cash Flows",
+"node_id": "0010",
+"start_index": 6,
+"end_index": 8,
+"nodes": [
+{
+"title": "PepsiCo, Inc. and Subsidiaries Condensed Consolidated Statement of Cash Flows (in millions, unaudited)",
+"node_id": "0011",
+"start_index": 6,
+"end_index": 7
+},
+{
+"title": "PepsiCo, Inc. and Subsidiaries Condensed Consolidated Statement of Cash Flows (continued) (in millions, unaudited)",
+"node_id": "0012",
+"start_index": 7,
+"end_index": 8
+}
+]
+},
+{
+"title": "A-5 - Condensed Consolidated Balance Sheet",
+"node_id": "0013",
+"start_index": 8,
+"end_index": 9,
+"nodes": [
+{
+"title": "PepsiCo, Inc. and Subsidiaries Condensed Consolidated Balance Sheet (in millions except per share amounts)",
+"node_id": "0014",
+"start_index": 8,
+"end_index": 9
+}
+]
+},
+{
+"title": "Non-GAAP Measures, Glossary, Commodity Mark to Markets, etc. and Guidance",
+"node_id": "0015",
+"start_index": 9,
+"end_index": 11,
+"nodes": [
+{
+"title": "Non-GAAP Measures",
+"node_id": "0016",
+"start_index": 9,
+"end_index": 9
+},
+{
+"title": "Glossary",
+"node_id": "0017",
+"start_index": 9,
+"end_index": 11,
+"nodes": [
+{
+"title": "Mark-to-market net impact",
+"node_id": "0018",
+"start_index": 9,
+"end_index": 9
+},
+{
+"title": "Restructuring and impairment charges",
+"node_id": "0019",
+"start_index": 9,
+"end_index": 9
+},
+{
+"title": "Acquisition and divestiture-related charges",
+"node_id": "0020",
+"start_index": 9,
+"end_index": 10
+},
+{
+"title": "Gain associated with the Juice Transaction",
+"node_id": "0021",
+"start_index": 10,
+"end_index": 10
+},
+{
+"title": "Impairment and other charges/credits",
+"node_id": "0022",
+"start_index": 10,
+"end_index": 10
+},
+{
+"title": "Russia-Ukraine conflict charges",
+"node_id": "0023",
+"start_index": 10,
+"end_index": 10
+},
+{
+"title": "Brand portfolio impairment charges",
+"node_id": "0024",
+"start_index": 10,
+"end_index": 10
+},
+{
+"title": "Other impairment charges",
+"node_id": "0025",
+"start_index": 10,
+"end_index": 10
+},
+{
+"title": "Pension and retiree medical-related impact",
+"node_id": "0026",
+"start_index": 10,
+"end_index": 10
+},
+{
+"title": "Tax benefit related to the IRS audit",
+"node_id": "0027",
+"start_index": 10,
+"end_index": 10
+},
+{
+"title": "Tax expense related to the TCJ Act",
+"node_id": "0028",
+"start_index": 10,
+"end_index": 11
+}
+]
+}
+]
+},
+{
+"title": "A-8 - Reconciliation of GAAP and Non-GAAP Info (Quarter and Year Ended, Organic Growth )",
+"node_id": "0029",
+"start_index": 11,
+"end_index": 12
+},
+{
+"title": "A-9 - Reconciliation of GAAP and Non-GAAP Info (Quarter and Year Ended, Year over Year Growth)",
+"node_id": "0030",
+"start_index": 12,
+"end_index": 13
+},
+{
+"title": "A-10 - Reconciliation of GAAP and Non-GAAP Info (Quarters Ended, Line Items)",
+"node_id": "0031",
+"start_index": 13,
+"end_index": 14,
+"nodes": [
+{
+"title": "PepsiCo, Inc. and Subsidiaries Reconciliation of GAAP and Non-GAAP Information (continued) Certain Line Items 12 Weeks Ended March 25, 2023 and March 19, 2022 (in millions except per share amounts, unaudited)",
+"node_id": "0032",
+"start_index": 13,
+"end_index": 14
+}
+]
+},
+{
+"title": "A-11 - Reconciliation of GAAP and Non-GAAP Info (Quarters Ended, Operating Profit by Division)",
+"node_id": "0033",
+"start_index": 14,
+"end_index": 15
+},
+{
+"title": "A-15 - Reconciliation of GAAP and Non-GAAP Info",
+"node_id": "0034",
+"start_index": 15,
+"end_index": 16
+},
+{
+"title": "Cautionary Statement",
+"node_id": "0035",
+"start_index": 16,
+"end_index": 16
+}
+]
+}
+}
+]
+}

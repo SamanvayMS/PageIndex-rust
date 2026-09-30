@@ -19,6 +19,7 @@ clap = { version = "4", features = ["derive"] }
 pi-core = { path = "crates/pi-core" }
 pi-pycompat = { path = "crates/pi-pycompat" }
 pi-data = { path = "crates/pi-data" }
+pi-extract = { path = "crates/pi-extract" }
 regex = "1"
 unicode-normalization = "0.1"
 pi-llm = { path = "crates/pi-llm" }
