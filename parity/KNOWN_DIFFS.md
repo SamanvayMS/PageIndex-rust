@@ -47,6 +47,14 @@ Notes:
 - **PDF loading and API scope.** A path is read into memory and opened with `FPDF_LoadMemDocument64`; pypdfium2 uses `FPDF_LoadDocument` on the path. The document is parsed the same way either way. The pypdfium2 v4 `item.page_index` fallback is not ported, since the reference venv pins 5.13.
 - **PDFium lock.** PDFium is not thread-safe, so `read_bookmarks` serializes its own PDFium use with a process-wide mutex. Concurrent `pi-extract` use from other threads is not covered by that lock. A single shared PDFium lock belongs in `pi_extract::pdfium`.
 
+## End-to-end indexing (`pi-index`, `pi-cli`, `pi-py`)
+Temporary until stages 04-08 land in the `pi_index::detect_structure` seam. Reviewed by: nobody yet.
+- `detect_structure` returns an empty structure, so every document without trustworthy bookmarks gets the `_page_nodes` fallback (`toc_source = "pages"`).
+- `page_texts` (and so `pages.json` and the text seen by expand and summaries) are the layout lines joined with `\n`. The reference joins stage-04 block texts.
+- `pageindex-rs index` still writes a refused result (flat tree over 10 pages, unreadable, empty) to `--tree-out`. In the report it is marked `rejected` (not `error`, so `bench/index_rust.py` keeps the tree) and it is not committed. The SDK raises instead. `--accept-flat` (Python: `accept_flat=True`) commits flat page trees anyway.
+- `--ocr auto` (triage + OCR through `[ocr]`) is Rust-only. The reference has no OCR. With OCR on, doc.json `metadata` carries `{"page_labels": {...}, "ocr_pages": n}`; with it off, `metadata` is null as in the SDK.
+- `pageindex-rs index` exits non-zero only when every input failed; per-document failures go to the report as `error`.
+
 ## Open
 (none yet)
 
