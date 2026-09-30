@@ -78,9 +78,8 @@ def flash_like(pdf: str):
 
 
 def index_one(job):
-    doc, out = job
-    out = Path(out)
-    pdf = DATA / "pdfs" / f"{doc}.pdf"
+    doc, out, pdf = job
+    out, pdf = Path(out), Path(pdf)
     pages = page_count(pdf)
     row = {"doc": doc, "pages": pages}
     try:
@@ -111,19 +110,27 @@ def main() -> int:
     ap.add_argument("--run", default=time.strftime("%Y%m%d-%H%M%S"))
     ap.add_argument("--limit", type=int)
     ap.add_argument("--docs", nargs="*")
+    ap.add_argument("--pdf-dir", type=Path, help="index every PDF in this directory instead of FinanceBench")
     ap.add_argument("--jobs", type=int, default=3, help="docs indexed concurrently (each serial)")
     args = ap.parse_args()
 
     out = HERE / "results" / args.run
     (out / "trees").mkdir(parents=True, exist_ok=True)
-    questions = [json.loads(l) for l in (DATA / "financebench_open_source.jsonl").read_text().splitlines() if l.strip()]
-    docs = sorted({q["doc_name"] for q in questions})
+    if args.pdf_dir:
+        # Any directory of PDFs (e.g. bench/data/edgar from fetch_edgar.py); no gold questions.
+        questions = []
+        pdf_of = {p.stem: p for p in sorted(args.pdf_dir.glob("*.pdf"))}
+    else:
+        questions = [json.loads(l) for l in (DATA / "financebench_open_source.jsonl").read_text().splitlines()
+                     if l.strip()]
+        pdf_of = {d: DATA / "pdfs" / f"{d}.pdf" for d in {q["doc_name"] for q in questions}}
+    docs = sorted(pdf_of)
     if args.docs:
         docs = [d for d in docs if d in set(args.docs)]
     if args.limit:
         docs = docs[: args.limit]
 
-    jobs = [(doc, str(out)) for doc in docs]
+    jobs = [(doc, str(out), str(pdf_of[doc])) for doc in docs]
     rows, trees = [], {}
     with cf.ProcessPoolExecutor(args.jobs) as ex:
         for i, (row, merged) in enumerate(ex.map(index_one, jobs), 1):
