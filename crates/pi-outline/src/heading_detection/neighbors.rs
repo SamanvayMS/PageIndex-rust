@@ -9,6 +9,7 @@ use pi_layout::model::block::BlockId;
 use pi_layout::model::rects::Bounded;
 use pi_layout::phases::DocPage;
 
+use crate::consts::{NEIGHBOR_BUCKET_DIVISOR, NEIGHBOR_BUCKET_MIN_WIDTH};
 use crate::model::clamp;
 
 /// ref: heading_detection/neighbors.py::BlockNeighborCache
@@ -55,7 +56,7 @@ impl PageNeighborMap {
     pub fn new(page: &DocPage) -> Self {
         let blocks: Vec<BlockId> = page.output.clone();
         let bw = page.layout.bounds.bbox_width();
-        let tw = pi_pycompat::pymath::max(5.0, bw / 300.0);
+        let tw = pi_pycompat::pymath::max(NEIGHBOR_BUCKET_MIN_WIDTH, bw / NEIGHBOR_BUCKET_DIVISOR);
         let n = (bw / tw).floor() as i64;
         let mut m = PageNeighborMap {
             bucket_width: tw,

@@ -15,6 +15,7 @@ use super::style_context::{
     Cluster, OutlineContext, StyleCluster, compare_heading_depth, has_style_neighbor,
     is_compatible_with_context,
 };
+use crate::consts::MAX_CLIQUE_DEPTH;
 use crate::heading_detection::keyword_tables::SECTION_KEYWORD_TRIE;
 use crate::heading_detection::neighbors::PageNeighborMap;
 use crate::heading_detection::style_detectors::is_sentence_like;
@@ -129,7 +130,7 @@ impl CliqueTree {
                     t.cursor = t.nodes[t.cursor].parent;
                     depth -= 1;
                 } else {
-                    if cmp > 0 && depth < 8 {
+                    if cmp > 0 && depth < MAX_CLIQUE_DEPTH {
                         t.append(t.cursor, h);
                         depth += 1;
                     } else {

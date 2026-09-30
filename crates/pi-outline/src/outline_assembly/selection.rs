@@ -15,6 +15,7 @@ use super::style_context::{
     OutlineState, StyleCluster, compare_heading_depth, count_sibling_numberings,
     has_style_neighbor, heading_signature, is_in_oo_range, min_font_distance, parent_signature,
 };
+use crate::consts::SUBHEADING_CONTENT_CAP;
 use crate::model::{Cand, Doc, HeadingCandidate, Node, new_node};
 
 /// `style_key(first_anchor_span(first_token(title)))`, or "" without a title token.
@@ -294,7 +295,7 @@ pub fn extract_sub_headings(
                 }
                 if b.is_body_paragraph.get() {
                     acc += info_weight(&b.char_stats);
-                    if acc >= 1000.0 {
+                    if acc >= SUBHEADING_CONTENT_CAP {
                         return Vec::new();
                     }
                 }

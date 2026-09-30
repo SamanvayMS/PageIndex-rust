@@ -18,6 +18,7 @@ use pi_layout::model::span_line::style_key;
 use pi_layout::tokens::is_char_token;
 use pi_pycompat::unicode;
 
+use crate::consts::NEARBY_DUPLICATE_PAGES;
 use crate::model::{
     Cand, Doc, HeadingCandidate, Node, Num, compare_heading_order, heading_order_key, num_str,
 };
@@ -161,9 +162,9 @@ impl StyleCluster {
     /// A matching signature within +/- 20 pages.
     // ref: outline_assembly/style_context.py::StyleCluster.has_nearby_duplicate
     pub fn has_nearby_duplicate(&self, d: Doc, c: &HeadingCandidate) -> bool {
-        self.by_sig
-            .get(&heading_signature(c))
-            .is_some_and(|e| (d.cpage_index(c) as i64 - d.cpage_index(e) as i64).abs() < 20)
+        self.by_sig.get(&heading_signature(c)).is_some_and(|e| {
+            (d.cpage_index(c) as i64 - d.cpage_index(e) as i64).abs() < NEARBY_DUPLICATE_PAGES
+        })
     }
 }
 

@@ -3,6 +3,7 @@
 
 use serde_json::Value;
 
+use crate::consts::{MAX_GAP_MIN_PAGES, MAX_GAP_PAGE_FRACTION};
 use crate::model::{Cand, Doc, Node};
 use crate::outline_assembly::{
     assemble_outline, compute_max_heading_gap, has_table_or_prominent, is_chapter_outline_valid,
@@ -36,6 +37,42 @@ pub struct OutlineOutput {
     pub tree: Vec<Value>,
 }
 
+/// Section openers found by the stage-05 pass of `pi_layout` as outline nodes of this crate
+/// (candidates are immutable and gain identity here; the openers have no children yet).
+pub fn openers_from_layout(nodes: &[pi_layout::heading_detection::OutlineNode]) -> Vec<Node> {
+    nodes
+        .iter()
+        .map(|n| {
+            let h = &n.heading;
+            crate::model::new_node(std::rc::Rc::new(crate::model::HeadingCandidate {
+                kind: h.kind,
+                page: h.page,
+                block: h.block,
+                anchor: h.anchor,
+                numbering: h.numbering.clone(),
+                prefix: h.prefix.clone(),
+                title: h.title.clone(),
+                has_numbering: h.has_numbering,
+                is_prominent: h.is_prominent,
+                script: h.script,
+                y_frac: h.y_frac,
+            }))
+        })
+        .collect()
+}
+
+/// Stages 05-08 on a document built by `pi_layout::phases::build_document`: classification
+/// (`pi_layout::phases::classify_document`), then [`extract_outline`].
+// ref: main.py::extract_toc (steps 5-11)
+pub fn classify_and_outline(
+    doc: &pi_layout::phases::Document,
+) -> (pi_layout::phases::Classified, OutlineOutput) {
+    let classified = pi_layout::phases::classify_document(doc);
+    let openers = openers_from_layout(&classified.section_openers);
+    let out = extract_outline(Doc::new(doc), openers);
+    (classified, out)
+}
+
 /// Outline assembly and validation (`extract_toc` step 11).
 // ref: main.py::extract_toc (step 11)
 pub fn extract_outline(d: Doc, mut section_openers: Vec<Node>) -> OutlineOutput {
@@ -56,10 +93,10 @@ pub fn extract_outline(d: Doc, mut section_openers: Vec<Node>) -> OutlineOutput 
         mark_outline_block_types(d, &nodes);
         let page_count = d.pages().len();
         let mut max_gap = None;
-        if page_count >= 3 {
+        if page_count >= MAX_GAP_MIN_PAGES {
             let g = compute_max_heading_gap(d, &nodes, 1.0).0;
             max_gap = Some(g);
-            if g.unwrap_or(0.0) > 0.85 * page_count as f64 {
+            if g.unwrap_or(0.0) > MAX_GAP_PAGE_FRACTION * page_count as f64 {
                 nodes = Vec::new();
             }
         }

@@ -25,6 +25,7 @@ use super::text_checks::{
     has_substantive_content, is_cover_page, is_heading_continuation, matches_abstract,
     matches_references,
 };
+use crate::consts::MAX_PAGE_CANDIDATES;
 use crate::model::{Cand, Doc, Node, Num, new_node};
 use crate::outline_assembly::style_context::{OutlineContext, has_conflict_in_context};
 
@@ -397,7 +398,7 @@ pub fn filter_page_candidates(
         dc.next_labeled += 1;
     }
     let count = cands.len();
-    if count >= 20 {
+    if count >= MAX_PAGE_CANDIDATES {
         return;
     }
     pi_pycompat::pysort::sort_by_key_lt(

@@ -1,15 +1,18 @@
 //! Stage 06/07/08 parity against the Python reference goldens.
 //!
-//! For each doc under `$PI_GOLDEN` (default `/home/user/PageIndex-rust/parity/golden`), rebuilds
-//! the stage-05 document state (see `pi_outline::golden`), runs stages 06-08 and compares with
-//! `06_candidates.json`, `07_outline.json` and `08_tree_raw.json`: ints, strings and bools
-//! exactly, floats within 1e-9 relative (`PI_PARITY_TOL` overrides). Skips when the goldens are
-//! absent. `PI_PARITY_DOCS=a,b` restricts the run to some docs.
+//! For each doc under `$PI_GOLDEN` (default `/home/user/PageIndex-rust/parity/golden`), runs the
+//! Rust pipeline from `01_spans.json` (stages 02-05 in `pi_layout`, then 06-08 here) and compares
+//! the section openers with `05_classified.json` and stages 06-08 with `06_candidates.json`,
+//! `07_outline.json` and `08_tree_raw.json`: ints, strings and bools exactly, floats within 1e-9
+//! relative (`PI_PARITY_TOL` overrides). Skips when the goldens are absent.
+//! `PI_PARITY_DOCS=a,b` restricts the run to some docs. `PI_OUTLINE_INJECT=1` instead injects
+//! the stage-05 state from the goldens (see `pi_outline::golden`), isolating stages 06-08.
 
 use std::path::{Path, PathBuf};
 
-use pi_outline::golden::{classified_document, first_diff, load};
-use pi_outline::{Doc, dump, extract_outline};
+use pi_outline::golden::{classified_document, document_from_spans, first_diff, load};
+use pi_outline::pipeline::{extract_outline, openers_from_layout};
+use pi_outline::{Doc, dump};
 
 fn rel_tol() -> f64 {
     std::env::var("PI_PARITY_TOL")
@@ -25,7 +28,25 @@ fn golden_root() -> PathBuf {
 }
 
 fn run_doc(dir: &Path) -> Result<Vec<String>, String> {
-    let (doc, openers, mut notes) = classified_document(dir)?;
+    let inject = std::env::var("PI_OUTLINE_INJECT").is_ok_and(|v| v == "1");
+    let (doc, openers, mut notes) = if inject {
+        classified_document(dir)?
+    } else {
+        let doc = document_from_spans(dir)?;
+        let classified = pi_layout::phases::classify_document(&doc);
+        let openers = openers_from_layout(&classified.section_openers);
+        let want = load(&dir.join("05_classified.json"))?;
+        let got = dump::outline(Doc::new(&doc), &openers);
+        let notes: Vec<String> = first_diff(
+            "05 section_openers",
+            &want["data"]["section_openers"],
+            &got,
+            rel_tol(),
+        )
+        .into_iter()
+        .collect();
+        (doc, openers, notes)
+    };
     let d = Doc::new(&doc);
     let out = extract_outline(d, openers);
     let mut errs = Vec::new();
