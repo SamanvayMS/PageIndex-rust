@@ -131,6 +131,45 @@ pub fn same_y_extent(a: &impl Bounded, b: &impl Bounded, tol: f64) -> bool {
     (a.top_edge() - b.top_edge()).abs() <= tol && (a.bottom_edge() - b.bottom_edge()).abs() <= tol
 }
 
+// ref: model/rects.py::intervals_overlap
+pub fn intervals_overlap(a0: f64, a1: f64, b0: f64, b1: f64) -> bool {
+    (a0 <= b0 && b0 <= a1) || (b0 <= a0 && a0 <= b1)
+}
+
+// ref: model/rects.py::y_overlaps
+pub fn y_overlaps(a: &impl Bounded, b: &impl Bounded) -> bool {
+    intervals_overlap(a.bottom_edge(), a.top_edge(), b.bottom_edge(), b.top_edge())
+}
+
+// ref: model/rects.py::extend_top_to
+pub fn extend_top_to(r: &Rect, y: f64) -> Rect {
+    Rect::new(r.left, r.right, max_nan(r.top, y), r.bottom)
+}
+
+// ref: model/rects.py::extend_bottom_to
+pub fn extend_bottom_to(r: &Rect, y: f64) -> Rect {
+    Rect::new(r.left, r.right, r.top, min_nan(r.bottom, y))
+}
+
+// ref: model/rects.py::cmp_reading_order (raw delta; callers use the sign)
+pub fn cmp_reading_order(a: &impl Bounded, b: &impl Bounded) -> f64 {
+    if a.top_edge() != b.top_edge() {
+        return b.top_edge() - a.top_edge();
+    }
+    if a.bottom_edge() != b.bottom_edge() {
+        return b.bottom_edge() - a.bottom_edge();
+    }
+    if a.left_edge() != b.left_edge() {
+        return a.left_edge() - b.left_edge();
+    }
+    a.right_edge() - b.right_edge()
+}
+
+// ref: model/rects.py::Rect.contains
+pub fn rect_contains(a: &Rect, b: &Rect) -> bool {
+    a.left <= b.left && a.right >= b.right && a.top >= b.top && a.bottom <= b.bottom
+}
+
 // ref: model/rects.py::left_aligned
 pub fn left_aligned(a: &impl Bounded, b: &impl Bounded, tol: f64) -> bool {
     (a.left_edge() - b.left_edge()).abs() <= tol
@@ -158,6 +197,11 @@ pub fn center_aligned(a: &impl Bounded, b: &impl Bounded, tol: f64) -> bool {
         return false;
     }
     (a.center_x() - b.center_x()).abs() <= pymath::max(tol, pymath::min(dl.abs(), dr.abs()) / 2.0)
+}
+
+// ref: model/rects.py::x_aligned
+pub fn x_aligned(a: &impl Bounded, b: &impl Bounded, tol: f64) -> bool {
+    left_aligned(a, b, tol) || right_aligned(a, b, tol) || center_aligned(a, b, tol)
 }
 
 // ref: model/rects.py::x_centers_close

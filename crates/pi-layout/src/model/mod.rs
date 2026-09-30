@@ -2,6 +2,7 @@
 //!
 //! ref: pageindex/flash/model/
 
+pub mod block;
 pub mod char_stats;
 pub mod numbering;
 pub mod rects;
