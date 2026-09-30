@@ -3,6 +3,13 @@ on:
   push:
     branches: [main]
   pull_request:
+
+env:
+  CARGO_TERM_COLOR: always
+  # PDFium build pinned to the one bundled by pypdfium2 5.13.0 (docs/spikes/A-pdfium.md)
+  PDFIUM_RELEASE: chromium%2F7999
+  PDFIUM_SHA256: c3af580f9df0fef9545b44115bc5ea440f286956b5f231df69fb373b8efc4f69
+
 jobs:
   rust:
     runs-on: ubuntu-latest
@@ -14,8 +21,10 @@ jobs:
       - uses: Swatinem/rust-cache@v2
       - run: cargo fmt --all --check
       - run: cargo clippy --workspace --all-targets -- -D warnings
+      # PDF/golden-dependent tests skip themselves when PDFium or goldens are absent.
       - run: cargo test --workspace
-  parity-smoke:
+
+  parity:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,9 +33,30 @@ jobs:
           python-version: "3.11"
       - uses: dtolnay/rust-toolchain@1.94
       - uses: Swatinem/rust-cache@v2
-      - run: parity/fetch_reference.sh
-      # Reference determinism: two dumps of the same PDF must be diff-clean.
-      - run: |
-          parity/.venv/bin/python parity/dump_reference.py --pdf parity/.ref/examples/documents/earthmover.pdf --out /tmp/g1 --verify
-          parity/.venv/bin/python parity/dump_reference.py --pdf parity/.ref/examples/documents/earthmover.pdf --out /tmp/g2
-          cargo run -q --release -p pi-cli -- diff --a /tmp/g1 --b /tmp/g2
+      - name: PDFium 7999
+        run: |
+          curl -sSL -o pdfium.tgz "https://github.com/bblanchon/pdfium-binaries/releases/download/${PDFIUM_RELEASE}/pdfium-linux-x64.tgz"
+          echo "${PDFIUM_SHA256}  pdfium.tgz" | sha256sum -c -
+          mkdir -p pdfium && tar xzf pdfium.tgz -C pdfium
+          echo "PDFIUM_LIB=$PWD/pdfium/lib/libpdfium.so" >> "$GITHUB_ENV"
+      - name: Reference + goldens (small corpus subset)
+        run: |
+          parity/fetch_reference.sh
+          parity/.venv/bin/python parity/dump_reference.py --corpus parity/corpus.toml \
+            --ids earthmover four_lectures q1_fy25_earnings ja_report zh_body_en_headings ar_report --verify
+          # determinism: a second dump must be identical
+          parity/.venv/bin/python parity/dump_reference.py --corpus parity/corpus.toml \
+            --ids earthmover --out /tmp/golden2
+      - run: cargo build --release -p pi-cli -p pi-extract --example dump_spans
+      - run: target/release/pageindex-rs diff --a parity/golden --b /tmp/golden2 earthmover
+      - name: Stage 01 (pi-extract)
+        run: |
+          for id in earthmover four_lectures q1_fy25_earnings ja_report zh_body_en_headings ar_report; do
+            p=$(python3 -c "import tomllib;print([d['path'] for d in tomllib.load(open('parity/corpus.toml','rb'))['doc'] if d['id']=='$id'][0])")
+            target/release/examples/dump_spans "parity/$p" "target/rust-golden/$id"
+          done
+          target/release/pageindex-rs diff --stage 1 --a parity/golden --b target/rust-golden
+      - name: Stages 02-03, 09, 10 (golden tests)
+        run: cargo test --release -p pi-layout -p pi-outline -p pi-optimize -p pi-extract -p pi-ocr
+        env:
+          PI_GOLDEN: ${{ github.workspace }}/parity/golden
