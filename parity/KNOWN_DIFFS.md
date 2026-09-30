@@ -13,5 +13,9 @@ Each entry lists the stage, the scope, the reason and who reviewed it. An entry 
 
 ## Stage 01 (pi-extract): diff-clean on all 18 corpus docs
 - PDF objects are read with `lopdf` instead of PyPDF2. lopdf stores reals as `f32`, so `pi-extract` renders them from the f32's shortest round-trip decimal. That is exact for tokens with <= 7 significant digits, which covers every box value in the corpus. A token with more digits (e.g. `595.27559055`) would differ from Python's `float(token)` by < 1e-4 pt.
-- Unicode categories (`Mn`/`Cf` checks, `_char_category`) and bidi classes currently come from the Rust Unicode crates (Unicode 15+) instead of Python 3.11's Unicode 14 tables. This only matters for code points assigned after Unicode 14 and will be switched to the generated tables (Spike D).
+- Unicode categories, bidi classes and normalization use the Unicode 14 tables generated from Python 3.11 (`pi_pycompat::unicode`).
 - PyPDF2 load failures (the reference then runs without content-stream repair) and lopdf load failures do not necessarily coincide on malformed PDFs.
+
+## Stage status
+- **02_lines / 03_columns** (`pi-layout::process_page`) and **04 `doc_stats`** (`compute_doc_stats`): bit-exact on all 18 golden docs (`cargo test -p pi-layout --test parity`, also with `PI_PARITY_TOL=0`).
+- Version pins that parity depends on: general category / case tables are Unicode 14 (Python 3.11); `\p{Number}` in `model/numbering.py` follows the `regex` module installed in the parity venv (2026.9.29), captured in `pi-pycompat/src/unicode_tables.rs`. Regenerate with `crates/pi-pycompat/gen/unicode_tables.py` if either changes.

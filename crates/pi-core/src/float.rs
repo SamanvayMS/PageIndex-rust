@@ -18,15 +18,15 @@ pub fn serialize<S: Serializer>(v: &f64, s: S) -> Result<S::Ok, S::Error> {
 pub fn deserialize<'de, D: Deserializer<'de>>(d: D) -> Result<f64, D::Error> {
     #[derive(Deserialize)]
     #[serde(untagged)]
-    enum Repr<'a> {
+    enum Repr {
         Num(f64),
-        Str(&'a str),
+        Str(String),
     }
     match Repr::deserialize(d)? {
         Repr::Num(x) => Ok(x),
-        Repr::Str("inf") => Ok(f64::INFINITY),
-        Repr::Str("-inf") => Ok(f64::NEG_INFINITY),
-        Repr::Str("nan") => Ok(f64::NAN),
+        Repr::Str(s) if s == "inf" => Ok(f64::INFINITY),
+        Repr::Str(s) if s == "-inf" => Ok(f64::NEG_INFINITY),
+        Repr::Str(s) if s == "nan" => Ok(f64::NAN),
         Repr::Str(other) => Err(de::Error::custom(format!("not a float: {other:?}"))),
     }
 }

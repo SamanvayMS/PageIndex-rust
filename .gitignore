@@ -227,3 +227,4 @@ bench/results/
 parity/scans/
 parity/golden*/
 parity/golden.log
+.claude/

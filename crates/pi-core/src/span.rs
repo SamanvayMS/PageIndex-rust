@@ -57,4 +57,13 @@ mod tests {
         assert_eq!(p.spans[0].source, SpanSource::TextLayer);
         assert!(p.spans[0].skew.is_infinite());
     }
+
+    /// Non-finite floats must also decode from an owned `serde_json::Value` (no borrowing).
+    #[test]
+    fn non_finite_from_value() {
+        let v = serde_json::json!({"bbox":[0,1,1,0],"text":"x","font_name":null,
+            "font_size":"nan","bold":false,"italic":false,"skew":"-inf"});
+        let s: Span = serde_json::from_value(v).unwrap();
+        assert!(s.font_size.is_nan() && s.skew == f64::NEG_INFINITY);
+    }
 }
