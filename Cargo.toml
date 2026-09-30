@@ -17,6 +17,10 @@ anyhow = "1"
 thiserror = "2"
 clap = { version = "4", features = ["derive"] }
 pi-core = { path = "crates/pi-core" }
+pi-pycompat = { path = "crates/pi-pycompat" }
+pi-data = { path = "crates/pi-data" }
+regex = "1"
+unicode-normalization = "0.1"
 
 [workspace.lints.rust]
 unsafe_code = "deny"
