@@ -7,8 +7,8 @@ use anyhow::{Context, Result, bail};
 use pi_config::{Config, IngestSource, Optimize, RemoteUri};
 use pi_index::{IndexOptions, IndexedDoc, LlmRoles, OcrMode, index_document};
 use pi_storage::{AnySource, Mirror, Source};
+use pi_store::LocalApi;
 use pi_store::naming::sanitize_filename;
-use pi_store::{LocalApi, NewDocument};
 use serde_json::{Map, Value, json};
 
 pub struct IndexArgs {
@@ -66,20 +66,9 @@ async fn index_one(
             serde_json::to_string_pretty(&Value::Object(doc.result.clone()))?,
         )?;
     }
-    let flat_ok = args.accept_flat && doc.toc_source() == "pages" && !doc.structure().is_empty();
-    if doc.rejection.is_some() && !flat_ok {
+    let Some((doc_id, _)) = doc.commit(api, &doc_name, args.accept_flat)? else {
         return Ok((doc, None));
-    }
-    let structure = doc.stored_structure();
-    let committed = api.commit_document(NewDocument {
-        name: &doc_name,
-        description: doc.description.as_deref(),
-        structure: &structure,
-        page_texts: &doc.page_texts,
-        metadata: doc.metadata(),
-        mode: "flash",
-    })?;
-    let doc_id = committed["doc_id"].as_str().unwrap_or_default().to_string();
+    };
     if let Some(m) = mirror {
         m.push_document(api.store().root(), &doc_id).await?;
     }

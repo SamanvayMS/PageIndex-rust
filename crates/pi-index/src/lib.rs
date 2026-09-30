@@ -207,6 +207,37 @@ impl IndexedDoc {
         walk(self.structure())
     }
 
+    /// Commit into a `.pageindex` store the way `local_api.py::submit_document` does (name
+    /// uniqued under the store lock, tree without node text, pipeline page text), returning
+    /// `(doc_id, stored name)`. Refused results are not stored unless `accept_flat` and the
+    /// refusal is only the flat-tree size limit.
+    pub fn commit(
+        &self,
+        api: &pi_store::LocalApi,
+        doc_name: &str,
+        accept_flat: bool,
+    ) -> Result<Option<(String, String)>> {
+        let flat_ok = accept_flat && self.toc_source() == "pages" && !self.structure().is_empty();
+        if self.rejection.is_some() && !flat_ok {
+            return Ok(None);
+        }
+        let structure = self.stored_structure();
+        let committed = api
+            .commit_document(pi_store::NewDocument {
+                name: doc_name,
+                description: self.description.as_deref(),
+                structure: &structure,
+                page_texts: &self.page_texts,
+                metadata: self.metadata(),
+                mode: "flash",
+            })
+            .map_err(|e| anyhow::anyhow!("{e}"))?;
+        Ok(Some((
+            committed["doc_id"].as_str().unwrap_or_default().to_string(),
+            committed["name"].as_str().unwrap_or_default().to_string(),
+        )))
+    }
+
     /// doc.json `metadata`: the page-label histogram when triage ran, else None.
     pub fn metadata(&self) -> Option<Map<String, Value>> {
         if self.triage.is_empty() {

@@ -24,6 +24,7 @@ pi-outline.workspace = true
 pi-optimize.workspace = true
 pi-summary.workspace = true
 pi-llm.workspace = true
+pi-store.workspace = true
 
 [dev-dependencies]
 tokio = { workspace = true, features = ["rt-multi-thread", "macros", "net", "io-util"] }
