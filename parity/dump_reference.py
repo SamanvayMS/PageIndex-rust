@@ -260,6 +260,19 @@ def run(pdf: Path, use_embedded_toc: bool = True) -> tuple[dict, dict]:
 
     from pageindex.flash.heading_detection import find_section_openers as _find_section_openers
     title_page_idx = title_winner.page.page_index if title_winner is not None else 0
+    # 05a: block/page classification state as find_section_openers sees it (it retypes blocks
+    # to 7/12, and build_caption_regions then sets region_label / caption_claimed), so a port
+    # can recompute the openers without stage 05 code.
+    S["05a_pre_openers"] = {
+        "title_page": title_page_idx,
+        "pages": [{"page": p.page_index, "has_caption": bool(p.measure_slot), "title_or_refs": bool(p.auxiliary_slot),
+                   "has_body": bool(p.state_slot),
+                   "blocks": [{"type": b.type, "is_body_paragraph": b.is_body_paragraph,
+                               "used_as_heading": b.used_as_heading, "caption_claimed": b.measure_slot,
+                               "caption_label": b.marker_slot, "region_label": b.state_slot}
+                              for b in (p.output_slot or [])]}
+                  for p in pages],
+    }
     section_openers = _find_section_openers(doc, title_page_idx)
 
     caption_regions = M.build_caption_regions(caption_context)

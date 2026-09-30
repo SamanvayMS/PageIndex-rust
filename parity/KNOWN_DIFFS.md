@@ -55,6 +55,16 @@ Temporary until stages 04-08 land in the `pi_index::detect_structure` seam. Revi
 - `--ocr auto` (triage + OCR through `[ocr]`) is Rust-only. The reference has no OCR. With OCR on, doc.json `metadata` carries `{"page_labels": {...}, "ocr_pages": n}`; with it off, `metadata` is null as in the SDK.
 - `pageindex-rs index` exits non-zero only when every input failed; per-document failures go to the report as `error`.
 
+## Stages 06-08: heading candidates, outline assembly, dict tree (`pi-outline`)
+Parity status: `06_candidates`, `07_outline` (assembled, gate, final, `has_abstract_or_references`) and `08_tree_raw` are bit-exact (`PI_PARITY_TOL=0`) on all 18 golden docs, running the Rust pipeline from `01_spans` (`cargo test -p pi-outline --test parity`). The test also checks the stage-05 section openers against `05_classified`. `PI_OUTLINE_INJECT=1` runs stages 06-08 on stage-05 state taken from the goldens instead. That mode needs the `05a_pre_openers.json` stage file that `dump_reference.py` now writes (the block state `find_section_openers` sees), and is also clean on all 18 docs. Without that file, the pre-opener state is guessed, and fb_3m_2018_10k diverges (a block the openers pass retyped 12 cannot be recovered).
+
+Notes:
+- **`compare_heading_depth` sign.** Ported from the code: `+1` means the first candidate is shallower (see "Reference defects").
+- **`SortedKeyList`.** `StyleCluster` and the per-font trees are sorted `Vec`s bisected with Python tuple `<`. The reference inserts only keys that are not already present, so this reproduces its order for any strict weak order. A NaN in a key (a NaN font size) could order differently from `sortedcontainers`' two-level bisect. The corpus has no NaN keys.
+- **`NUMBERED_PREFIX_RE` `\p{Lu}`.** `\p{Number}` uses the `regex`-module table in `pi-pycompat`. `\p{Lu}` uses the Unicode 14 general category, where the installed `regex` module uses its own, newer Unicode version. Uppercase letters added after Unicode 14 can therefore differ in `is_heading_continuation`.
+- **Unguarded reference dereferences.** In `scan_page_headings` the reference reads `above.line_count()` / `predecessor.line_count()` without a `None` check (sibling-continuation tests), and in `detect_heading_with_body` it tokenizes a missing above-neighbor. Python raises there, and the port panics with a message instead. Neither case occurs in the corpus.
+- **Duplicated opener code.** `find_section_openers` and the detectors it needs exist twice: a subset in `pi_layout::heading_detection` (what `classify_document` runs) and the full stage-06 set in `pi_outline::heading_detection`. `pi_outline::pipeline::openers_from_layout` converts the former's nodes. Both produce identical openers on the corpus. The pi-layout copy should eventually be replaced by the pi-outline one, which needs the stage-05 orchestration split around `find_section_openers`, or pi-layout reusing pi-outline's detectors.
+
 ## Open
 (none yet)
 

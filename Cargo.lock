@@ -1756,7 +1756,11 @@ dependencies = [
 name = "pi-outline"
 version = "0.0.1"
 dependencies = [
+ "anyhow",
+ "pi-core",
+ "pi-data",
  "pi-extract",
+ "pi-layout",
  "pi-pycompat",
  "regex",
  "serde_json",

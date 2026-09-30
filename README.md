@@ -9,7 +9,7 @@ A Rust reimplementation of [VectifyAI/PageIndex](https://github.com/VectifyAI/Pa
 | 01 spans (PDFium chars, content streams, font Unicode repair, glyph merge) | `pi-extract` | ✅ diff-clean, 6–12× faster |
 | 02 lines, 03 columns, page/doc stats | `pi-layout` | ✅ bit-exact |
 | 04 blocks, 05 classification/title/captions | `pi-layout` | in progress |
-| 06 heading candidates, 07 outline, 08 tree | `pi-outline` | next |
+| 06 heading candidates, 07 outline, 08 tree | `pi-outline` | ✅ bit-exact |
 | 09 embedded bookmarks | `pi-outline` | in progress |
 | 10 fallbacks + merge/expand + summaries | `pi-optimize`, `pi-llm`, `pi-summary` | ✅ merge clean; LLM passes clean under replay |
 | Store (`.pageindex/`, Python-SDK compatible), MCP tools | `pi-store`, `pi-mcp` | in progress |
@@ -54,6 +54,7 @@ parity/fetch_reference.sh                                                   # re
 parity/.venv/bin/python parity/dump_reference.py --corpus parity/corpus.toml --verify   # goldens
 parity/check_stage01.sh                                                     # Rust stage 01 vs goldens
 cargo test -p pi-layout --test parity                                       # stages 02-03
+cargo test --release -p pi-outline --test parity                            # stages 06-08 (+ 05 openers)
 cargo test -p pi-optimize --test golden_merge                               # stage 10
 target/release/pageindex-rs diff --stage N --a parity/golden --b <rust-out> # any stage
 ```

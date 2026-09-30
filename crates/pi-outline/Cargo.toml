@@ -10,10 +10,14 @@ rust-version.workspace = true
 workspace = true
 
 [dependencies]
+pi-core.workspace = true
+pi-data.workspace = true
 pi-extract.workspace = true
+pi-layout = { path = "../pi-layout" }
 pi-pycompat.workspace = true
 regex.workspace = true
 serde_json.workspace = true
 
 [dev-dependencies]
+anyhow.workspace = true
 sha2.workspace = true
