@@ -7,6 +7,7 @@
 """
 import fcntl
 import json
+import os
 import sys
 
 from pageindex import PageIndexLocalClient
@@ -84,3 +85,7 @@ if __name__ == "__main__":
     cmd, store, *rest = sys.argv[1:]
     result = {"read": read, "write": write, "save": save, "trylock": trylock}[cmd](store, *rest)
     sys.stdout.write(json.dumps(result, ensure_ascii=False))
+    sys.stdout.flush()
+    # The SDK preloads litellm on a daemon thread; interpreter shutdown can abort while
+    # that import is still running ("FATAL: exception not rethrown"). Skip shutdown.
+    os._exit(0)
