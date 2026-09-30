@@ -14,6 +14,7 @@ pub mod clustering;
 pub mod columns;
 pub mod consts;
 pub mod dump;
+pub mod heading_detection;
 pub mod labels;
 pub mod model;
 pub mod phases;
