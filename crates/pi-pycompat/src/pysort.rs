@@ -621,9 +621,10 @@ impl<F: FnMut(usize, usize) -> bool> MergeState<'_, F> {
     fn hi_copy_a(&mut self, dest: usize, ssa: usize, ssb: usize, na: usize) {
         // C: dest -= na; ssa -= na; memmove(dest+1, ssa+1, na); *dest = *ssb;
         // Here dest/ssa are one past the C pointers.
+        // (C's `ssa` may point one before the run here, so work with `ssa + 1` directly.)
         let d = dest - 1 - na;
-        let s = ssa - 1 - na;
-        self.keys.copy_within(s + 1..s + 1 + na, d + 1);
+        let src = ssa - na; // C: ssa + 1
+        self.keys.copy_within(src..src + na, d + 1);
         self.keys[d] = self.tmp[ssb - 1];
     }
 }
