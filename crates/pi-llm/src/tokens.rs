@@ -21,7 +21,8 @@ use crate::consts::{
 
 /// Names in litellm's `open_ai_chat_completion_models` whose tiktoken encoding is `o200k_base`
 /// (every other listed name, and every unlisted one, is `cl100k_base`). Generated from the
-/// reference venv's litellm; see crates/pi-llm/gen/llm_fixture.py.
+/// reference venv's litellm: the names `m` in `litellm.open_ai_chat_completion_models` for
+/// which `"gpt-4o" in m` or `tiktoken.model.encoding_name_for_model(m)` is `o200k_base`.
 const O200K_MODELS: &[&str] = &[
     "chatgpt-4o-latest",
     "gpt-4.1",

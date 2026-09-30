@@ -1,0 +1,49 @@
+{"key": "7cf1da360c779459d24c8ebb5346004352c58aed325e057785ea4bbf23aabe39", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: 1 ML at a Glance Suppose we were\"}"}
+{"key": "3c35345c37f1072d56b4774bd86380a8fcd5bac8dd19ee684ef683ca03480dea", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: For a binary tree to be a heap,\"}"}
+{"key": "2b9815bfbc638d832afe3d709e287b8775bf8778365e65f9b41fb2ed6ca9f3ab", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: 12, 15, 28, and 9. To de ne\"}"}
+{"key": "43419532a5cfa527e475a7afe21948b60f7b5df011b0c3182d7b9b7426a434a4", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: 12, 15, 28, and 9. To de ne\"}"}
+{"key": "a527b716d0538b054c1fc2159cc79a313afa8401606d9dbef4892e74664c9731", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: N( initial, t, t) ; in particular the\"}"}
+{"key": "0ccaaf6a46cd1361cbcf21eae6b8c6ffb6974a0d911c1d875ff784b80887b6e8", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: structure Heap = struct type item = int;\"}"}
+{"key": "25c544f7a0f472f8c27c84f4b96d5f4530d09be68c1849771ee20a5ccacbaab5", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: structure Heap = struct type item = int;\"}"}
+{"key": "afdd5439a67f7d955d9af2191f1cc1e702ad02a58ddc35f1b215c53d27364f04", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: the following shorter declaration of HEAP. signature HEAP\"}"}
+{"key": "a9e65c72f1771c89d8fc00d0659e47d22da89507a9368dcfc5e6469deac04e1a", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: functor Heap(Item: ITEM): HEAP = struct type item\"}"}
+{"key": "697bf688cac3fd8829bacb5bf5b554a379766a968a808acc916c3a1e9a403860", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: structure StringItem = struct type item = string\"}"}
+{"key": "b4098810a66ad7cf5fe4f925035bdafa2cd0a68e8dee75c68a65a97802754e86", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: 2 Programming with ML Modules 2.1 Introduction This\"}"}
+{"key": "1a542f1a4501b2e1cece9aa5f3acca288427cf6074b5daf21e00b8e414e1a10d", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: \\\\modules\\\" and in ML we use the word\"}"}
+{"key": "cbab2320a217d3cdbfa35503241a9dcae2c50dbb5adf50cdb77fe07184793486", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: to lists of pairs of symbols and values:\"}"}
+{"key": "12358c95e003c25ebbda4ddaa7996d5cfbda1e34bed5fb7b41a978a2c9f32316", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: fun nd( sym,[ ]) = raise Lookup nd(\"}"}
+{"key": "82961bdda9442cd78cceb383f6c959c10f6526f8dcba0730e6021203ad8fec8d", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: Now the Sym, Val and IntMap that occur\"}"}
+{"key": "1b269609e10056a761b71aa91029a6a45e3e5702aee98b91d89084de89918399", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: The solution to this problem is to make\"}"}
+{"key": "23cc6615f47c9a03631a2e9abdf61768daf7980584c95d4fd516b71697a9aa04", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: Here is a rst attempt at ParseFct .\"}"}
+{"key": "7866265a0a4fb935a491ace4ab8c82785842735c3ed1d61c285db215c7049ed6", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: We can now build the entire system by\"}"}
+{"key": "72cb46bc5877bddd92e0bf357a21991a1aef27d321e3643526931cdea0cb93c6", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: 2.9 Good Style It is good practice to\"}"}
+{"key": "c42d92903dc3d710f725a8be887f14329dba11ddc6c399f6af5274bd31e2ae20", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: 2.9 Good Style It is good practice to\"}"}
+{"key": "cc728f5f3915fb1d06b762ccbc4797b464898b22086649592df9ed1b5bf0d292", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: 3 The Static Semantics of Modules The purpose\"}"}
+{"key": "68951fa8cc7e5865fc11f9ca2b0d47ef7df4013baf2a145dac36db699a9ba4b2", "model": "openai/mock", "reply": "{\"title\": \"Page on 3.2 Names structure\", \"summary\": \"Leaf: 3.2 Names structure Stack = struct type elt\"}"}
+{"key": "a5f226d1b3ce1be09fe3b2a5384e369f2fabac7381f3e9a97742fd4511806e89", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: 3.4 Decorating Signatures signature StackSig (m1;s1;s2) = sigm1\"}"}
+{"key": "ac8aa8c6086245a1fd63cb0ceed00c2178312291ae748e9c09275686b6e15763", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: type abstsyn val parse : unit-> abstsyn end\"}"}
+{"key": "7addf41a901fb235c8f055495d28bf654f20faddd93a51be454a6fcfe366f0db", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: structure Stack n1 = struct type elt int\"}"}
+{"key": "d37d9fbc0ea681361a9f1ce2c6263b256f1241cf61ec6136dbe6b798e836e172", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: Exercise 18 Let mytype be a type which\"}"}
+{"key": "5f7c7212c3d9970fcf72cfcba0a31e83b72be035388178b63df7f49a47779855", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: 3.8 Decorating Functors Dynamically, the body of a\"}"}
+{"key": "afccf8b5083eec0462d98dc659f818a627240d3ca3d6045ccbd177a2a31b3fcb", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: 3.8 Decorating Functors Dynamically, the body of a\"}"}
+{"key": "263fa6946cae09fdca2e548cec1d199991484b2e90c46e4abe42722666566401", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: structure MyPervasives = structn1 datatype numt1 = NUM\"}"}
+{"key": "926e307b92314d09e3a34759779cb6f68c1e0e655b63646719de824dc1b23c6e", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: Result receives a fresh structure name and Result\"}"}
+{"key": "f1c292475d789d0f57d43e7c1709f833589fb18cb185c0e841b0a59da304b44d", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: Result receives a fresh structure name and Result\"}"}
+{"key": "1b47e858ed6b9230e71fcdca5765eddbd68f423619f20e1d6a3bdf7d3ca29695", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: 4.1 VERSION 1: The bare Typechecker (Appendix A)\"}"}
+{"key": "ffbd59a6d45d551b626d309863cd33d31dd5edfce4e73d5877021095bac0a6d3", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: structure Value = Value structure Parser = Parser\"}"}
+{"key": "a168dcd88699fccf09cf9cbae42cc609dd42e0d2b89c529ab75de86165a9e4a7", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: type subst = Type -> Type fun Id\"}"}
+{"key": "2c504e1bd221a4d3352b721f9460782c5a64ed6f4ec1ec1c02372a7259eae288", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: ML implementors normally opt for the imperative version.\"}"}
+{"key": "a072169961a59f55cb96b940a6357a6794a34afdcfe375958cd6d13744ae10e3", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: fun close(ty)= let fun fv(INT) = [] |\"}"}
+{"key": "3119df975569f4a68ef87a83f98000db86b29b5971b70bbbdca2f2f5f8761ed9", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: Mads Tofte, March 1, 1989 Laboratory for Foundations\"}"}
+{"key": "f9d19be7920e23cb30c09499e2c854b383d8665791223c5c7cfa750bd95ddab8", "model": "openai/mock", "reply": "```json\n{\"subsections\": [{\"title\": \"val parse: string -> E.Expression\", \"page\": 45}, {\"title\": \"(* type checking *)\", \"page\": 46}, {\"title\": \"and Evaluator.Val = Value ): INTERPRETER=\", \"page\": 47}]}\n```"}
+{"key": "820fafbacaceb8b429cb5b6509c613564fe8a1226aa830f13c43592cbf1d6856", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: val parse: string -> E.Expression end (* environments\"}"}
+{"key": "64b404a4e8310740bae42706567b3e28f014b1790d8b32346d75d538f7766d66", "model": "openai/mock", "reply": "```json\n{\"subsections\": [{\"title\": \"unValueNumber e2')\", \"page\": 48}, {\"title\": \"\\\"(boolean constants)\\\"\", \"page\": 49}, {\"title\": \"(* the basics -- nullary functors *)\", \"page\": 50}]}\n```"}
+{"key": "1b548f0ff09ce906e92c2951f2657f8b3bb5cf03ba780322b65ca8ec272a326c", "model": "openai/mock", "reply": "{\"summary\": \"Section 1 ML at a Glance with 10 parts; Leaf: 1 ML at\"}"}
+{"key": "5ce0456b64e6e7643555e946cff2fc411acef4a5cfe4986d141e8d36fe89c068", "model": "openai/mock", "reply": "{\"summary\": \"Section 2 Programming with ML Modules with 10 parts; Leaf: 2 Programming with\"}"}
+{"key": "f0d952b1527cccf91611b5b10938694b9931d381009854bb5f264c4fd21c7927", "model": "openai/mock", "reply": "{\"summary\": \"Section 3 The Static Semantics of Modules with 11 parts; Leaf: 3 The Static\"}"}
+{"key": "6a61dfbc87cede99d871b1ccc632ae3fc4890430933a7d8bb088fcab298f6b5a", "model": "openai/mock", "reply": "{\"summary\": \"Section 4 Implementing an Interpreter in ML with 5 parts; Leaf: 4.1 VERSION 1:\"}"}
+{"key": "1b11882e7e15528bf6bdff167fe85c01eb6a9a8730b443190677638424ba81c3", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: | NUMBERexpr i => mkValueNumber i | SUMexpr(e1,\"}"}
+{"key": "d78c4c08e5572df72bad7c42d82838286077f4b4b85008b52355ed1c2ca5c677", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: (structure Ex: EXPRESSION structure Ty: TYPE)= struct structure\"}"}
+{"key": "0c7e7ac5a447e712ccbb22676c50c5a1288f247a213352a774b4834d886f2afb", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: (* the basics -- nullary functors *) functor\"}"}
+{"key": "6ff54f79c6ddb8cf4e7fcf48261914c3932497936b008277a9a6c50144195b93", "model": "openai/mock", "reply": "{\"summary\": \"Section and Evaluator.Val = Value ): INTERPRETER with 3 parts; Leaf: | NUMBERexpr i\"}"}
+{"key": "01d175ecac2abf02cd9d4e79dcbdfcf98ad78ed90f117d35d54308d1d8db3be9", "model": "openai/mock", "reply": "{\"summary\": \"Section Appendix A: The bare Interpreter with 3 parts; Leaf: val parse: string\"}"}

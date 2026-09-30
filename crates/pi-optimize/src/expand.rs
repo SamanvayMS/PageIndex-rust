@@ -57,7 +57,7 @@ fn py_index<T>(seq: &[T], i: i64) -> Option<&T> {
 
 /// The part of a fenced reply after the first ```` ``` ````, as
 /// `re.sub(r"^.*?```(?:json)?\s*", "", text, flags=re.S).split("```")[0]`.
-pub(crate) fn unfence(text: &str) -> &str {
+pub fn unfence(text: &str) -> &str {
     let Some(i) = text.find("```") else {
         return text;
     };

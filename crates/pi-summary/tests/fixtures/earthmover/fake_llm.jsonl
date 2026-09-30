@@ -1,0 +1,16 @@
+{"key": "d0234a4e0b433b9af6ef376a3cbad0150c8cd9ab3fba98c44002892952f21e06", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: q pq 1q12/2p101q12/2 0/3 0q21/1p200q21/1 0q31/3 22/4/2p300q31/32/42/2 0q41/1p410q41/1p410q4\"}"}
+{"key": "ac5185a5d4dea7bc84064cf546e54ceaa22ea04883e36675ac0a1e6dbefa9640", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: q pq 1q12/2p101q12/2 0/3 0q21/1p200q21/1 0q31/3 22/4/2p300q31/32/42/2 0q41/1p410q41/1p410q4\"}"}
+{"key": "81401e34953de85fd65bb9b797f7935842e382accb41eb8022982d55c17ab71a", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: current cost and leads to an early termination\"}"}
+{"key": "6750260f3f16bbc50f6ac32bdb8bfe74e1b75858f0bd6ab05bb3daaa306617b0", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: 2.0 Best bound from filter phase Real EMD\"}"}
+{"key": "fa763c00d076badf314ec205eccfa5390a8038a3b4725dfe425a97d931e25575", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: Note that the currently best object in PL\"}"}
+{"key": "9c5e41cf986abd0acf03697f824e65492710e2ddb887bd76c1cfa08a5a17ebc1", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: Table 3: The statistics of six real datasets\"}"}
+{"key": "292316f550be15a707878107e4be9b347f413975fd6c5efe6562cc271ae78521", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: 5 20 20 15 2.0CAPSSP CAPSSP COSTRA NETSIA\"}"}
+{"key": "30d9cf744669f1cfb4073ad11ba2ef193633763a9216417780462c444a1c0c41", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: 0.4 ) SIASIAPB-C 1.5PBPBDRO-C DRODRO SIASIAPB-C PBPBDRO-C2 DRODRO\"}"}
+{"key": "707179edab9104b914a5ff287e1c590cb1db06c87d0f69bfa783898ec916e787", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: Earth Mover’s Distance based Similarity Search at Scale\"}"}
+{"key": "20e3ee32cff846bf9a0b5ce8b4bb94738ffa0d05b64daa8583284ad5ff546c61", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: Earth Mover’s Distance based Similarity Search at Scale\"}"}
+{"key": "12faeb4c53a4136507a92475c88ef23433f83b9df06c4bcfb2ac7131e4b0a64d", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: and every calculation is still conducted at its\"}"}
+{"key": "03de46bc6eef1247b4dc4762e657f4ca4a640d387cfbe3e645e44dc19da78fde", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: Algorithm 1 FILTER-AND-REFINEMENT FOR k-NN H: heap, θ:\"}"}
+{"key": "b4859e797f4a40b1dcb576e878f719ba4ec724ba552eff213fa19258a738256a", "model": "openai/mock", "reply": "{\"summary\": \"Leaf: 0.4 ) SIASIAPB-C 1.5PBPBDRO-C DRODRO SIASIAPB-C PBPBDRO-C2 DRODRO\"}"}
+{"key": "9f626e57ffd57b1d5723baad71f1983f4eeecb612c131ede9587cb41e5897b15", "model": "openai/mock", "reply": "{\"title\": \"Page on For example, the\", \"summary\": \"Leaf: For example, the choice of ground distance could\"}"}
+{"key": "604502a671a866785ec3ca0be5b6a8e01681bbfd4c9881489c66439d5847659a", "model": "openai/mock", "reply": "{\"summary\": \"Section 4. BOOSTING THE REFINEMENT PHASE with 5 parts; Leaf: q pq 1q12/2p101q12/2\"}"}
+{"key": "084adcd68e42b582491ac8d75278e5d491a575a78255f8f676aaecb2858a8a34", "model": "openai/mock", "reply": "{\"summary\": \"Section 5. EXPERIMENTAL EVALUATION with 3 parts; Leaf: Table 3: The\"}"}

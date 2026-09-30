@@ -1068,6 +1068,7 @@ version = "0.0.1"
 name = "pi-summary"
 version = "0.0.1"
 dependencies = [
+ "async-trait",
  "futures",
  "pi-llm",
  "pi-optimize",
