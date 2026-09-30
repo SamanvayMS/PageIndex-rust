@@ -18,6 +18,7 @@ pub mod labels;
 pub mod model;
 pub mod phases;
 pub mod stats;
+pub mod title;
 pub mod tokens;
 
 pub use phases::{PageLayout, page_bbox_from_viewbox, process_page};
