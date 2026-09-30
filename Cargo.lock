@@ -1646,6 +1646,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "pi-index"
+version = "0.0.1"
+dependencies = [
+ "anyhow",
+ "pi-config",
+ "pi-core",
+ "pi-extract",
+ "pi-layout",
+ "pi-llm",
+ "pi-ocr",
+ "pi-optimize",
+ "pi-outline",
+ "pi-summary",
+ "pi-triage",
+ "rayon",
+ "serde_json",
+ "tokio",
+]
+
+[[package]]
 name = "pi-layout"
 version = "0.0.1"
 dependencies = [
