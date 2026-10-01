@@ -83,7 +83,10 @@ pub fn to_spans(ocr: &OcrPage, img: &PageImage, cal: &SpanCalibration) -> OcrSpa
             });
         }
         if b.kind == BlockKind::Table
-            && let Some(md) = b.html.as_deref().and_then(html_table_to_markdown)
+            && let Some(md) = b
+                .markdown
+                .clone()
+                .or_else(|| b.html.as_deref().and_then(html_table_to_markdown))
         {
             out.tables.push(OcrTable {
                 page: ocr.page,

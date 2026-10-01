@@ -55,6 +55,39 @@ profile = "spans-json"
 timeout_s = 120
 ```
 
+## Profile `paddleocr-vl` (PaddleOCR-VL behind vLLM)
+PaddleOCR-VL is an *element-level* model. It does not follow the JSON prompt above, so it gets its own engine (`pi_ocr::PaddleVlEngine`), selected with `profile = "paddleocr-vl"`. Triage, rendering, span mapping, routing and layout are shared with `spans-json`.
+
+**Request contract**, checked by `crates/pi-ocr/tests/mock_paddle_vl.rs`:
+- One user message: `[image_url (PNG data URL), text "<task>:"]`. No system message, no `response_format`, `temperature = 0`.
+- Always send `skip_special_tokens: false`. vLLM strips special tokens by default, which would drop the `<|LOC_n|>` location tokens.
+- Per page, one `Spotting:` call. The reply is text lines with `<|LOC_0..1000|>` boxes, normalized to 0-1000 on each axis:
+  - 4 tokens give `x0 y0 x1 y1`; 8 give a quad, which is reduced to its axis-aligned box.
+  - The tokens may come before or after the line text.
+  - With no LOC tokens, the engine warns once and falls back to the plain-text parser (`approx_bbox`).
+- The page is rendered at a dpi that fits `max_pixels`: `72·sqrt(max_pixels / page_area_pt²)`, clamped to 72..400. The default is 2048·28·28 ≈ 1.6 MP, the Spotting budget from the model card.
+- **Tables** (`tables = true`): a grid heuristic over the spotted lines finds candidate regions. A region needs ≥3 consecutive rows with ≥2 cells each, a numeric cell, and gaps of no more than 3 line heights. Each region is cropped from the page PNG and sent as `Table Recognition:`.
+  - The OTSL reply (`<fcel> <ecel> <lcel> <ucel> <xcel> <nl>`) is converted to markdown. Merged cells are left empty, and an HTML table reply also works.
+  - The markdown is appended to that page's text in `pages.json`.
+- PaddleOCR-VL returns no heading levels; page layout in PaddleOCR comes from a separate detector. Headings on OCR'd pages therefore come from the normal layout/outline heuristics, using the font size estimated from line height.
+
+**Serving.** Use the official PaddleOCR genai server with the vLLM backend, e.g. `paddleocr genai_server --model_name PaddleOCR-VL-1.6-0.9B --backend vllm --port 8118`, or plain `vllm serve PaddlePaddle/PaddleOCR-VL-1.6 --trust-remote-code`. Flags change between releases, so check the current PaddleOCR docs. Either way the server exposes `/v1/chat/completions`.
+
+```toml
+[ocr]
+profile = "paddleocr-vl"
+base_url = "http://dgx:8118/v1"
+model = "PaddleOCR-VL-1.6-0.9B"   # the served model name
+api_key_env = "PI_OCR_KEY"        # omit for an unauthenticated local server
+concurrency = 16
+max_tokens = 8192
+tables = true
+max_pixels = 1605632              # 2048*28*28
+timeout_s = 180
+```
+
+**Verify on the real server first.** `ocr_calibrate --profile paddleocr-vl --dump-raw page.pdf` prints one raw Spotting reply; it should contain `<|LOC_n|>` tokens. Then run without `--dump-raw` on born-digital PDFs to get `font_size_factor`.
+
 ## Open items (need an endpoint)
-- Which served model: a Paddle-family VL model, Qwen-VL class, or a hosted GPT/Claude vision model. Compare box quality and cost per page on the synthetic scans (`parity/make_scans.py`) against the born-digital goldens.
+- Which served model: PaddleOCR-VL (profile above), a Qwen-VL class model, or a hosted GPT/Claude vision model. Compare box quality and cost per page on the synthetic scans (`parity/make_scans.py`) against the born-digital goldens.
 - Whether the served model supports `response_format`; `json_mode = false` covers the case where it doesn't.

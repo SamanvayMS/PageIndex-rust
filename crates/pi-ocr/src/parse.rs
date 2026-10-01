@@ -30,6 +30,9 @@ pub struct OcrBlock {
     pub lines: Vec<OcrLine>,
     pub text: String,
     pub html: Option<String>,
+    /// Table already converted to markdown by the engine (e.g. from OTSL).
+    #[serde(default)]
+    pub markdown: Option<String>,
     pub confidence: Option<f32>,
     /// Boxes synthesized from plain text (no geometry from the engine).
     pub approx_bbox: bool,
@@ -153,6 +156,7 @@ fn block_from(b: &Value) -> Option<OcrBlock> {
         lines,
         text,
         html: o.get("html").and_then(|h| h.as_str()).map(str::to_string),
+        markdown: None,
         confidence: o
             .get("confidence")
             .and_then(|c| c.as_f64())
@@ -204,6 +208,7 @@ fn plain_text_blocks(reply: &str, w: f64, h: f64) -> Vec<OcrBlock> {
                 }],
                 text,
                 html: None,
+                markdown: None,
                 confidence: None,
                 approx_bbox: true,
             }

@@ -15,6 +15,7 @@
 //! [ocr]
 //! base_url = "..."; model = "..."; api_key_env = "PI_OCR_KEY"
 //! dpi = 200; concurrency = 8; json_mode = true; profile = "spans-json"; timeout_s = 120
+//! max_tokens = 8192; tables = true; max_pixels = 1605632   # profile = "paddleocr-vl"
 //!
 //! [storage]
 //! index_root = ".pageindex"
@@ -33,7 +34,8 @@
 //! `PI_LLM_CONCURRENCY`, `PI_LLM_TIMEOUT_S`, `PI_LLM_MAX_RETRIES` apply to every role unless
 //! the role-specific `PI_LLM_<ROLE>_<FIELD>` is set; `PI_OCR_BASE_URL`, `PI_OCR_MODEL`,
 //! `PI_OCR_KEY`, `PI_OCR_DPI`, `PI_OCR_CONCURRENCY`, `PI_OCR_JSON_MODE`, `PI_OCR_PROFILE`,
-//! `PI_OCR_TIMEOUT_S`. A `*_KEY` variable holds the key itself; the resolved config records
+//! `PI_OCR_TIMEOUT_S`, `PI_OCR_MAX_TOKENS`, `PI_OCR_TABLES`, `PI_OCR_MAX_PIXELS`.
+//! A `*_KEY` variable holds the key itself; the resolved config records
 //! only which variable to read, never a key value.
 
 pub mod consts;
@@ -118,6 +120,9 @@ struct RawOcr {
     json_mode: Option<bool>,
     profile: Option<String>,
     timeout_s: Option<f64>,
+    max_tokens: Option<i64>,
+    tables: Option<bool>,
+    max_pixels: Option<i64>,
 }
 
 #[derive(Debug, Default, Deserialize)]
@@ -193,9 +198,20 @@ pub struct OcrConfig {
     pub dpi: u32,
     pub concurrency: usize,
     pub json_mode: bool,
+    /// Engine protocol: `spans-json` (generic vision model asked for a JSON block layout) or
+    /// `paddleocr-vl` (PaddleOCR-VL task prompts: `Spotting:` + `Table Recognition:`).
     pub profile: String,
     pub timeout_s: f64,
+    /// Completion token cap per OCR request.
+    pub max_tokens: u32,
+    /// `paddleocr-vl`: also recognise detected table regions into markdown.
+    pub tables: bool,
+    /// `paddleocr-vl`: pixel budget for the page image (the model's spotting max_pixels).
+    pub max_pixels: u64,
 }
+
+/// Recognised `[ocr] profile` values.
+pub const OCR_PROFILES: [&str; 2] = ["spans-json", "paddleocr-vl"];
 
 impl OcrConfig {
     pub fn api_key(&self) -> Option<String> {
@@ -642,6 +658,15 @@ fn resolve_ocr(
             format!("must be within 36..=1200, got {dpi}"),
         ));
     }
+    let profile = env("PI_OCR_PROFILE")
+        .or_else(|| raw.profile.clone())
+        .unwrap_or_else(|| OCR_PROFILE.to_string());
+    if !OCR_PROFILES.contains(&profile.as_str()) {
+        return Err(err(
+            "ocr.profile",
+            format!("must be one of {OCR_PROFILES:?}, got {profile:?}"),
+        ));
+    }
     Ok(OcrConfig {
         base_url,
         model: env("PI_OCR_MODEL").or_else(|| raw.model.clone()),
@@ -661,14 +686,26 @@ fn resolve_ocr(
         json_mode: env_bool(env, "PI_OCR_JSON_MODE")?
             .or(raw.json_mode)
             .unwrap_or(OCR_JSON_MODE),
-        profile: env("PI_OCR_PROFILE")
-            .or_else(|| raw.profile.clone())
-            .unwrap_or_else(|| OCR_PROFILE.to_string()),
+        profile,
         timeout_s: seconds(
             env_float(env, "PI_OCR_TIMEOUT_S")?.or(raw.timeout_s),
             OCR_TIMEOUT_S,
             "ocr.timeout_s",
         )?,
+        max_tokens: positive(
+            env_int(env, "PI_OCR_MAX_TOKENS")?.or(raw.max_tokens),
+            8192,
+            "ocr.max_tokens",
+        )? as u32,
+        tables: env_bool(env, "PI_OCR_TABLES")?
+            .or(raw.tables)
+            .unwrap_or(true),
+        // PaddleOCR-VL spotting budget: 2048 * 28 * 28 pixels (model card).
+        max_pixels: positive(
+            env_int(env, "PI_OCR_MAX_PIXELS")?.or(raw.max_pixels),
+            2048 * 28 * 28,
+            "ocr.max_pixels",
+        )? as u64,
     })
 }
 

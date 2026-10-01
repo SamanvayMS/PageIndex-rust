@@ -14,7 +14,7 @@ The whole Flash pipeline is ported. **End to end, from PDF to `page_index_flash(
 | 10 fallbacks + merge/expand + summaries | `pi-optimize`, `pi-llm`, `pi-summary` | ✅ merge identical; LLM passes identical under record/replay |
 | Store (`.pageindex/`, Python-SDK compatible), MCP tools | `pi-store`, `pi-mcp` | ✅ 156/156 tool calls byte-identical; the Python SDK reads Rust-built stores |
 | Orchestrator, CLI, Python bindings | `pi-index`, `pi-cli`, `pi-py` | ✅ |
-| Page triage + OCR (OpenAI-compatible vision endpoint) | `pi-triage`, `pi-ocr` | ✅ (tested with a mock endpoint; real-model calibration is `ocr_calibrate`) |
+| Page triage + OCR (OpenAI-compatible endpoint: generic vision model or PaddleOCR-VL) | `pi-triage`, `pi-ocr` | ✅ (tested with mock endpoints; real-model calibration is `ocr_calibrate`) |
 
 Details and every known deviation: `parity/KNOWN_DIFFS.md`. Design notes: `docs/spikes/`.
 
@@ -29,6 +29,21 @@ target/release/pageindex-rs serve-mcp --storage .pageindex          # MCP tools 
 PI_LLM_BASE_URL=... PI_LLM_MODEL=... PI_LLM_KEY=... target/release/pageindex-rs index --summary report.pdf
 # scanned documents: add an [ocr] endpoint in pageindex.toml (or PI_OCR_*) and pass --ocr auto
 ```
+
+### OCR with PaddleOCR-VL
+Text-layer pages are read directly. Triage (in Rust, no pypdf) sends scanned, garbled and image-heavy pages to OCR. To use PaddleOCR-VL served by vLLM (or PaddleOCR's genai server) as the OCR engine:
+```toml
+# pageindex.toml
+[ocr]
+profile = "paddleocr-vl"            # default "spans-json" = generic vision LLM with a JSON prompt
+base_url = "http://dgx:8118/v1"
+model = "PaddleOCR-VL-1.6-0.9B"
+tables = true                       # second pass: "Table Recognition:" on detected table regions -> markdown
+```
+The engine sends `skip_special_tokens: false` so vLLM keeps the `<|LOC_n|>` box tokens. Check your server once with
+`cargo run --release -p pi-ocr --example ocr_calibrate -- --profile paddleocr-vl --dump-raw some.pdf`.
+Details: `docs/spikes/E-ocr-endpoint.md`.
+
 Python: `cd crates/pi-py && maturin develop --release`, then `import pageindex_rs; pageindex_rs.index("report.pdf")`.
 
 ## Layout

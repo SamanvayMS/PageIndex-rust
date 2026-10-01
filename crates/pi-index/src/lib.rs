@@ -334,12 +334,16 @@ fn label_name(l: pi_triage::PageLabel) -> String {
         .unwrap_or_default()
 }
 
-/// Triage every page; OCR the ones that need it when an endpoint is configured.
+/// Per-page OCR output kept for `pages.json`: the table markdown of each page.
+type PageTables = Vec<Vec<String>>;
+
+/// Triage every page; OCR the ones that need it when an endpoint is configured. The engine is
+/// chosen by `[ocr] profile`: `spans-json` (generic vision model) or `paddleocr-vl`.
 async fn triage_and_ocr(
     bytes: Vec<u8>,
     pages: Vec<PageSpans>,
     cfg: Option<&pi_config::OcrConfig>,
-) -> Result<(Vec<PageSpans>, Vec<PageRoute>)> {
+) -> Result<(Vec<PageSpans>, Vec<PageRoute>, PageTables)> {
     let b = bytes.clone();
     let triage = tokio::task::spawn_blocking(move || {
         pi_triage::triage_pdf_bytes(b, &pi_triage::Thresholds::default())
@@ -357,18 +361,31 @@ async fn triage_and_ocr(
                 error: None,
             })
             .collect();
-        return Ok((pages, routes));
+        let n = pages.len();
+        return Ok((pages, routes, vec![Vec::new(); n]));
     };
-    let mut vc = pi_ocr::OpenAiVisionConfig::new(base_url, model, c.api_key());
-    vc.timeout_s = c.timeout_s.ceil() as u64;
-    vc.json_mode = c.json_mode;
-    let engine = pi_ocr::OpenAiVisionEngine::new(vc)?;
     let opts = pi_ocr::OcrOptions {
         dpi: c.dpi as f64,
         concurrency: c.concurrency,
         ..Default::default()
     };
-    let routed = pi_ocr::ocr_and_route(bytes, pages, &triage, &engine, &opts).await?;
+    let timeout = c.timeout_s.ceil() as u64;
+    let routed = if c.profile == "paddleocr-vl" {
+        let mut pc = pi_ocr::PaddleVlConfig::new(base_url, model, c.api_key());
+        pc.timeout_s = timeout;
+        pc.max_tokens = c.max_tokens;
+        pc.max_pixels = c.max_pixels;
+        pc.tables = c.tables;
+        let engine = pi_ocr::PaddleVlEngine::new(pc)?;
+        pi_ocr::ocr_and_route(bytes, pages, &triage, &engine, &opts).await?
+    } else {
+        let mut vc = pi_ocr::OpenAiVisionConfig::new(base_url, model, c.api_key());
+        vc.timeout_s = timeout;
+        vc.json_mode = c.json_mode;
+        vc.max_tokens = c.max_tokens;
+        let engine = pi_ocr::OpenAiVisionEngine::new(vc)?;
+        pi_ocr::ocr_and_route(bytes, pages, &triage, &engine, &opts).await?
+    };
     let routes = routed
         .iter()
         .zip(&triage)
@@ -379,7 +396,15 @@ async fn triage_and_ocr(
             error: r.error.clone(),
         })
         .collect();
-    Ok((routed.into_iter().map(|r| r.spans).collect(), routes))
+    let tables = routed
+        .iter()
+        .map(|r| r.tables.iter().map(|t| t.markdown.clone()).collect())
+        .collect();
+    Ok((
+        routed.into_iter().map(|r| r.spans).collect(),
+        routes,
+        tables,
+    ))
 }
 
 /// Index one PDF. `llm` is required for `summary`, `optimize = Full` and `description`;
@@ -410,8 +435,8 @@ pub async fn index_document(
 
     // triage + OCR
     let t = Instant::now();
-    let (spans, triage) = match opts.ocr {
-        OcrMode::Off => (spans, Vec::new()),
+    let (spans, triage, ocr_tables) = match opts.ocr {
+        OcrMode::Off => (spans, Vec::new(), Vec::new()),
         OcrMode::Auto => triage_and_ocr(pdf_bytes.clone(), spans, opts.ocr_config.as_ref()).await?,
     };
     timings.ocr_s = t.elapsed().as_secs_f64();
@@ -438,7 +463,7 @@ pub async fn index_document(
     // 04-08 seam, then 09 embedded bookmarks.
     let t = Instant::now();
     let mut result = detect_structure(doc_name, layouts);
-    let page_texts: Vec<String> = result
+    let mut page_texts: Vec<String> = result
         .get("page_texts")
         .and_then(Value::as_array)
         .map(|a| {
@@ -447,6 +472,19 @@ pub async fn index_document(
                 .collect()
         })
         .unwrap_or_default();
+    // OCR'd tables go into the page text (pages.json and the LLM passes) as markdown after the
+    // page's own text; the tree comes from the spans and is unaffected.
+    if ocr_tables.iter().any(|t| !t.is_empty()) {
+        for (text, tables) in page_texts.iter_mut().zip(&ocr_tables) {
+            for md in tables {
+                if !text.is_empty() {
+                    text.push_str("\n\n");
+                }
+                text.push_str(md);
+            }
+        }
+        result.insert("page_texts".into(), json!(page_texts));
+    }
     if opts.use_embedded_toc {
         let structure: Vec<Value> = result
             .get("structure")

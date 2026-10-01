@@ -6,6 +6,9 @@
 //! layout-model titles as hints.
 
 pub mod engine;
+pub mod http;
+pub mod otsl;
+pub mod paddle_vl;
 pub mod parse;
 pub mod render;
 pub mod route;
@@ -20,6 +23,7 @@ use pi_triage::{PageLabel, PageTriage};
 use serde::{Deserialize, Serialize};
 
 pub use engine::{OcrEngine, OcrPage, OpenAiVisionConfig, OpenAiVisionEngine};
+pub use paddle_vl::{PaddleVlConfig, PaddleVlEngine};
 pub use route::PageSource;
 pub use spans::{LayoutHint, OcrSpans, OcrTable, SpanCalibration};
 
@@ -66,15 +70,18 @@ pub async fn ocr_and_route<E: OcrEngine>(
     {
         let mut doc = Document::open(pdf_bytes)?;
         for (idx, t) in triage.iter().enumerate() {
+            let dpi = engine
+                .preferred_dpi(t.signals.width, t.signals.height)
+                .unwrap_or(opts.dpi);
             let imgs = match t.label {
                 PageLabel::Scanned | PageLabel::Garbled => {
-                    vec![render::render_page(&mut doc, idx, opts.dpi, None)?]
+                    vec![render::render_page(&mut doc, idx, dpi, None)?]
                 }
                 PageLabel::Mixed => t
                     .signals
                     .image_regions
                     .iter()
-                    .map(|r| render::render_page(&mut doc, idx, opts.dpi, Some(*r)))
+                    .map(|r| render::render_page(&mut doc, idx, dpi, Some(*r)))
                     .collect::<Result<_>>()?,
                 _ => continue,
             };

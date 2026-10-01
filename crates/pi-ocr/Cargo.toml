@@ -19,6 +19,7 @@ serde_json.workspace = true
 anyhow.workspace = true
 base64 = "0.22"
 png = "0.17"
+regex = "1"
 reqwest.workspace = true
 tokio = { workspace = true, features = ["rt-multi-thread", "net", "io-util"] }
 futures.workspace = true

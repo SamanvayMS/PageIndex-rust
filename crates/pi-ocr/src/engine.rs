@@ -1,10 +1,7 @@
 //! OCR engines. The default engine calls an OpenAI-compatible chat-completions endpoint with
 //! the page image (hosted APIs and self-hosted servers, e.g. a DGX, expose the same API).
 
-use std::time::Duration;
-
-use anyhow::{Context, Result, bail};
-use base64::Engine as _;
+use anyhow::Result;
 use serde::{Deserialize, Serialize};
 use serde_json::json;
 
@@ -21,6 +18,12 @@ pub struct OcrPage {
 /// An OCR engine: image in, positioned blocks out.
 pub trait OcrEngine: Send + Sync {
     fn ocr(&self, img: &PageImage) -> impl std::future::Future<Output = Result<OcrPage>> + Send;
+
+    /// Render resolution the engine wants for a page of `w_pt` x `h_pt` points; `None` uses
+    /// the configured dpi.
+    fn preferred_dpi(&self, _w_pt: f64, _h_pt: f64) -> Option<f64> {
+        None
+    }
 }
 
 /// The instruction sent with every page (profile `spans-json`).
@@ -75,14 +78,11 @@ pub struct OpenAiVisionEngine {
 
 impl OpenAiVisionEngine {
     pub fn new(cfg: OpenAiVisionConfig) -> Result<Self> {
-        let http = reqwest::Client::builder()
-            .timeout(Duration::from_secs(cfg.timeout_s))
-            .build()?;
+        let http = crate::http::client(cfg.timeout_s)?;
         Ok(Self { cfg, http })
     }
 
     fn body(&self, img: &PageImage) -> serde_json::Value {
-        let b64 = base64::engine::general_purpose::STANDARD.encode(&img.png);
         let mut body = json!({
             "model": self.cfg.model,
             "temperature": 0,
@@ -91,7 +91,7 @@ impl OpenAiVisionEngine {
                 {"role": "system", "content": self.cfg.prompt},
                 {"role": "user", "content": [
                     {"type": "text", "text": format!("Page {}. Image is {}x{} px.", img.page, img.width_px, img.height_px)},
-                    {"type": "image_url", "image_url": {"url": format!("data:image/png;base64,{b64}")}}
+                    {"type": "image_url", "image_url": {"url": crate::http::png_data_url(&img.png)}}
                 ]}
             ]
         });
@@ -101,55 +101,25 @@ impl OpenAiVisionEngine {
         body
     }
 
-    async fn call(&self, img: &PageImage) -> Result<String> {
-        let url = format!(
-            "{}/chat/completions",
-            self.cfg.base_url.trim_end_matches('/')
-        );
-        let mut req = self.http.post(&url).json(&self.body(img));
-        if let Some(k) = &self.cfg.api_key {
-            req = req.bearer_auth(k);
-        }
-        let resp = req.send().await.context("OCR request")?;
-        let status = resp.status();
-        let text = resp.text().await?;
-        if !status.is_success() {
-            bail!(
-                "OCR endpoint returned {status}: {}",
-                text.chars().take(300).collect::<String>()
-            );
-        }
-        let v: serde_json::Value =
-            serde_json::from_str(&text).context("OCR response is not JSON")?;
-        Ok(v["choices"][0]["message"]["content"]
-            .as_str()
-            .unwrap_or_default()
-            .to_string())
+    /// One raw chat reply for `img` (used by `ocr` and by the calibration tool).
+    pub async fn call(&self, img: &PageImage) -> Result<String> {
+        crate::http::post_chat_retrying(
+            &self.http,
+            &self.cfg.base_url,
+            self.cfg.api_key.as_deref(),
+            &self.body(img),
+            self.cfg.max_retries,
+        )
+        .await
     }
-}
-
-fn retryable(e: &anyhow::Error) -> bool {
-    let s = e.to_string();
-    !(s.contains(" 400 ") || s.contains(" 401 ") || s.contains(" 403 ") || s.contains(" 404 "))
 }
 
 impl OcrEngine for OpenAiVisionEngine {
     async fn ocr(&self, img: &PageImage) -> Result<OcrPage> {
-        let mut attempt = 0;
-        loop {
-            match self.call(img).await {
-                Ok(reply) => {
-                    return Ok(OcrPage {
-                        page: img.page,
-                        blocks: parse_reply(&reply, img.width_px as f64, img.height_px as f64),
-                    });
-                }
-                Err(e) if attempt < self.cfg.max_retries && retryable(&e) => {
-                    attempt += 1;
-                    tokio::time::sleep(Duration::from_millis(500 * (1 << attempt.min(6)))).await;
-                }
-                Err(e) => return Err(e),
-            }
-        }
+        let reply = self.call(img).await?;
+        Ok(OcrPage {
+            page: img.page,
+            blocks: parse_reply(&reply, img.width_px as f64, img.height_px as f64),
+        })
     }
 }

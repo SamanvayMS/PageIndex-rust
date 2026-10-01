@@ -130,18 +130,25 @@ async fn bookmarks_drive_the_tree_and_models_run() {
 /// A one-shot-per-connection HTTP server answering every chat completion with a fixed
 /// OCR reply. Returns its base URL.
 async fn mock_ocr_server(reply: Value) -> String {
+    let content = reply.to_string();
+    mock_chat_server(move |_| content.clone()).await
+}
+
+/// A one-shot-per-connection HTTP server answering each chat completion with
+/// `reply(request)`. Returns its base URL.
+async fn mock_chat_server<F>(reply: F) -> String
+where
+    F: Fn(&Value) -> String + Send + Sync + 'static,
+{
     let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
     let addr = listener.local_addr().unwrap();
-    let body = json!({"choices": [{"message": {"role": "assistant",
-                                               "content": reply.to_string()},
-                                   "finish_reason": "stop"}]})
-    .to_string();
+    let reply = std::sync::Arc::new(reply);
     tokio::spawn(async move {
         loop {
             let Ok((mut sock, _)) = listener.accept().await else {
                 return;
             };
-            let body = body.clone();
+            let reply = reply.clone();
             tokio::spawn(async move {
                 // Read headers, then Content-Length bytes of body.
                 let mut buf = Vec::new();
@@ -171,6 +178,11 @@ async fn mock_ocr_server(reply: Value) -> String {
                     }
                     buf.extend_from_slice(&tmp[..n]);
                 }
+                let req: Value = serde_json::from_slice(&buf[header_end..]).unwrap_or(Value::Null);
+                let body = json!({"choices": [{"message": {"role": "assistant",
+                                                           "content": reply(&req)},
+                                               "finish_reason": "stop"}]})
+                .to_string();
                 let resp = format!(
                     "HTTP/1.1 200 OK\r\ncontent-type: application/json\r\ncontent-length: {}\r\nconnection: close\r\n\r\n{body}",
                     body.len()
@@ -232,4 +244,67 @@ async fn scanned_pages_go_through_ocr() {
         .await
         .unwrap();
     assert_eq!(plain.toc_source(), "unreadable");
+}
+
+#[tokio::test]
+async fn paddleocr_vl_profile_puts_tables_in_page_texts() {
+    if pi_extract::pdfium::bindings().is_err() {
+        eprintln!("skipped: PDFium not available");
+        return;
+    }
+    let scan = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+        .join("../../parity/scans/earthmover__scan150.pdf");
+    let Ok(bytes) = std::fs::read(&scan) else {
+        eprintln!("skipped: {} not found", scan.display());
+        return;
+    };
+    let base_url = mock_chat_server(|req| {
+        assert_eq!(req["skip_special_tokens"], false);
+        let loc = |v: [u32; 4]| v.iter().map(|n| format!("<|LOC_{n}|>")).collect::<String>();
+        match req["messages"][0]["content"][1]["text"].as_str() {
+            Some("Spotting:") => {
+                let mut s = format!("1. INTRODUCTION{}\n", loc([100, 60, 500, 80]));
+                s += &format!("paddle body line one{}\n", loc([100, 100, 900, 120]));
+                for (k, (a, b)) in [("Revenue", "1,234"), ("Cost", "(812)"), ("Profit", "422")]
+                    .iter()
+                    .enumerate()
+                {
+                    let y = 300 + 30 * k as u32;
+                    s += &format!(
+                        "{a}{}\n{b}{}\n",
+                        loc([100, y, 400, y + 20]),
+                        loc([700, y, 800, y + 20])
+                    );
+                }
+                s
+            }
+            Some("Table Recognition:") => {
+                "<fcel>Revenue<fcel>1,234<nl><fcel>Cost<fcel>(812)<nl><fcel>Profit<fcel>422<nl>"
+                    .into()
+            }
+            other => panic!("unexpected prompt {other:?}"),
+        }
+    })
+    .await;
+    let mut ocr = pi_config::Config::default().ocr;
+    ocr.profile = "paddleocr-vl".into();
+    ocr.base_url = Some(base_url);
+    ocr.model = Some("PaddleOCR-VL-1.6".into());
+    ocr.concurrency = 4;
+    let opts = IndexOptions {
+        ocr: OcrMode::Auto,
+        ocr_config: Some(ocr),
+        ..llm_free()
+    };
+    let doc = index_document(bytes, "scan.pdf", &opts, None)
+        .await
+        .unwrap();
+    assert!(doc.triage.iter().all(|p| p.ocr), "{:?}", doc.triage);
+    for t in &doc.page_texts {
+        assert!(t.contains("paddle body line one"), "{t}");
+        assert!(
+            t.contains("| Revenue | 1,234 |\n| --- | --- |\n| Cost | (812) |"),
+            "{t}"
+        );
+    }
 }
